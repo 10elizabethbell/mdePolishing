@@ -14,6 +14,42 @@
         "value": "<div> \"slab-wrap\": children flush against bg on all sides (no inset)",
         "createdAt": "2026-10-17T23:54:34.865Z",
         "reason": "Claude: slab-wrap is the hero canvas frame; the canvas is meant to fill it edge to edge"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".875rem",
+        "createdAt": "2026-10-17T23:57:55.751Z",
+        "reason": "Claude: slab drag-hint label size, one-off left out of DESIGN.md by the documenter"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(9,14,40,.55)",
+        "createdAt": "2026-10-17T23:57:55.855Z",
+        "reason": "Claude: navy band depth glow, part of the shipped band treatment"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#000",
+        "createdAt": "2026-10-17T23:57:55.973Z",
+        "reason": "Claude: CSS mask gradient stop, not a visible colour"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.25rem",
+        "createdAt": "2026-10-17T23:57:56.071Z",
+        "reason": "Claude: plain blue step numerals from the Impeccable quieter pass"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#6d7186",
+        "createdAt": "2026-10-17T23:58:01.836Z",
+        "reason": "Claude: input placeholder grey, 4.5:1 on white, shipped in build"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "clamp(4rem,6.4vw,6rem)",
+        "createdAt": "2026-10-17T23:58:01.951Z",
+        "reason": "Claude: desktop hero headline size, documented in DESIGN.md as up to 6rem"
       }
     ]
   }
