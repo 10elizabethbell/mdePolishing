@@ -10,7 +10,7 @@
 <meta property="og:title" content="MDE Polishing Inc.">
 <meta property="og:description" content="Concrete grinding, polishing, epoxy coatings and sealing. Send us photos of your floor for a quote.">
 <meta property="og:url" content="https://10elizabethbell.github.io/mdePolishing/">
-<meta property="og:image" content="https://10elizabethbell.github.io/mdePolishing/assets/og.png">
+<meta property="og:image" content="https://10elizabethbell.github.io/mdePolishing/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ebebeb'/%3E%3Cg fill='%232c54f7' stroke='%23000f2f' stroke-width='2.4' stroke-linejoin='round'%3E%3Cpath d='M18 26V6h6l8 9 8-9h6v20h-5V13l-9 9-9-9v13z'/%3E%3Cpath d='M18 29h17c7 0 11 4 11 8.5S42 46 35 46H18zm5 4v9h12c3.6 0 6-1.8 6-4.5S38.6 33 35 33z' fill-rule='evenodd'/%3E%3Cpath d='M18 49h28v4H23v1.5h20v3.5H23V59h23v4H18z' transform='translate(0 -1)'/%3E%3C/g%3E%3C/svg%3E">
@@ -31,7 +31,7 @@
   --line:#c9c7c0;
   --focus:#f0a51c;       /* form outline accent: grinder warning-light amber */
   --radius:14px;
-  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;overscroll-behavior-y:none;scroll-behavior:smooth}
@@ -54,7 +54,7 @@ p{margin:0}
 .btn-ghost{background:transparent;color:var(--ink)}
 .btn-ghost:hover{background:var(--ink);color:#fff}
 .btn svg{width:22px;height:22px;flex:none}
-.on-navy .btn-primary{border-color:#fff}
+.on-navy .btn-primary{border-color:#fff;box-shadow:none}
 
 /* ---------- header ---------- */
 .top{position:relative;z-index:3}
@@ -137,12 +137,12 @@ fieldset legend{padding:0;margin-bottom:10px}
 form input[type=text]:hover,form input[type=tel]:hover,form textarea:hover,.chip span:hover,form .btn:hover,
 form input[type=text]:focus,form input[type=tel]:focus,form textarea:focus,.chip input:focus-visible+span,form .btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 form input:focus,form textarea:focus{border-color:var(--ink)}
-.err{display:none;color:#b3261e;font-weight:700;font-size:.9375rem}
+.err{display:none;color:#b3261e;font-weight:700;font-size:1rem}
 .field.bad .err{display:block}
 .field.bad input{border-color:#b3261e}
 .sent{display:none;padding:18px;border-radius:var(--radius);background:#fff;border:2px solid var(--line)}
 .sent.show{display:grid;gap:12px}
-.sent pre{margin:0;white-space:pre-wrap;font:500 .9375rem/1.45 var(--font);color:var(--ink-soft)}
+.sent pre{margin:0;white-space:pre-wrap;font:500 1rem/1.45 var(--font);color:var(--ink-soft)}
 .sent .row-btns{display:flex;flex-wrap:wrap;gap:10px}
 .sent .btn{min-height:48px;font-size:1rem}
 
@@ -500,7 +500,7 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* polished slab: ground to the stone, deep and glossy */
     polished = mk(w, h); c = polished.getContext('2d');
-    c.fillStyle = '#7d7a74'; c.fillRect(0, 0, w, h);
+    c.fillStyle = '#74716c'; c.fillRect(0, 0, w, h);
     for (i = 0; i < 40; i++){
       bx = rnd(0, w); by = rnd(0, h); br = rnd(60, 260) * dpr;
       gr = c.createRadialGradient(bx, by, 0, bx, by, br);
@@ -508,9 +508,9 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       c.fillStyle = gr; c.fillRect(bx - br, by - br, br * 2, br * 2);
     }
     var stones = ['#d8d2c7','#bdb5a8','#a39a8d','#6a645d','#4a4642','#e9e5dd','#8c7d6a','#b8a38a','#575049','#cfc6b6'];
-    var n = Math.round(w * h / (34 * dpr * dpr));
+    var n = Math.round(w * h / (16 * dpr * dpr));
     for (i = 0; i < n; i++){
-      var sx = rnd(0, w), sy = rnd(0, h), sr = Math.pow(Math.random(), 3) * 6 * dpr + 0.6 * dpr, sides = 5 + (Math.random() * 4 | 0), rot = rnd(0, 6.28);
+      var sx = rnd(0, w), sy = rnd(0, h), sr = Math.pow(Math.random(), 3.4) * 4.2 * dpr + 0.45 * dpr, sides = 5 + (Math.random() * 4 | 0), rot = rnd(0, 6.28);
       c.fillStyle = stones[Math.random() * stones.length | 0]; c.globalAlpha = rnd(0.55, 0.95);
       c.beginPath();
       for (var v = 0; v < sides; v++){ var aa = rot + v / sides * 6.28, rr = sr * rnd(0.6, 1.15); c[v ? 'lineTo' : 'moveTo'](sx + Math.cos(aa) * rr, sy + Math.sin(aa) * rr * rnd(0.7, 1)); }
@@ -523,7 +523,7 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     grain(c, w, h, 14);
     seed.forEach(function(s){ crack(c, s.x, s.y, s.l, s.a, 0.5, 1.1 * dpr); });
     var depth = c.createLinearGradient(0, 0, 0, h);                                /* gloss deepens the tone */
-    depth.addColorStop(0, 'rgba(20,24,40,.10)'); depth.addColorStop(1, 'rgba(20,24,40,.22)');
+    depth.addColorStop(0, 'rgba(20,24,40,.14)'); depth.addColorStop(1, 'rgba(20,24,40,.28)');
     c.fillStyle = depth; c.fillRect(0, 0, w, h);
 
     /* reflection of a row of shop light fixtures, drawn once, slid each frame */
@@ -536,7 +536,7 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       for (var col = -1; col < 4; col++){
         var lx = col * w * 0.42 + (row % 2) * w * 0.21 + w * 0.05;
         c.save(); c.filter = 'blur(' + (14 * dpr) + 'px)';
-        c.fillStyle = 'rgba(255,255,250,.5)'; c.fillRect(lx, ly - lh * 0.4, lw, lh * 1.8);
+        c.fillStyle = 'rgba(255,255,250,.6)'; c.fillRect(lx, ly - lh * 0.4, lw, lh * 1.8);
         c.filter = 'blur(' + (2.5 * dpr) + 'px)';
         c.fillStyle = 'rgba(255,255,255,.85)'; c.fillRect(lx + lw * 0.03, ly + lh * 0.3, lw * 0.94, lh * 0.4);
         c.restore();
@@ -564,7 +564,7 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function stamp(x, y, k){
     var s = MASK_SCALE, rr = R * 1.05 * s;
     var gr = mctx.createRadialGradient(x * s, y * s, 0, x * s, y * s, rr);
-    gr.addColorStop(0, 'rgba(0,0,0,' + (POLISH_RATE * k) + ')'); gr.addColorStop(0.84, 'rgba(0,0,0,' + (POLISH_RATE * k * 0.95) + ')'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+    gr.addColorStop(0, 'rgba(0,0,0,' + (POLISH_RATE * k) + ')'); gr.addColorStop(0.9, 'rgba(0,0,0,' + (POLISH_RATE * k * 0.95) + ')'); gr.addColorStop(1, 'rgba(0,0,0,0)');
     mctx.globalCompositeOperation = 'source-over'; mctx.fillStyle = gr;
     mctx.beginPath(); mctx.arc(x * s, y * s, rr, 0, 6.28); mctx.fill();
   }
