@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MDE Polishing Inc. | Concrete grinding, polishing and epoxy</title>
+<meta name="description" content="MDE Polishing Inc.: concrete grinding, epoxy coatings, concrete polishing, grind and seals, coating removals and concrete sealing in southwestern Ontario. Call or text 226-808-4556.">
+<meta name="theme-color" content="#e9e8e4">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MDE Polishing Inc.">
+<meta property="og:description" content="Concrete grinding, polishing, epoxy coatings and sealing. Send us photos of your floor for a quote.">
+<meta property="og:url" content="https://10elizabethbell.github.io/mdePolishing/">
+<meta property="og:image" content="https://10elizabethbell.github.io/mdePolishing/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ebebeb'/%3E%3Cg fill='%232c54f7' stroke='%23000f2f' stroke-width='2.4' stroke-linejoin='round'%3E%3Cpath d='M18 26V6h6l8 9 8-9h6v20h-5V13l-9 9-9-9v13z'/%3E%3Cpath d='M18 29h17c7 0 11 4 11 8.5S42 46 35 46H18zm5 4v9h12c3.6 0 6-1.8 6-4.5S38.6 33 35 33z' fill-rule='evenodd'/%3E%3Cpath d='M18 49h28v4H23v1.5h20v3.5H23V59h23v4H18z' transform='translate(0 -1)'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --ground:#e9e8e4;      /* fresh concrete, from the logo's grey */
+  --ground-2:#f3f2ef;
+  --ink:#0d1636;         /* navy-black, from the logo outline */
+  --ink-soft:#3c4361;
+  --blue:#2c54f7;        /* logo blue */
+  --blue-deep:#1d3cc4;
+  --navy:#14215a;        /* logo tagline navy */
+  --navy-2:#1a2a6e;
+  --on-navy:#eef0fa;
+  --on-navy-soft:#b9c0e0;
+  --line:#c9c7c0;
+  --focus:#f0a51c;       /* form outline accent: grinder warning-light amber */
+  --radius:14px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overscroll-behavior-y:none;scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 1.0625rem/1.55 var(--font)}
+::selection{background:var(--blue);color:#fff}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+h1,h2,h3{margin:0;font-weight:900;text-transform:uppercase;letter-spacing:-.015em;line-height:.95;text-wrap:balance}
+h2{font-size:clamp(2rem,9vw,3.6rem)}
+p{margin:0}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- buttons (outlined like the logo's letters) ---------- */
+.btn{display:flex;align-items:center;justify-content:center;gap:.6em;min-height:58px;padding:0 1.4em;border:2.5px solid var(--ink);border-radius:999px;font:800 1.0625rem/1.1 var(--font);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,transform .15s}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 14px -6px rgba(13,22,54,.45)}
+.btn-primary:hover{background:var(--blue-deep)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.btn svg{width:22px;height:22px;flex:none}
+.on-navy .btn-primary{border-color:#fff}
+
+/* ---------- header ---------- */
+.top{position:relative;z-index:3}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:6px}
+.logo{display:block;width:clamp(138px,40vw,200px)}
+.logo img{width:100%;height:auto}
+.phone{display:flex;align-items:center;gap:.4em;min-height:44px;padding:0 2px;font-weight:800;font-size:1.0625rem;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
+.phone svg{width:18px;height:18px;color:var(--blue)}
+.phone:hover{color:var(--blue-deep)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;display:flex;flex-direction:column;min-height:min(calc(100svh - 70px),980px)}
+.hero-copy{padding-top:10px;padding-bottom:22px}
+.hero h1{font-size:clamp(2.75rem,13.4vw,5.6rem);line-height:.9;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.promise{margin-top:14px;max-width:34ch;font-size:clamp(1.0625rem,4.4vw,1.25rem);color:var(--ink-soft)}
+.actions{display:grid;gap:10px;margin-top:20px}
+.slab-wrap{position:relative;flex:1;min-height:250px;overflow:hidden;background:#bdbab3}
+#slab{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+#slab:active{cursor:grabbing}
+.slab-hint{position:absolute;left:14px;bottom:12px;z-index:1;padding:6px 11px;border-radius:8px;background:rgba(233,232,228,.82);color:var(--ink);font-size:.875rem;font-weight:700;pointer-events:none;transition:opacity .6s}
+.slab-hint.gone{opacity:0}
+
+/* ---------- epoxy pour dividers ---------- */
+.pour{display:block;width:100%;height:46px;margin-top:-1px;margin-bottom:-1px;position:relative;z-index:2}
+.pour path{filter:drop-shadow(0 -3px 3px rgba(13,22,54,.18))}
+
+/* ---------- sections ---------- */
+section{position:relative}
+.band{padding:56px 0 64px}
+.light-2{background:var(--ground-2)}
+.on-navy{background:var(--navy);color:var(--on-navy);background-image:radial-gradient(120% 80% at 15% 0%,rgba(44,84,247,.35),transparent 60%),radial-gradient(90% 70% at 100% 100%,rgba(9,14,40,.55),transparent 70%)}
+.on-navy p{color:var(--on-navy-soft)}
+.on-navy :focus-visible{outline-color:#fff}
+
+/* services: whole row is the link, only the arrow reacts */
+.svc-list{list-style:none;margin:26px 0 0;padding:0;border-top:1.5px solid var(--line)}
+.svc-list li{border-bottom:1.5px solid var(--line)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px;padding:10px 2px;text-decoration:none;font-weight:800;font-size:clamp(1.125rem,5vw,1.5rem);text-transform:uppercase;letter-spacing:-.01em}
+.row:hover,.row:focus-visible{outline:none;background:none;box-shadow:none}
+.arrow{display:grid;place-items:center;flex:none;width:44px;height:44px;border:2px solid var(--line);border-radius:50%;color:var(--ink);transition:background .2s,border-color .2s,color .2s}
+.arrow svg{width:18px;height:18px}
+.row:hover .arrow,.row:focus-visible .arrow{background:var(--blue);border-color:var(--blue);color:#fff}
+.row:focus-visible .arrow{outline:3px solid var(--blue);outline-offset:3px}
+.svc-note{margin-top:16px;color:var(--ink-soft);font-size:1rem}
+
+/* how it works */
+.steps{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:26px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:52px 1fr;gap:4px 16px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);grid-row:span 2;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;font-weight:900;font-size:1.375rem}
+.steps h3{font-size:1.375rem;line-height:1.05;padding-top:4px}
+.steps p{color:var(--ink-soft);max-width:44ch}
+
+/* work / facebook */
+.work h2{max-width:14ch}
+.work p.lede{margin-top:14px;max-width:40ch;font-size:1.125rem}
+.fb{display:flex;align-items:center;gap:16px;margin-top:26px;padding:18px 20px;border:2.5px solid #fff;border-radius:var(--radius);background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-weight:800;font-size:clamp(1.125rem,5vw,1.375rem);line-height:1.15;transition:background .2s}
+.fb:hover{background:rgba(255,255,255,.14)}
+.fb .fbi{flex:none;width:52px;height:52px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center}
+.fb .fbi svg{width:28px;height:28px}
+.fb .go{margin-left:auto;flex:none;width:28px;height:28px}
+
+/* quote form */
+.quote .intro{margin-top:14px;max-width:44ch;color:var(--ink-soft)}
+form{margin-top:26px;display:grid;gap:22px;max-width:640px}
+.field{display:grid;gap:8px}
+.field>label,fieldset legend{font-weight:800;font-size:1rem}
+.opt{font-weight:500;color:var(--ink-soft)}
+input[type=text],input[type=tel],textarea{width:100%;min-height:54px;padding:13px 15px;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font:500 1.0625rem/1.4 var(--font);transition:border-color .15s,outline-color .15s}
+textarea{min-height:110px;resize:vertical}
+input::placeholder,textarea::placeholder{color:#6d7186}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+fieldset legend{padding:0;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:flex;align-items:center;min-height:46px;padding:0 16px;border:2px solid var(--line);border-radius:999px;background:#fff;font-weight:700;font-size:1rem;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.chip input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+/* every control inside the form: amber outline on hover and focus */
+form input[type=text]:hover,form input[type=tel]:hover,form textarea:hover,.chip span:hover,form .btn:hover,
+form input[type=text]:focus,form input[type=tel]:focus,form textarea:focus,.chip input:focus-visible+span,form .btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+form input:focus,form textarea:focus{border-color:var(--ink)}
+.err{display:none;color:#b3261e;font-weight:700;font-size:.9375rem}
+.field.bad .err{display:block}
+.field.bad input{border-color:#b3261e}
+.sent{display:none;padding:18px;border-radius:var(--radius);background:#fff;border:2px solid var(--line)}
+.sent.show{display:grid;gap:12px}
+.sent pre{margin:0;white-space:pre-wrap;font:500 .9375rem/1.45 var(--font);color:var(--ink-soft)}
+.sent .row-btns{display:flex;flex-wrap:wrap;gap:10px}
+.sent .btn{min-height:48px;font-size:1rem}
+
+/* close + footer */
+.close{text-align:left}
+.close h2{max-width:12ch}
+.close p.lede{margin-top:14px;max-width:38ch;font-size:1.125rem}
+.close .actions{max-width:420px}
+.close .call{display:inline-flex;align-items:center;gap:.4em;min-height:44px;margin-top:14px;color:#fff;font-weight:800;font-size:1.25rem;text-decoration:none;font-variant-numeric:tabular-nums}
+.close .call:hover{text-decoration:underline;text-underline-offset:4px}
+.area{margin-top:22px;font-size:1rem}
+footer{padding:28px 0 36px;border-top:1px solid rgba(255,255,255,.14)}
+footer .wrap{display:grid;gap:8px;font-size:1rem}
+footer strong{font-size:1.0625rem;color:#fff}
+footer a{color:var(--on-navy);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+footer a:hover{text-decoration:underline;text-underline-offset:4px}
+footer .links{display:flex;flex-wrap:wrap;gap:4px 22px}
+
+/* ---------- larger screens ---------- */
+@media (min-width:600px){
+  .actions{grid-template-columns:auto auto;justify-content:start}
+  .pour{height:64px}
+}
+@media (min-width:1024px){
+  .wrap{padding:0 40px}
+  .top .wrap{padding-top:18px}
+  .phone{font-size:1.25rem}
+  .hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:min(calc(100vh - 92px),820px);max-width:none;padding-left:max(40px,calc((100vw - 1180px)/2 + 40px))}
+  .hero-copy{align-self:center;padding:30px 40px 60px 0;margin:0;max-width:none}
+  .hero h1{font-size:clamp(4rem,6.4vw,6rem)}
+  .promise{font-size:1.25rem}
+  .slab-wrap{margin:0;border-radius:28px 0 0 28px}
+  .band{padding:96px 0 104px}
+  .svc .wrap,.how .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:60px;align-items:start}
+  .svc-list,.steps{margin-top:6px}
+  .quote .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:60px}
+  form{margin-top:0}
+  .work .wrap{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+  .fb{margin-top:0;min-width:420px}
+  .pour{height:84px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<!--
+DIRECTION CONTRACT
+THESIS: A raw, dusty slab becomes a floor you can see yourself in. The page lets you do that yourself.
+OWN-WORLD: The polishing floor. Matte grey concrete with trowel marks and an oil stain; a blue floor grinder (the logo's blue) that cuts through it to salt-and-pepper aggregate and a deep gloss that reflects the shop lights. Edges between sections are wet epoxy pours, flowing.
+STORY: Hero (watch the grinder polish, then take the handle) -> what we do (six services, each one text-to-quote) -> how a quote works (photos first) -> our work on Facebook -> quote form that writes the text -> close with the number.
+FIRST VIEWPORT (phone): logo + number top-right, "Make your concrete shine.", one-line promise, two buttons (text photos / get a quote), the living slab beneath.
+FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo letters, logo blue + navy on concrete grey, navy bands for depth. No black grounds.
+-->
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="MDE Polishing Inc., home"><img src="assets/logo.webp" width="460" height="220" alt="MDE Polishing: concrete grinding and polishing"></a>
+    <a class="phone" href="tel:+12268084556"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>226-808-4556</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h-hero">
+    <div class="hero-copy wrap">
+      <h1 id="h-hero">Make your concrete <em>shine.</em></h1>
+      <p class="promise">We take a tired, stained floor down to fresh stone and bring it back up to a finish you'll want to show people.</p>
+      <div class="actions">
+        <a class="btn btn-primary" id="hero-text" href="sms:+12268084556"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="11" r="1.6"/><path d="m21 16-5-5-8 8"/></svg>Text us photos of your floor</a>
+        <a class="btn btn-ghost" href="#quote">Get a quote</a>
+      </div>
+    </div>
+    <div class="slab-wrap" id="slab-wrap">
+      <canvas id="slab" aria-label="A concrete floor being polished by a floor grinder. Drag across it to polish it yourself." role="img"></canvas>
+      <p class="slab-hint" id="slab-hint">Drag to polish the floor</p>
+    </div>
+  </section>
+
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path fill="#f3f2ef"/></svg>
+
+  <section class="svc band light-2" aria-labelledby="h-svc">
+    <div class="wrap">
+      <div>
+        <h2 id="h-svc">What we do</h2>
+        <p class="svc-note">Tap one to text us about it.</p>
+      </div>
+      <ul class="svc-list">
+        <li><a class="row" data-svc="concrete grinding" href="sms:+12268084556">Concrete grinding<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li><a class="row" data-svc="epoxy coating" href="sms:+12268084556">Epoxy coatings<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li><a class="row" data-svc="concrete polishing" href="sms:+12268084556">Concrete polishing<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li><a class="row" data-svc="a grind and seal" href="sms:+12268084556">Grind and seal<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li><a class="row" data-svc="removing an old coating" href="sms:+12268084556">Coating removal<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li><a class="row" data-svc="concrete sealing" href="sms:+12268084556">Concrete sealing<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground-2)"><path fill="#e9e8e4"/></svg>
+
+  <section class="how band" aria-labelledby="h-how">
+    <div class="wrap">
+      <h2 id="h-how">How a quote works</h2>
+      <ol class="steps">
+        <li><h3>Send us photos</h3><p>Stand back and take a few of the whole floor, plus close-ups of any cracks, stains or old coating. Tell us your town and roughly how big it is.</p></li>
+        <li><h3>We tell you straight</h3><p>What your floor needs, and what it doesn't. Sometimes that's a full polish, sometimes a grind and seal does the job for less.</p></li>
+        <li><h3>We do it right</h3><p>We prep the concrete properly before anything goes on it, so the finish holds up to cars, tools and years of use.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path fill="#14215a"/></svg>
+
+  <section class="work band on-navy" aria-labelledby="h-work">
+    <div class="wrap">
+      <div>
+        <h2 id="h-work">Our latest floors</h2>
+      </div>
+      <a class="fb" href="https://facebook.com/profile.php?id=61589369156324" rel="noopener"><span class="fbi"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.2L14.1 2C10.9 2 10.2 4.4 10.2 6v2.5H8v3.7h2.2V22H14v-9.8h2.8l.4-3.7z"/></svg></span>See our work on Facebook<svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--navy)"><path fill="#e9e8e4"/></svg>
+
+  <section class="quote band" id="quote" aria-labelledby="h-quote">
+    <div class="wrap">
+      <div>
+        <h2 id="h-quote">Get a quote</h2>
+        <p class="intro">Fill this in and we'll write the text for you. Add your photos before you hit send.</p>
+      </div>
+      <form id="qform" novalidate>
+        <div class="field" id="f-name">
+          <label for="q-name">Your name</label>
+          <input type="text" id="q-name" name="name" autocomplete="name" required>
+          <p class="err" id="e-name">Add your name so we know who we're talking to.</p>
+        </div>
+        <div class="field" id="f-town">
+          <label for="q-town">Town</label>
+          <input type="text" id="q-town" name="town" autocomplete="address-level2" required>
+          <p class="err" id="e-town">Add your town so we know where the floor is.</p>
+        </div>
+        <fieldset>
+          <legend>What kind of floor?</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="floor" value="Garage"><span>Garage</span></label>
+            <label class="chip"><input type="radio" name="floor" value="Basement"><span>Basement</span></label>
+            <label class="chip"><input type="radio" name="floor" value="Shop or warehouse"><span>Shop or warehouse</span></label>
+            <label class="chip"><input type="radio" name="floor" value="Store or office"><span>Store or office</span></label>
+            <label class="chip"><input type="radio" name="floor" value="Patio or outdoor"><span>Patio or outdoor</span></label>
+            <label class="chip"><input type="radio" name="floor" value="Something else"><span>Something else</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>What are you after? <span class="opt">(pick any)</span></legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="work" value="Epoxy coating"><span>Epoxy coating</span></label>
+            <label class="chip"><input type="checkbox" name="work" value="Polished concrete"><span>Polished concrete</span></label>
+            <label class="chip"><input type="checkbox" name="work" value="Grind and seal"><span>Grind and seal</span></label>
+            <label class="chip"><input type="checkbox" name="work" value="Concrete sealing"><span>Sealing</span></label>
+            <label class="chip"><input type="checkbox" name="work" value="Old coating removed"><span>Old coating off</span></label>
+            <label class="chip"><input type="checkbox" name="work" value="Not sure yet"><span>Not sure yet</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="q-size">Rough size <span class="opt">(optional)</span></label>
+          <input type="text" id="q-size" name="size" placeholder="e.g. two-car garage, or 600 sq ft">
+        </div>
+        <div class="field">
+          <label for="q-notes">Anything else? <span class="opt">(optional)</span></label>
+          <textarea id="q-notes" name="notes" placeholder="Cracks, stains, an old coating peeling up, when you'd like it done…"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Write my text</button>
+        <div class="sent" id="sent" role="status" aria-live="polite">
+          <p><strong>Your text is ready.</strong> If it didn't open, copy it and send it to 226-808-4556, with your photos.</p>
+          <pre id="sent-msg"></pre>
+          <div class="row-btns"><a class="btn btn-primary" id="sent-open" href="sms:+12268084556">Open my text</a><button class="btn btn-ghost" type="button" id="sent-copy">Copy message</button></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path fill="#14215a"/></svg>
+
+  <section class="close band on-navy" aria-labelledby="h-close">
+    <div class="wrap">
+      <h2 id="h-close">Ready for a better floor?</h2>
+      <p class="lede">Send a few photos and we'll tell you what it'll take.</p>
+      <div class="actions"><a class="btn btn-primary" id="close-text" href="sms:+12268084556">Text us photos of your floor</a></div>
+      <a class="call" href="tel:+12268084556">or call 226-808-4556</a>
+      <p class="area">Serving southwestern Ontario.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="on-navy">
+  <div class="wrap">
+    <strong>MDE Polishing Inc.</strong>
+    <div class="links">
+      <a href="tel:+12268084556">226-808-4556</a>
+      <a href="https://facebook.com/profile.php?id=61589369156324" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- text-message links ---------- */
+(function(){
+  var NUM = '+12268084556';
+  function sms(body){ return 'sms:' + NUM + '?&body=' + encodeURIComponent(body); }
+  window.MDE_sms = sms;
+  var photos = "Hi MDE Polishing! I'd like a quote on my floor. Here are some photos.\nTown: \nRough size: ";
+  document.getElementById('hero-text').href = sms(photos);
+  document.getElementById('close-text').href = sms(photos);
+  document.querySelectorAll('.row[data-svc]').forEach(function(a){
+    a.href = sms("Hi MDE Polishing! I'd like a quote for " + a.dataset.svc + ". Here are some photos of the floor.\nTown: \nRough size: ");
+  });
+})();
+
+/* ---------- quote form -> text message ---------- */
+(function(){
+  var form = document.getElementById('qform');
+  var sent = document.getElementById('sent');
+  var msgEl = document.getElementById('sent-msg');
+  var openBtn = document.getElementById('sent-open');
+  function need(id){
+    var input = document.getElementById('q-' + id), f = document.getElementById('f-' + id);
+    var ok = input.value.trim() !== '';
+    f.classList.toggle('bad', !ok);
+    input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    if (!ok) input.setAttribute('aria-describedby', 'e-' + id); else input.removeAttribute('aria-describedby');
+    return ok;
+  }
+  ['name','town'].forEach(function(id){
+    document.getElementById('q-' + id).addEventListener('input', function(){
+      if (document.getElementById('f-' + id).classList.contains('bad')) need(id);
+    });
+  });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var okName = need('name'), okTown = need('town');
+    if (!okName || !okTown){ document.getElementById(okName ? 'q-town' : 'q-name').focus(); return; }
+    var d = new FormData(form);
+    var lines = ["Hi MDE Polishing! I'd like a quote.", 'Name: ' + d.get('name').trim(), 'Town: ' + d.get('town').trim()];
+    if (d.get('floor')) lines.push('Floor: ' + d.get('floor'));
+    var work = d.getAll('work'); if (work.length) lines.push('Looking for: ' + work.join(', '));
+    if (d.get('size').trim()) lines.push('Size: ' + d.get('size').trim());
+    if (d.get('notes').trim()) lines.push('Notes: ' + d.get('notes').trim());
+    lines.push('Photos of the floor attached.');
+    var body = lines.join('\n');
+    msgEl.textContent = body;
+    openBtn.href = window.MDE_sms(body);
+    sent.classList.add('show');
+    window.location.href = openBtn.href;
+  });
+  document.getElementById('sent-copy').addEventListener('click', function(){
+    var b = this;
+    function done(){ b.textContent = 'Copied'; setTimeout(function(){ b.textContent = 'Copy message'; }, 2000); }
+    if (navigator.clipboard) navigator.clipboard.writeText(msgEl.textContent).then(done, function(){ b.textContent = 'Select the text above to copy'; });
+    else b.textContent = 'Select the text above to copy';
+  });
+})();
+
+/* ---------- shared animation loop ---------- */
+var MDE_loop = (function(){
+  var jobs = [], running = false;
+  function tick(t){
+    running = false;
+    var any = false;
+    for (var i = 0; i < jobs.length; i++) if (jobs[i].active()) { jobs[i].step(t); any = true; }
+    if (any) { running = true; requestAnimationFrame(tick); }
+  }
+  return {
+    add: function(job){ jobs.push(job); },
+    wake: function(){ if (!running) { running = true; requestAnimationFrame(tick); } }
+  };
+})();
+var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- hero: the slab you polish ---------- */
+(function(){
+  /* tunables */
+  var DPR_CAP = 1.5;           /* animated canvas sharpness cap */
+  var MASK_SCALE = 0.5;        /* polish mask resolution vs CSS px */
+  var REGROW_EVERY = 8;        /* frames between dulling steps */
+  var REGROW = 0.018;          /* how fast polish fades back to matte */
+  var POLISH_RATE = 0.22;      /* opacity per grinder stamp */
+  var FOLLOW = 7.5;            /* how hard the grinder chases your finger (spring) */
+  var DAMP = 5.2;              /* grinder damping */
+  var SPIN = 9;                /* motor cap spin, rad/s */
+  var IDLE_MS = 2600;          /* hand back to autopilot after this */
+  var AUTO_SPEED = 0.00042;    /* autopilot path speed */
+
+  var wrap = document.getElementById('slab-wrap');
+  var cv = document.getElementById('slab');
+  var hint = document.getElementById('slab-hint');
+  var ctx = cv.getContext('2d');
+  var W = 0, H = 0, dpr = 1, R = 40;
+  var raw, polished, layer, lctx, mask, mctx, lights;
+  var g = {x:0, y:0, vx:0, vy:0, ang:Math.PI*0.5, spin:0, px:0, py:0};
+  var ptr = {x:0, y:0, cx:0, cy:0, on:false, last:-1e9};
+  var dust = [], frame = 0, visible = true, lastT = 0, t0 = 0;
+
+  function rnd(a, b){ return a + Math.random() * (b - a); }
+  function mk(w, h){ var c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
+
+  /* organic hairline crack */
+  function crack(c, x, y, len, ang, alpha, w){
+    c.strokeStyle = 'rgba(40,38,36,' + alpha + ')'; c.lineWidth = w; c.lineCap = 'round';
+    c.beginPath(); c.moveTo(x, y);
+    for (var s = 0; s < len; s += 6 * dpr){
+      ang += rnd(-0.22, 0.22); x += Math.cos(ang) * 6 * dpr; y += Math.sin(ang) * 6 * dpr; c.lineTo(x, y);
+      if (Math.random() < 0.025) crack(c, x, y, len * 0.3, ang + rnd(-1, 1), alpha * 0.8, w * 0.7);
+    }
+    c.stroke();
+  }
+
+  function grain(c, w, h, amt){
+    var t = mk(160, 160), tc = t.getContext('2d'), id = tc.createImageData(160, 160), p = id.data;
+    for (var i = 0; i < p.length; i += 4){ var v = Math.random() < 0.5 ? 0 : 255; p[i] = p[i+1] = p[i+2] = v; p[i+3] = Math.random() * amt; }
+    tc.putImageData(id, 0, 0);
+    c.fillStyle = c.createPattern(t, 'repeat'); c.fillRect(0, 0, w, h);
+  }
+
+  function build(){
+    var r = wrap.getBoundingClientRect();
+    var nw = Math.round(r.width), nh = Math.round(r.height);
+    if (nw === W && nh === H) return false;           /* phones fire resize when the address bar moves */
+    W = nw; H = nh; dpr = Math.min(window.devicePixelRatio || 1, DPR_CAP);
+    var w = Math.round(W * dpr), h = Math.round(H * dpr);
+    cv.width = w; cv.height = h;
+    R = Math.max(30, Math.min(64, Math.min(W, H) * 0.13));
+    var seed = [];
+    for (var k = 0; k < 2; k++) seed.push({x:rnd(0, w), y:rnd(0, h), l:rnd(0.35, 0.8) * Math.max(w, h), a:rnd(0, 6.28)});
+    var stain = {x:w * rnd(0.55, 0.8), y:h * rnd(0.3, 0.7), r:Math.min(w, h) * rnd(0.12, 0.18)};
+
+    /* raw slab: matte, dusty, trowel-marked */
+    raw = mk(w, h); var c = raw.getContext('2d');
+    c.fillStyle = '#bcb9b2'; c.fillRect(0, 0, w, h);
+    for (var i = 0; i < 70; i++){
+      var bx = rnd(0, w), by = rnd(0, h), br = rnd(40, 220) * dpr, light = Math.random() < 0.5;
+      var gr = c.createRadialGradient(bx, by, 0, bx, by, br);
+      gr.addColorStop(0, light ? 'rgba(232,229,222,.16)' : 'rgba(120,116,108,.12)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+      c.fillStyle = gr; c.fillRect(bx - br, by - br, br * 2, br * 2);
+    }
+    c.lineWidth = 1.2 * dpr;
+    for (i = 0; i < 26; i++){                          /* trowel swirls */
+      var tx = rnd(0, w), ty = rnd(0, h), tr = rnd(60, 180) * dpr, a0 = rnd(0, 6.28);
+      c.strokeStyle = 'rgba(236,233,226,' + rnd(0.08, 0.2) + ')';
+      c.beginPath(); c.arc(tx, ty, tr, a0, a0 + rnd(0.5, 1.4)); c.stroke();
+    }
+    var og = c.createRadialGradient(stain.x, stain.y, 0, stain.x, stain.y, stain.r);   /* oil stain */
+    og.addColorStop(0, 'rgba(70,64,56,.42)'); og.addColorStop(0.55, 'rgba(84,78,70,.28)'); og.addColorStop(1, 'rgba(90,84,76,0)');
+    c.save(); c.translate(stain.x, stain.y); c.scale(1.35, 0.85); c.translate(-stain.x, -stain.y);
+    c.fillStyle = og; c.beginPath(); c.arc(stain.x, stain.y, stain.r, 0, 6.28); c.fill(); c.restore();
+    for (i = 0; i < 160; i++){ c.fillStyle = 'rgba(90,86,80,' + rnd(0.15, 0.4) + ')'; c.beginPath(); c.arc(rnd(0, w), rnd(0, h), rnd(0.5, 1.6) * dpr, 0, 6.28); c.fill(); }  /* pits */
+    grain(c, w, h, 46);
+    seed.forEach(function(s){ crack(c, s.x, s.y, s.l, s.a, 0.42, 1.3 * dpr); });
+
+    /* polished slab: ground to the stone, deep and glossy */
+    polished = mk(w, h); c = polished.getContext('2d');
+    c.fillStyle = '#7d7a74'; c.fillRect(0, 0, w, h);
+    for (i = 0; i < 40; i++){
+      bx = rnd(0, w); by = rnd(0, h); br = rnd(60, 260) * dpr;
+      gr = c.createRadialGradient(bx, by, 0, bx, by, br);
+      gr.addColorStop(0, Math.random() < 0.5 ? 'rgba(160,156,148,.2)' : 'rgba(84,80,74,.2)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+      c.fillStyle = gr; c.fillRect(bx - br, by - br, br * 2, br * 2);
+    }
+    var stones = ['#d8d2c7','#bdb5a8','#a39a8d','#6a645d','#4a4642','#e9e5dd','#8c7d6a','#b8a38a','#575049','#cfc6b6'];
+    var n = Math.round(w * h / (34 * dpr * dpr));
+    for (i = 0; i < n; i++){
+      var sx = rnd(0, w), sy = rnd(0, h), sr = Math.pow(Math.random(), 3) * 6 * dpr + 0.6 * dpr, sides = 5 + (Math.random() * 4 | 0), rot = rnd(0, 6.28);
+      c.fillStyle = stones[Math.random() * stones.length | 0]; c.globalAlpha = rnd(0.55, 0.95);
+      c.beginPath();
+      for (var v = 0; v < sides; v++){ var aa = rot + v / sides * 6.28, rr = sr * rnd(0.6, 1.15); c[v ? 'lineTo' : 'moveTo'](sx + Math.cos(aa) * rr, sy + Math.sin(aa) * rr * rnd(0.7, 1)); }
+      c.closePath(); c.fill();
+    }
+    c.globalAlpha = 1;
+    og = c.createRadialGradient(stain.x, stain.y, 0, stain.x, stain.y, stain.r);    /* stain mostly ground away */
+    og.addColorStop(0, 'rgba(70,64,56,.08)'); og.addColorStop(1, 'rgba(70,64,56,0)');
+    c.fillStyle = og; c.fillRect(0, 0, w, h);
+    grain(c, w, h, 14);
+    seed.forEach(function(s){ crack(c, s.x, s.y, s.l, s.a, 0.5, 1.1 * dpr); });
+    var depth = c.createLinearGradient(0, 0, 0, h);                                /* gloss deepens the tone */
+    depth.addColorStop(0, 'rgba(20,24,40,.10)'); depth.addColorStop(1, 'rgba(20,24,40,.22)');
+    c.fillStyle = depth; c.fillRect(0, 0, w, h);
+
+    /* reflection of a row of shop light fixtures, drawn once, slid each frame */
+    lights = mk(w, h * 2); c = lights.getContext('2d');
+    var glow = c.createRadialGradient(w * 0.72, h * 0.55, 0, w * 0.72, h * 0.55, Math.max(w, h) * 0.6);   /* big window glow */
+    glow.addColorStop(0, 'rgba(255,255,255,.22)'); glow.addColorStop(1, 'rgba(255,255,255,0)');
+    c.fillStyle = glow; c.fillRect(0, 0, w, h * 2);
+    for (var row = 0; row < 5; row++){
+      var ly = h * 0.42 + row * h * 0.34, lw = w * 0.26, lh = 20 * dpr;
+      for (var col = -1; col < 4; col++){
+        var lx = col * w * 0.42 + (row % 2) * w * 0.21 + w * 0.05;
+        c.save(); c.filter = 'blur(' + (14 * dpr) + 'px)';
+        c.fillStyle = 'rgba(255,255,250,.5)'; c.fillRect(lx, ly - lh * 0.4, lw, lh * 1.8);
+        c.filter = 'blur(' + (2.5 * dpr) + 'px)';
+        c.fillStyle = 'rgba(255,255,255,.85)'; c.fillRect(lx + lw * 0.03, ly + lh * 0.3, lw * 0.94, lh * 0.4);
+        c.restore();
+      }
+    }
+    var sky = c.createLinearGradient(0, 0, w, 0);                                    /* faint blue from a garage door */
+    sky.addColorStop(0, 'rgba(120,150,255,0)'); sky.addColorStop(0.75, 'rgba(120,150,255,.10)'); sky.addColorStop(1, 'rgba(120,150,255,0)');
+    c.fillStyle = sky; c.fillRect(0, 0, w, h * 2);
+
+    layer = mk(w, h); lctx = layer.getContext('2d');
+    mask = mk(Math.max(1, Math.round(W * MASK_SCALE)), Math.max(1, Math.round(H * MASK_SCALE))); mctx = mask.getContext('2d');
+
+    /* start with a first pass already done, so there's something to see */
+    g.x = W * 0.3; g.y = H * 0.5; g.vx = g.vy = 0;
+    for (var s = 0; s < 260; s++){ autoTarget(s * 40); g.x += (ptr.cx - g.x) * 0.08; g.y += (ptr.cy - g.y) * 0.08; stamp(g.x, g.y, 0.5); }
+    return true;
+  }
+
+  function autoTarget(t){
+    var u = t * AUTO_SPEED;
+    ptr.cx = W * (0.5 + 0.36 * Math.sin(u * 1.0 + 0.4) + 0.06 * Math.sin(u * 3.1));
+    ptr.cy = H * (0.52 + 0.3 * Math.sin(u * 1.7 + 1.1) + 0.06 * Math.cos(u * 2.3));
+  }
+
+  function stamp(x, y, k){
+    var s = MASK_SCALE, rr = R * 1.05 * s;
+    var gr = mctx.createRadialGradient(x * s, y * s, 0, x * s, y * s, rr);
+    gr.addColorStop(0, 'rgba(0,0,0,' + (POLISH_RATE * k) + ')'); gr.addColorStop(0.84, 'rgba(0,0,0,' + (POLISH_RATE * k * 0.95) + ')'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+    mctx.globalCompositeOperation = 'source-over'; mctx.fillStyle = gr;
+    mctx.beginPath(); mctx.arc(x * s, y * s, rr, 0, 6.28); mctx.fill();
+  }
+
+  function drawGrinder(c, x, y, ang, spin){
+    var r = R;
+    c.save(); c.translate(x, y);
+    /* shadow */
+    c.save(); c.translate(r * 0.12, r * 0.22); c.fillStyle = 'rgba(30,28,26,.32)'; c.filter = 'blur(' + Math.round(r * 0.18) + 'px)';
+    c.beginPath(); c.arc(0, 0, r * 1.02, 0, 6.28); c.fill();
+    c.rotate(ang); c.fillRect(r * 0.6, -r * 0.16, r * 2.1, r * 0.32); c.restore();
+    /* handle: two tubes back to a T-bar with grips */
+    c.save(); c.rotate(ang);
+    var tube = c.createLinearGradient(0, -r * 0.2, 0, r * 0.2);
+    tube.addColorStop(0, '#5b6070'); tube.addColorStop(0.5, '#2b2f3a'); tube.addColorStop(1, '#181b23');
+    c.fillStyle = tube;
+    c.beginPath(); c.moveTo(r * 0.5, -r * 0.2); c.lineTo(r * 2.3, -r * 0.12); c.lineTo(r * 2.3, r * 0.12); c.lineTo(r * 0.5, r * 0.2); c.closePath(); c.fill();
+    c.fillStyle = '#1f222b'; c.beginPath(); c.roundRect ? c.roundRect(r * 2.22, -r * 0.62, r * 0.2, r * 1.24, r * 0.08) : c.rect(r * 2.22, -r * 0.62, r * 0.2, r * 1.24); c.fill();
+    c.fillStyle = '#0f1116';
+    c.beginPath(); c.roundRect ? c.roundRect(r * 2.18, -r * 0.66, r * 0.28, r * 0.3, r * 0.1) : c.rect(r * 2.18, -r * 0.66, r * 0.28, r * 0.3); c.fill();
+    c.beginPath(); c.roundRect ? c.roundRect(r * 2.18, r * 0.36, r * 0.28, r * 0.3, r * 0.1) : c.rect(r * 2.18, r * 0.36, r * 0.28, r * 0.3); c.fill();
+    c.restore();
+    /* brush skirt */
+    c.fillStyle = '#23252b'; c.beginPath(); c.arc(0, 0, r * 1.04, 0, 6.28); c.fill();
+    c.strokeStyle = 'rgba(255,255,255,.07)'; c.lineWidth = 1;
+    for (var i = 0; i < 48; i++){ var a = i / 48 * 6.28; c.beginPath(); c.moveTo(Math.cos(a) * r * 0.9, Math.sin(a) * r * 0.9); c.lineTo(Math.cos(a) * r * 1.03, Math.sin(a) * r * 1.03); c.stroke(); }
+    /* blue deck, lit from the top left */
+    var deck = c.createRadialGradient(-r * 0.35, -r * 0.4, r * 0.1, 0, 0, r * 0.92);
+    deck.addColorStop(0, '#5f80ff'); deck.addColorStop(0.55, '#2c54f7'); deck.addColorStop(1, '#1631a8');
+    c.fillStyle = deck; c.beginPath(); c.arc(0, 0, r * 0.9, 0, 6.28); c.fill();
+    /* motor */
+    var mot = c.createRadialGradient(-r * 0.12, -r * 0.14, r * 0.04, 0, 0, r * 0.46);
+    mot.addColorStop(0, '#565b68'); mot.addColorStop(1, '#1b1e26');
+    c.fillStyle = 'rgba(10,16,50,.35)'; c.beginPath(); c.arc(r * 0.04, r * 0.06, r * 0.5, 0, 6.28); c.fill();
+    c.fillStyle = mot; c.beginPath(); c.arc(0, 0, r * 0.46, 0, 6.28); c.fill();
+    /* spinning fan cover */
+    c.save(); c.rotate(spin);
+    c.fillStyle = '#0e1015';
+    for (i = 0; i < 9; i++){ c.save(); c.rotate(i / 9 * 6.28); c.beginPath(); c.ellipse(r * 0.22, 0, r * 0.13, r * 0.035, 0.5, 0, 6.28); c.fill(); c.restore(); }
+    c.restore();
+    c.fillStyle = '#9aa0ae'; c.beginPath(); c.arc(0, 0, r * 0.07, 0, 6.28); c.fill();
+    c.restore();
+  }
+
+  function step(t){
+    if (!lastT) { lastT = t; t0 = t; }
+    var dt = Math.min(0.05, (t - lastT) / 1000); lastT = t; frame++;
+    var r = cv.getBoundingClientRect();                       /* read every frame: the page scrolls under a finger */
+    var manual = (t - ptr.last) < IDLE_MS;
+    if (manual){ ptr.cx = ptr.x - r.left; ptr.cy = ptr.y - r.top; }
+    else autoTarget(t - t0 + 3000);
+    /* heavy machine on a spring */
+    var ax = (ptr.cx - g.x) * FOLLOW - g.vx * DAMP, ay = (ptr.cy - g.y) * FOLLOW - g.vy * DAMP;
+    g.vx += ax * dt; g.vy += ay * dt; g.x += g.vx * dt; g.y += g.vy * dt;
+    g.x = Math.max(-R * 0.4, Math.min(W + R * 0.4, g.x)); g.y = Math.max(-R * 0.4, Math.min(H + R * 0.4, g.y));
+    var sp = Math.hypot(g.vx, g.vy);
+    if (sp > 12){                                              /* handle trails behind the direction of travel */
+      var want = Math.atan2(-g.vy, -g.vx), d = want - g.ang;
+      d = Math.atan2(Math.sin(d), Math.cos(d)); g.ang += d * Math.min(1, dt * 3.2);
+    }
+    g.spin += SPIN * dt;
+    /* polish where the heads have been */
+    var dist = Math.hypot(g.x - g.px, g.y - g.py), steps = Math.max(1, Math.ceil(dist / (R * 0.25)));
+    for (var i = 1; i <= steps; i++) stamp(g.px + (g.x - g.px) * i / steps, g.py + (g.y - g.py) * i / steps, 1 / Math.sqrt(steps) * 0.55 + 0.1);
+    g.px = g.x; g.py = g.y;
+    if (frame % REGROW_EVERY === 0){ mctx.globalCompositeOperation = 'destination-out'; mctx.fillStyle = 'rgba(0,0,0,' + REGROW + ')'; mctx.fillRect(0, 0, mask.width, mask.height); }
+    /* dust flung off the skirt */
+    var count = W < 600 ? 1 : 2;
+    for (i = 0; i < count; i++){
+      var a = Math.random() * 6.28, tv = rnd(30, 90);
+      dust.push({x:g.x + Math.cos(a) * R * 1.05, y:g.y + Math.sin(a) * R * 1.05, vx:-Math.sin(a) * tv + Math.cos(a) * 20 + g.vx * 0.3, vy:Math.cos(a) * tv + Math.sin(a) * 20 + g.vy * 0.3, life:1, s:rnd(0.8, 2.2)});
+    }
+    if (dust.length > 140) dust.splice(0, dust.length - 140);
+    render(t);
+  }
+
+  function render(t){
+    var w = cv.width, h = cv.height;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.drawImage(raw, 0, 0);
+    /* polished layer: stone + moving reflection, cut by the mask */
+    lctx.globalCompositeOperation = 'source-over'; lctx.drawImage(polished, 0, 0);
+    var sc = window.scrollY || 0, par = (g.x / Math.max(1, W) - 0.5);
+    lctx.globalCompositeOperation = 'screen';
+    lctx.drawImage(lights, -par * w * 0.06, -h * 0.5 - (sc * 0.35 * dpr) % (h * 0.34) + Math.sin(t * 0.0003) * 6 * dpr);
+    lctx.globalCompositeOperation = 'destination-in';
+    lctx.imageSmoothingEnabled = true; lctx.drawImage(mask, 0, 0, w, h);
+    ctx.drawImage(layer, 0, 0);
+    /* dust */
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    for (var i = dust.length - 1; i >= 0; i--){
+      var p = dust[i]; p.life -= 0.022; if (p.life <= 0){ dust.splice(i, 1); continue; }
+      p.x += p.vx / 60; p.y += p.vy / 60; p.vx *= 0.94; p.vy *= 0.94;
+      ctx.fillStyle = 'rgba(236,233,226,' + (p.life * 0.7) + ')';
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.s * (1.4 - p.life * 0.4), 0, 6.28); ctx.fill();
+    }
+    drawGrinder(ctx, g.x, g.y, g.ang, g.spin);
+  }
+
+  function onMove(x, y){
+    ptr.x = x; ptr.y = y; ptr.last = performance.now();
+    if (!hint.classList.contains('gone')) hint.classList.add('gone');
+    MDE_loop.wake();
+  }
+  cv.addEventListener('pointerdown', function(e){ e.preventDefault(); try { cv.setPointerCapture(e.pointerId); } catch (_) {} onMove(e.clientX, e.clientY); });
+  cv.addEventListener('pointermove', function(e){ if (e.pointerType === 'mouse' || e.buttons || e.pressure > 0) onMove(e.clientX, e.clientY); });
+  cv.addEventListener('touchmove', function(e){ var tt = e.touches[0]; if (tt) onMove(tt.clientX, tt.clientY); }, {passive:true});
+  cv.addEventListener('dragstart', function(e){ e.preventDefault(); });
+
+  build(); g.px = g.x; g.py = g.y;
+  window.addEventListener('resize', function(){ if (build()) { g.px = g.x; g.py = g.y; render(performance.now()); } });
+  if (MDE_reduced){ render(0); hint.textContent = 'Polished concrete'; return; }
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ visible = es[0].isIntersecting; if (visible) MDE_loop.wake(); }).observe(wrap);
+  MDE_loop.add({active:function(){ return visible; }, step:step});
+  MDE_loop.wake();
+})();
+
+/* ---------- epoxy pour dividers ---------- */
+(function(){
+  var SPEED = 0.0011;       /* how fast the pour edge rolls */
+  var AMP = 9;              /* swell height, viewBox units */
+  var PUSH = 16;            /* how far the edge bulges from a nearby pointer */
+  var pours = [].slice.call(document.querySelectorAll('.pour'));
+  var px = -1e4, py = -1e4;
+  var state = pours.map(function(svg, k){ return {svg:svg, path:svg.querySelector('path'), ph:k * 1.7, vis:true, bump:new Float32Array(73), vel:new Float32Array(73)}; });
+  function edge(s, t){
+    var d = 'M0 80', n = 72;
+    for (var i = 0; i <= n; i++){
+      var x = i * 20, u = x / 1440;
+      var y = 40 + AMP * Math.sin(u * 6.1 + t * SPEED + s.ph) + AMP * 0.55 * Math.sin(u * 13.7 - t * SPEED * 1.6 + s.ph * 2) + AMP * 0.3 * Math.sin(u * 27 + t * SPEED * 2.3) + s.bump[i];
+      d += ' L' + x + ' ' + y.toFixed(1);
+    }
+    return d + ' L1440 80 Z';
+  }
+  function step(t){
+    state.forEach(function(s){
+      if (!s.vis) return;
+      var r = s.svg.getBoundingClientRect();
+      var near = py > r.top - 90 && py < r.bottom + 90;
+      for (var i = 0; i <= 72; i++){
+        var target = 0;
+        if (near){ var dx = (r.left + i / 72 * r.width) - px; var f = Math.exp(-(dx * dx) / 9000); target = (py < r.top + r.height / 2 ? 1 : -1) * PUSH * f; }
+        s.vel[i] += (target - s.bump[i]) * 0.08; s.vel[i] *= 0.82; s.bump[i] += s.vel[i];
+      }
+      s.path.setAttribute('d', edge(s, t));
+    });
+  }
+  state.forEach(function(s){ s.path.setAttribute('d', edge(s, 0)); });
+  if (MDE_reduced) return;
+  window.addEventListener('pointermove', function(e){ px = e.clientX; py = e.clientY; }, {passive:true});
+  window.addEventListener('touchmove', function(e){ var tt = e.touches[0]; if (tt){ px = tt.clientX; py = tt.clientY; } }, {passive:true});
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ state.forEach(function(s){ if (s.svg === e.target) s.vis = e.isIntersecting; }); }); MDE_loop.wake(); });
+    state.forEach(function(s){ io.observe(s.svg); });
+  }
+  MDE_loop.add({active:function(){ return state.some(function(s){ return s.vis; }); }, step:step});
+  MDE_loop.wake();
+})();
+</script>
+</body>
+</html>
