@@ -25,7 +25,6 @@
   --blue:#2c54f7;        /* logo blue */
   --blue-deep:#1d3cc4;
   --navy:#14215a;        /* logo tagline navy */
-  --navy-2:#1a2a6e;
   --on-navy:#eef0fa;
   --on-navy-soft:#b9c0e0;
   --line:#c9c7c0;
@@ -137,7 +136,7 @@ fieldset legend{padding:0;margin-bottom:10px}
 /* every control inside the form: amber outline on hover and focus */
 form input[type=text]:hover,form input[type=tel]:hover,form textarea:hover,.chip span:hover,form .btn:hover,
 form input[type=text]:focus,form input[type=tel]:focus,form textarea:focus,.chip input:focus-visible+span,form .btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
-form input:focus,form textarea:focus{border-color:var(--ink)}
+form input:focus,form textarea:focus,.chip input:focus-visible+span,.chip span:hover{border-color:var(--ink)}
 .err{display:none;color:#b3261e;font-weight:700;font-size:1rem}
 .field.bad .err{display:block}
 .field.bad input{border-color:#b3261e}
