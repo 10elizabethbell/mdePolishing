@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MDE Polishing Inc. | Concrete grinding, polishing and epoxy</title>
-<meta name="description" content="MDE Polishing Inc.: concrete grinding, epoxy coatings, concrete polishing, grind and seals, coating removals and concrete sealing in southwestern Ontario. Call or text 226-808-4556.">
+<meta name="description" content="MDE Polishing Inc.: concrete grinding, epoxy coatings, concrete polishing, grind and seals, coating removals and concrete sealing. Send photos of your floor for a quote: 226-808-4556.">
 <meta name="theme-color" content="#e9e8e4">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MDE Polishing Inc.">
@@ -39,7 +39,7 @@ body{margin:0;background:var(--ground);color:var(--ink);font:400 1.0625rem/1.55 
 ::selection{background:var(--blue);color:#fff}
 img{max-width:100%;display:block}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 h1,h2,h3{margin:0;font-weight:900;text-transform:uppercase;letter-spacing:-.015em;line-height:.95;text-wrap:balance}
 h2{font-size:clamp(2rem,9vw,3.6rem)}
 p{margin:0}
@@ -47,7 +47,7 @@ p{margin:0}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* ---------- buttons (outlined like the logo's letters) ---------- */
-.btn{display:flex;align-items:center;justify-content:center;gap:.6em;min-height:58px;padding:0 1.4em;border:2.5px solid var(--ink);border-radius:999px;font:800 1.0625rem/1.1 var(--font);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,transform .15s}
+.btn{display:flex;align-items:center;justify-content:center;gap:.6em;text-align:center;text-wrap:balance;min-height:58px;padding:0 1.4em;border:2.5px solid var(--ink);border-radius:999px;font:800 1.0625rem/1.1 var(--font);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,transform .15s}
 .btn:active{transform:translateY(1px) scale(.99)}
 .btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 14px -6px rgba(13,22,54,.45)}
 .btn-primary:hover{background:var(--blue-deep)}
@@ -66,7 +66,8 @@ p{margin:0}
 .phone:hover{color:var(--blue-deep)}
 
 /* ---------- hero ---------- */
-.hero{position:relative;display:flex;flex-direction:column;min-height:min(calc(100svh - 70px),980px)}
+.hero{position:relative;display:flex;flex-direction:column;min-height:min(calc(100svh - 94px),980px)}
+@media (orientation:landscape) and (max-height:500px){.slab-wrap{min-height:200px}}
 .hero-copy{padding-top:10px;padding-bottom:22px}
 .hero h1{font-size:clamp(2.75rem,13.4vw,5.6rem);line-height:.9;letter-spacing:-.025em}
 .hero h1 em{font-style:normal;color:var(--blue)}
@@ -75,25 +76,25 @@ p{margin:0}
 .slab-wrap{position:relative;flex:1;min-height:250px;overflow:hidden;background:#bdbab3}
 #slab{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
 #slab:active{cursor:grabbing}
-.slab-hint{position:absolute;left:14px;bottom:12px;z-index:1;padding:6px 11px;border-radius:8px;background:rgba(233,232,228,.82);color:var(--ink);font-size:.875rem;font-weight:700;pointer-events:none;transition:opacity .6s}
+.slab-hint{position:absolute;left:16px;top:12px;z-index:1;margin:0;text-shadow:0 0 8px #e9e8e4,0 0 3px #e9e8e4,0 0 1px #e9e8e4;color:var(--ink);font-size:.875rem;font-weight:700;pointer-events:none;transition:opacity .6s}
 .slab-hint.gone{opacity:0}
 
 /* ---------- epoxy pour dividers ---------- */
 .pour{display:block;width:100%;height:46px;margin-top:-1px;margin-bottom:-1px;position:relative;z-index:2}
-.pour path{filter:drop-shadow(0 -3px 3px rgba(13,22,54,.18))}
 
 /* ---------- sections ---------- */
 section{position:relative}
 .band{padding:56px 0 64px}
 .light-2{background:var(--ground-2)}
-.on-navy{background:var(--navy);color:var(--on-navy);background-image:radial-gradient(120% 80% at 15% 0%,rgba(44,84,247,.35),transparent 60%),radial-gradient(90% 70% at 100% 100%,rgba(9,14,40,.55),transparent 70%)}
+.on-navy{position:relative;isolation:isolate;background:var(--navy);color:var(--on-navy)}
+.on-navy::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(120% 80% at 15% 35%,rgba(44,84,247,.35),transparent 60%),radial-gradient(90% 70% at 100% 65%,rgba(9,14,40,.55),transparent 70%);-webkit-mask:linear-gradient(transparent,#000 28%,#000 72%,transparent);mask:linear-gradient(transparent,#000 28%,#000 72%,transparent)}
 .on-navy p{color:var(--on-navy-soft)}
 .on-navy :focus-visible{outline-color:#fff}
 
 /* services: whole row is the link, only the arrow reacts */
 .svc-list{list-style:none;margin:26px 0 0;padding:0;border-top:1.5px solid var(--line)}
 .svc-list li{border-bottom:1.5px solid var(--line)}
-.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px;padding:10px 2px;text-decoration:none;font-weight:800;font-size:clamp(1.125rem,5vw,1.5rem);text-transform:uppercase;letter-spacing:-.01em}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px;padding:10px 2px;text-decoration:none;font-weight:800;font-size:clamp(1.125rem,5vw,1.5rem);text-transform:uppercase;letter-spacing:.01em}
 .row:hover,.row:focus-visible{outline:none;background:none;box-shadow:none}
 .arrow{display:grid;place-items:center;flex:none;width:44px;height:44px;border:2px solid var(--line);border-radius:50%;color:var(--ink);transition:background .2s,border-color .2s,color .2s}
 .arrow svg{width:18px;height:18px}
@@ -103,8 +104,8 @@ section{position:relative}
 
 /* how it works */
 .steps{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:26px;counter-reset:s}
-.steps li{display:grid;grid-template-columns:52px 1fr;gap:4px 16px;align-items:start}
-.steps li::before{counter-increment:s;content:counter(s);grid-row:span 2;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;font-weight:900;font-size:1.375rem}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);grid-row:span 2;color:var(--blue);font-weight:900;font-size:2.25rem;line-height:1}
 .steps h3{font-size:1.375rem;line-height:1.05;padding-top:4px}
 .steps p{color:var(--ink-soft);max-width:44ch}
 
@@ -149,7 +150,7 @@ form input:focus,form textarea:focus{border-color:var(--ink)}
 /* close + footer */
 .close{text-align:left}
 .close h2{max-width:12ch}
-.close p.lede{margin-top:14px;max-width:38ch;font-size:1.125rem}
+.close p.lede{margin-top:14px;max-width:38ch;font-size:1.25rem}
 .close .actions{max-width:420px}
 .close .call{display:inline-flex;align-items:center;gap:.4em;min-height:44px;margin-top:14px;color:#fff;font-weight:800;font-size:1.25rem;text-decoration:none;font-variant-numeric:tabular-nums}
 .close .call:hover{text-decoration:underline;text-underline-offset:4px}
@@ -162,6 +163,7 @@ footer a:hover{text-decoration:underline;text-underline-offset:4px}
 footer .links{display:flex;flex-wrap:wrap;gap:4px 22px}
 
 /* ---------- larger screens ---------- */
+@media (max-width:359px){.btn{font-size:1rem;padding:0 1em}}
 @media (min-width:600px){
   .actions{grid-template-columns:auto auto;justify-content:start}
   .pour{height:64px}
@@ -175,6 +177,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:4px 22px}
   .hero h1{font-size:clamp(4rem,6.4vw,6rem)}
   .promise{font-size:1.25rem}
   .slab-wrap{margin:0;border-radius:28px 0 0 28px}
+  .slab-hint{left:30px;top:20px}
   .band{padding:96px 0 104px}
   .svc .wrap,.how .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:60px;align-items:start}
   .svc-list,.steps{margin-top:6px}
@@ -198,7 +201,7 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
 -->
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="MDE Polishing Inc., home"><img src="assets/logo.webp" width="460" height="220" alt="MDE Polishing: concrete grinding and polishing"></a>
+    <a class="logo" href="#top" aria-label="MDE Polishing Inc., home"><img src="assets/logo.webp" fetchpriority="high" width="460" height="220" alt="MDE Polishing: concrete grinding and polishing"></a>
     <a class="phone" href="tel:+12268084556"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>226-808-4556</a>
   </div>
 </header>
@@ -219,13 +222,13 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
     </div>
   </section>
 
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path fill="#f3f2ef"/></svg>
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#f3f2ef"/></svg>
 
   <section class="svc band light-2" aria-labelledby="h-svc">
     <div class="wrap">
       <div>
         <h2 id="h-svc">What we do</h2>
-        <p class="svc-note">Tap one to text us about it.</p>
+        <p class="svc-note">Pick one to text us about it.</p>
       </div>
       <ul class="svc-list">
         <li><a class="row" data-svc="concrete grinding" href="sms:+12268084556">Concrete grinding<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
@@ -238,31 +241,31 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
     </div>
   </section>
 
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground-2)"><path fill="#e9e8e4"/></svg>
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground-2)"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#e9e8e4"/></svg>
 
   <section class="how band" aria-labelledby="h-how">
     <div class="wrap">
       <h2 id="h-how">How a quote works</h2>
       <ol class="steps">
-        <li><h3>Send us photos</h3><p>Stand back and take a few of the whole floor, plus close-ups of any cracks, stains or old coating. Tell us your town and roughly how big it is.</p></li>
+        <li><h3>Send us photos</h3><p>Stand back and take a few of the whole floor, plus close-ups of any cracks, stains or old coating.</p></li>
         <li><h3>We tell you straight</h3><p>What your floor needs, and what it doesn't. Sometimes that's a full polish, sometimes a grind and seal does the job for less.</p></li>
-        <li><h3>We do it right</h3><p>We prep the concrete properly before anything goes on it, so the finish holds up to cars, tools and years of use.</p></li>
+        <li><h3>We do it right</h3><p>We prep the concrete properly before anything goes on it. That's the part you can't see, and the part we don't rush.</p></li>
       </ol>
     </div>
   </section>
 
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path fill="#14215a"/></svg>
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#14215a"/></svg>
 
   <section class="work band on-navy" aria-labelledby="h-work">
     <div class="wrap">
       <div>
-        <h2 id="h-work">Our latest floors</h2>
+        <h2 id="h-work">See our latest floors</h2>
       </div>
       <a class="fb" href="https://facebook.com/profile.php?id=61589369156324" rel="noopener"><span class="fbi"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.2L14.1 2C10.9 2 10.2 4.4 10.2 6v2.5H8v3.7h2.2V22H14v-9.8h2.8l.4-3.7z"/></svg></span>See our work on Facebook<svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </section>
 
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--navy)"><path fill="#e9e8e4"/></svg>
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--navy)"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#e9e8e4"/></svg>
 
   <section class="quote band" id="quote" aria-labelledby="h-quote">
     <div class="wrap">
@@ -311,7 +314,7 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
           <label for="q-notes">Anything else? <span class="opt">(optional)</span></label>
           <textarea id="q-notes" name="notes" placeholder="Cracks, stains, an old coating peeling up, when you'd like it done…"></textarea>
         </div>
-        <button class="btn btn-primary" type="submit">Write my text</button>
+        <button class="btn btn-primary" type="submit">Write my text message</button>
         <div class="sent" id="sent" role="status" aria-live="polite">
           <p><strong>Your text is ready.</strong> If it didn't open, copy it and send it to 226-808-4556, with your photos.</p>
           <pre id="sent-msg"></pre>
@@ -321,7 +324,7 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
     </div>
   </section>
 
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path fill="#14215a"/></svg>
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#14215a"/></svg>
 
   <section class="close band on-navy" aria-labelledby="h-close">
     <div class="wrap">
@@ -329,7 +332,6 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
       <p class="lede">Send a few photos and we'll tell you what it'll take.</p>
       <div class="actions"><a class="btn btn-primary" id="close-text" href="sms:+12268084556">Text us photos of your floor</a></div>
       <a class="call" href="tel:+12268084556">or call 226-808-4556</a>
-      <p class="area">Serving southwestern Ontario.</p>
     </div>
   </section>
 </main>
@@ -338,7 +340,6 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
   <div class="wrap">
     <strong>MDE Polishing Inc.</strong>
     <div class="links">
-      <a href="tel:+12268084556">226-808-4556</a>
       <a href="https://facebook.com/profile.php?id=61589369156324" rel="noopener">Facebook</a>
     </div>
   </div>
@@ -356,6 +357,14 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
   document.querySelectorAll('.row[data-svc]').forEach(function(a){
     a.href = sms("Hi MDE Polishing! I'd like a quote for " + a.dataset.svc + ". Here are some photos of the floor.\nTown: \nRough size: ");
   });
+  /* desktops can't send texts: rows open the quote form with that service ticked */
+  if (matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var map = {'epoxy coating':'Epoxy coating','concrete polishing':'Polished concrete','a grind and seal':'Grind and seal','concrete sealing':'Concrete sealing','removing an old coating':'Old coating removed','concrete grinding':'Not sure yet'};
+    document.querySelectorAll('.row[data-svc]').forEach(function(a){
+      a.href = '#quote';
+      a.addEventListener('click', function(){ var cb = document.querySelector('input[name=work][value="' + map[a.dataset.svc] + '"]'); if (cb) cb.checked = true; });
+    });
+  }
 })();
 
 /* ---------- quote form -> text message ---------- */
@@ -387,12 +396,13 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
     var work = d.getAll('work'); if (work.length) lines.push('Looking for: ' + work.join(', '));
     if (d.get('size').trim()) lines.push('Size: ' + d.get('size').trim());
     if (d.get('notes').trim()) lines.push('Notes: ' + d.get('notes').trim());
-    lines.push('Photos of the floor attached.');
+    lines.push("I'll add photos of the floor.");
     var body = lines.join('\n');
     msgEl.textContent = body;
     openBtn.href = window.MDE_sms(body);
     sent.classList.add('show');
-    window.location.href = openBtn.href;
+    sent.scrollIntoView({block:'nearest', behavior:'smooth'});
+    if (matchMedia('(pointer:coarse)').matches) window.location.href = openBtn.href;
   });
   document.getElementById('sent-copy').addEventListener('click', function(){
     var b = this;
@@ -424,8 +434,8 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var DPR_CAP = 1.5;           /* animated canvas sharpness cap */
   var MASK_SCALE = 0.5;        /* polish mask resolution vs CSS px */
   var REGROW_EVERY = 8;        /* frames between dulling steps */
-  var REGROW = 0.018;          /* how fast polish fades back to matte */
-  var POLISH_RATE = 0.22;      /* opacity per grinder stamp */
+  var REGROW = 0.007;          /* how fast polish fades back to matte */
+  var POLISH_RATE = 0.6;       /* opacity per grinder stamp */
   var FOLLOW = 7.5;            /* how hard the grinder chases your finger (spring) */
   var DAMP = 5.2;              /* grinder damping */
   var SPIN = 9;                /* motor cap spin, rad/s */
@@ -439,6 +449,7 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var W = 0, H = 0, dpr = 1, R = 40;
   var raw, polished, layer, lctx, mask, mctx, lights;
   var g = {x:0, y:0, vx:0, vy:0, ang:Math.PI*0.5, spin:0, px:0, py:0};
+  var hose = {x:0, y:0};       /* vacuum hose tail, drags behind the machine */
   var ptr = {x:0, y:0, cx:0, cy:0, on:false, last:-1e9};
   var dust = [], frame = 0, visible = true, lastT = 0, t0 = 0;
 
@@ -498,20 +509,20 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     grain(c, w, h, 46);
     seed.forEach(function(s){ crack(c, s.x, s.y, s.l, s.a, 0.42, 1.3 * dpr); });
 
-    /* polished slab: ground to the stone, deep and glossy */
+    /* polished slab: ground to the stone, clear and glossy */
     polished = mk(w, h); c = polished.getContext('2d');
-    c.fillStyle = '#74716c'; c.fillRect(0, 0, w, h);
+    c.fillStyle = '#8f8c86'; c.fillRect(0, 0, w, h);
     for (i = 0; i < 40; i++){
       bx = rnd(0, w); by = rnd(0, h); br = rnd(60, 260) * dpr;
       gr = c.createRadialGradient(bx, by, 0, bx, by, br);
-      gr.addColorStop(0, Math.random() < 0.5 ? 'rgba(160,156,148,.2)' : 'rgba(84,80,74,.2)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+      gr.addColorStop(0, Math.random() < 0.5 ? 'rgba(165,161,153,.18)' : 'rgba(110,106,100,.16)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
       c.fillStyle = gr; c.fillRect(bx - br, by - br, br * 2, br * 2);
     }
-    var stones = ['#d8d2c7','#bdb5a8','#a39a8d','#6a645d','#4a4642','#e9e5dd','#8c7d6a','#b8a38a','#575049','#cfc6b6'];
-    var n = Math.round(w * h / (16 * dpr * dpr));
+    var stones = ['#5e5a55','#6c675f','#4a4642','#7d776e','#9b948a','#3d3a37','#a99f90','#c9c1b3'];   /* cut aggregate, salt and pepper */
+    var n = Math.round(w * h / (9 * dpr * dpr));
     for (i = 0; i < n; i++){
-      var sx = rnd(0, w), sy = rnd(0, h), sr = Math.pow(Math.random(), 3.4) * 4.2 * dpr + 0.45 * dpr, sides = 5 + (Math.random() * 4 | 0), rot = rnd(0, 6.28);
-      c.fillStyle = stones[Math.random() * stones.length | 0]; c.globalAlpha = rnd(0.55, 0.95);
+      var sx = rnd(0, w), sy = rnd(0, h), sr = Math.pow(Math.random(), 5) * 3.4 * dpr + 0.35 * dpr, sides = 5 + (Math.random() * 4 | 0), rot = rnd(0, 6.28);
+      c.fillStyle = stones[Math.random() * stones.length | 0]; c.globalAlpha = rnd(0.8, 1);
       c.beginPath();
       for (var v = 0; v < sides; v++){ var aa = rot + v / sides * 6.28, rr = sr * rnd(0.6, 1.15); c[v ? 'lineTo' : 'moveTo'](sx + Math.cos(aa) * rr, sy + Math.sin(aa) * rr * rnd(0.7, 1)); }
       c.closePath(); c.fill();
@@ -520,25 +531,23 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     og = c.createRadialGradient(stain.x, stain.y, 0, stain.x, stain.y, stain.r);    /* stain mostly ground away */
     og.addColorStop(0, 'rgba(70,64,56,.08)'); og.addColorStop(1, 'rgba(70,64,56,0)');
     c.fillStyle = og; c.fillRect(0, 0, w, h);
-    grain(c, w, h, 14);
+    grain(c, w, h, 12);
     seed.forEach(function(s){ crack(c, s.x, s.y, s.l, s.a, 0.5, 1.1 * dpr); });
-    var depth = c.createLinearGradient(0, 0, 0, h);                                /* gloss deepens the tone */
-    depth.addColorStop(0, 'rgba(20,24,40,.14)'); depth.addColorStop(1, 'rgba(20,24,40,.28)');
-    c.fillStyle = depth; c.fillRect(0, 0, w, h);
+    var sheen = c.createLinearGradient(0, 0, w, h);                                /* clear-coat sheen */
+    sheen.addColorStop(0, 'rgba(255,255,255,.10)'); sheen.addColorStop(0.45, 'rgba(255,255,255,.02)'); sheen.addColorStop(1, 'rgba(255,255,255,.08)');
+    c.fillStyle = sheen; c.fillRect(0, 0, w, h);
 
-    /* reflection of a row of shop light fixtures, drawn once, slid each frame */
+    /* reflection of the shop's light tubes, drawn once, slid each frame (shadowBlur, not ctx.filter: older iPhones lack filter) */
     lights = mk(w, h * 2); c = lights.getContext('2d');
-    var glow = c.createRadialGradient(w * 0.72, h * 0.55, 0, w * 0.72, h * 0.55, Math.max(w, h) * 0.6);   /* big window glow */
-    glow.addColorStop(0, 'rgba(255,255,255,.22)'); glow.addColorStop(1, 'rgba(255,255,255,0)');
-    c.fillStyle = glow; c.fillRect(0, 0, w, h * 2);
     for (var row = 0; row < 5; row++){
-      var ly = h * 0.42 + row * h * 0.34, lw = w * 0.26, lh = 20 * dpr;
-      for (var col = -1; col < 4; col++){
-        var lx = col * w * 0.42 + (row % 2) * w * 0.21 + w * 0.05;
-        c.save(); c.filter = 'blur(' + (14 * dpr) + 'px)';
-        c.fillStyle = 'rgba(255,255,250,.6)'; c.fillRect(lx, ly - lh * 0.4, lw, lh * 1.8);
-        c.filter = 'blur(' + (2.5 * dpr) + 'px)';
-        c.fillStyle = 'rgba(255,255,255,.85)'; c.fillRect(lx + lw * 0.03, ly + lh * 0.3, lw * 0.94, lh * 0.4);
+      var ly = h * 0.35 + row * h * 0.4;
+      for (var col = -1; col < 3; col++){
+        var lx = col * w * 0.55 + (row % 2) * w * 0.28, lw = w * 0.46;
+        c.save();
+        c.shadowColor = 'rgba(255,255,248,.75)'; c.shadowBlur = 18 * dpr;
+        c.fillStyle = 'rgba(255,255,250,.35)'; c.fillRect(lx, ly - 5 * dpr, lw, 10 * dpr);
+        c.shadowBlur = 3 * dpr;
+        c.fillStyle = 'rgba(255,255,255,.95)'; c.fillRect(lx + lw * 0.02, ly - 1.5 * dpr, lw * 0.96, 3 * dpr);
         c.restore();
       }
     }
@@ -550,7 +559,7 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     mask = mk(Math.max(1, Math.round(W * MASK_SCALE)), Math.max(1, Math.round(H * MASK_SCALE))); mctx = mask.getContext('2d');
 
     /* start with a first pass already done, so there's something to see */
-    g.x = W * 0.3; g.y = H * 0.5; g.vx = g.vy = 0;
+    g.x = W * 0.3; g.y = H * 0.5; g.vx = g.vy = 0; hose.x = g.x + R * 3; hose.y = g.y + R * 2;
     for (var s = 0; s < 260; s++){ autoTarget(s * 40); g.x += (ptr.cx - g.x) * 0.08; g.y += (ptr.cy - g.y) * 0.08; stamp(g.x, g.y, 0.5); }
     return true;
   }
@@ -564,48 +573,59 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function stamp(x, y, k){
     var s = MASK_SCALE, rr = R * 1.05 * s;
     var gr = mctx.createRadialGradient(x * s, y * s, 0, x * s, y * s, rr);
-    gr.addColorStop(0, 'rgba(0,0,0,' + (POLISH_RATE * k) + ')'); gr.addColorStop(0.9, 'rgba(0,0,0,' + (POLISH_RATE * k * 0.95) + ')'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+    gr.addColorStop(0, 'rgba(0,0,0,' + (POLISH_RATE * k) + ')'); gr.addColorStop(0.86, 'rgba(0,0,0,' + (POLISH_RATE * k) + ')'); gr.addColorStop(1, 'rgba(0,0,0,0)');
     mctx.globalCompositeOperation = 'source-over'; mctx.fillStyle = gr;
     mctx.beginPath(); mctx.arc(x * s, y * s, rr, 0, 6.28); mctx.fill();
   }
 
+  function rr(c, x, y, w, h, r){ c.beginPath(); if (c.roundRect) c.roundRect(x, y, w, h, r); else c.rect(x, y, w, h); c.fill(); }
+
   function drawGrinder(c, x, y, ang, spin){
-    var r = R;
-    c.save(); c.translate(x, y);
-    /* shadow */
-    c.save(); c.translate(r * 0.12, r * 0.22); c.fillStyle = 'rgba(30,28,26,.32)'; c.filter = 'blur(' + Math.round(r * 0.18) + 'px)';
-    c.beginPath(); c.arc(0, 0, r * 1.02, 0, 6.28); c.fill();
-    c.rotate(ang); c.fillRect(r * 0.6, -r * 0.16, r * 2.1, r * 0.32); c.restore();
-    /* handle: two tubes back to a T-bar with grips */
-    c.save(); c.rotate(ang);
-    var tube = c.createLinearGradient(0, -r * 0.2, 0, r * 0.2);
-    tube.addColorStop(0, '#5b6070'); tube.addColorStop(0.5, '#2b2f3a'); tube.addColorStop(1, '#181b23');
-    c.fillStyle = tube;
-    c.beginPath(); c.moveTo(r * 0.5, -r * 0.2); c.lineTo(r * 2.3, -r * 0.12); c.lineTo(r * 2.3, r * 0.12); c.lineTo(r * 0.5, r * 0.2); c.closePath(); c.fill();
-    c.fillStyle = '#1f222b'; c.beginPath(); c.roundRect ? c.roundRect(r * 2.22, -r * 0.62, r * 0.2, r * 1.24, r * 0.08) : c.rect(r * 2.22, -r * 0.62, r * 0.2, r * 1.24); c.fill();
-    c.fillStyle = '#0f1116';
-    c.beginPath(); c.roundRect ? c.roundRect(r * 2.18, -r * 0.66, r * 0.28, r * 0.3, r * 0.1) : c.rect(r * 2.18, -r * 0.66, r * 0.28, r * 0.3); c.fill();
-    c.beginPath(); c.roundRect ? c.roundRect(r * 2.18, r * 0.36, r * 0.28, r * 0.3, r * 0.1) : c.rect(r * 2.18, r * 0.36, r * 0.28, r * 0.3); c.fill();
+    var r = R, i, a;
+    /* vacuum hose from the shroud port back to the dust extractor */
+    var pa = ang + 0.9, portX = x + Math.cos(pa) * r * 0.95, portY = y + Math.sin(pa) * r * 0.95;
+    var midX = x + Math.cos(ang + 0.7) * r * 2.4, midY = y + Math.sin(ang + 0.7) * r * 2.4;
+    c.save(); c.lineCap = 'round';
+    c.lineWidth = r * 0.3; c.strokeStyle = 'rgba(30,28,26,.18)';
+    c.beginPath(); c.moveTo(portX + r * 0.1, portY + r * 0.18); c.quadraticCurveTo(midX + r * 0.1, midY + r * 0.18, hose.x + r * 0.1, hose.y + r * 0.18); c.stroke();
+    c.lineWidth = r * 0.24; c.strokeStyle = '#3b3e46';
+    c.beginPath(); c.moveTo(portX, portY); c.quadraticCurveTo(midX, midY, hose.x, hose.y); c.stroke();
+    c.setLineDash([r * 0.05, r * 0.07]); c.lineWidth = r * 0.2; c.strokeStyle = 'rgba(255,255,255,.12)'; c.stroke(); c.setLineDash([]);
     c.restore();
-    /* brush skirt */
-    c.fillStyle = '#23252b'; c.beginPath(); c.arc(0, 0, r * 1.04, 0, 6.28); c.fill();
+
+    c.save(); c.translate(x, y);
+    /* handle: two rails back to a wide handlebar, control box on the rails (+x = toward the operator) */
+    c.save(); c.rotate(ang);
+    c.shadowColor = 'rgba(30,28,26,.3)'; c.shadowBlur = r * 0.2; c.shadowOffsetX = r * 0.08; c.shadowOffsetY = r * 0.14;
+    c.strokeStyle = '#2b2f3a'; c.lineWidth = r * 0.1; c.lineCap = 'round';
+    c.beginPath(); c.moveTo(r * 0.7, -r * 0.3); c.lineTo(r * 3.3, -r * 0.5); c.moveTo(r * 0.7, r * 0.3); c.lineTo(r * 3.3, r * 0.5); c.stroke();
+    c.lineWidth = r * 0.12; c.beginPath(); c.moveTo(r * 3.3, -r * 0.8); c.lineTo(r * 3.3, r * 0.8); c.stroke();
+    c.fillStyle = '#1f222b'; rr(c, r * 2.2, -r * 0.3, r * 0.5, r * 0.6, r * 0.06);
+    c.shadowColor = 'transparent';
+    c.fillStyle = '#f0a51c'; c.beginPath(); c.arc(r * 2.45, 0, r * 0.07, 0, 6.28); c.fill();      /* power light */
+    c.fillStyle = '#0f1116'; rr(c, r * 3.18, -r * 0.98, r * 0.24, r * 0.34, r * 0.08); rr(c, r * 3.18, r * 0.64, r * 0.24, r * 0.34, r * 0.08);
+    c.restore();
+    /* brush skirt, with the machine's shadow on the floor */
+    c.save(); c.shadowColor = 'rgba(30,28,26,.35)'; c.shadowBlur = r * 0.35; c.shadowOffsetX = r * 0.12; c.shadowOffsetY = r * 0.22;
+    c.fillStyle = '#23252b'; c.beginPath(); c.arc(0, 0, r * 1.04, 0, 6.28); c.fill(); c.restore();
     c.strokeStyle = 'rgba(255,255,255,.07)'; c.lineWidth = 1;
-    for (var i = 0; i < 48; i++){ var a = i / 48 * 6.28; c.beginPath(); c.moveTo(Math.cos(a) * r * 0.9, Math.sin(a) * r * 0.9); c.lineTo(Math.cos(a) * r * 1.03, Math.sin(a) * r * 1.03); c.stroke(); }
-    /* blue deck, lit from the top left */
+    for (i = 0; i < 48; i++){ a = i / 48 * 6.28; c.beginPath(); c.moveTo(Math.cos(a) * r * 0.9, Math.sin(a) * r * 0.9); c.lineTo(Math.cos(a) * r * 1.03, Math.sin(a) * r * 1.03); c.stroke(); }
+    /* blue shroud, lit from the top left */
     var deck = c.createRadialGradient(-r * 0.35, -r * 0.4, r * 0.1, 0, 0, r * 0.92);
     deck.addColorStop(0, '#5f80ff'); deck.addColorStop(0.55, '#2c54f7'); deck.addColorStop(1, '#1631a8');
     c.fillStyle = deck; c.beginPath(); c.arc(0, 0, r * 0.9, 0, 6.28); c.fill();
-    /* motor */
-    var mot = c.createRadialGradient(-r * 0.12, -r * 0.14, r * 0.04, 0, 0, r * 0.46);
-    mot.addColorStop(0, '#565b68'); mot.addColorStop(1, '#1b1e26');
-    c.fillStyle = 'rgba(10,16,50,.35)'; c.beginPath(); c.arc(r * 0.04, r * 0.06, r * 0.5, 0, 6.28); c.fill();
-    c.fillStyle = mot; c.beginPath(); c.arc(0, 0, r * 0.46, 0, 6.28); c.fill();
-    /* spinning fan cover */
-    c.save(); c.rotate(spin);
-    c.fillStyle = '#0e1015';
-    for (i = 0; i < 9; i++){ c.save(); c.rotate(i / 9 * 6.28); c.beginPath(); c.ellipse(r * 0.22, 0, r * 0.13, r * 0.035, 0.5, 0, 6.28); c.fill(); c.restore(); }
+    /* the three grinding heads turning under the shroud, seen through its vents */
+    c.save(); c.rotate(spin * 0.35); c.fillStyle = 'rgba(10,18,60,.35)';
+    for (i = 0; i < 3; i++){ c.save(); c.rotate(i / 3 * 6.28); c.beginPath(); c.arc(r * 0.68, 0, r * 0.1, 0, 6.28); c.fill(); c.restore(); }
     c.restore();
-    c.fillStyle = '#9aa0ae'; c.beginPath(); c.arc(0, 0, r * 0.07, 0, 6.28); c.fill();
+    /* motor housing with cooling fins */
+    c.fillStyle = 'rgba(10,16,50,.35)'; c.beginPath(); c.arc(r * 0.05, r * 0.08, r * 0.5, 0, 6.28); c.fill();
+    c.fillStyle = '#1b1e26';
+    for (i = 0; i < 18; i++){ c.save(); c.rotate(i / 18 * 6.28); c.fillRect(r * 0.36, -r * 0.025, r * 0.12, r * 0.05); c.restore(); }
+    var mot = c.createRadialGradient(-r * 0.1, -r * 0.12, r * 0.03, 0, 0, r * 0.4);
+    mot.addColorStop(0, '#5d6270'); mot.addColorStop(1, '#22252e');
+    c.fillStyle = mot; c.beginPath(); c.arc(0, 0, r * 0.38, 0, 6.28); c.fill();
+    c.fillStyle = '#2f333d'; c.beginPath(); c.arc(0, 0, r * 0.22, 0, 6.28); c.fill();
     c.restore();
   }
 
@@ -615,7 +635,8 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var r = cv.getBoundingClientRect();                       /* read every frame: the page scrolls under a finger */
     var manual = (t - ptr.last) < IDLE_MS;
     if (manual){ ptr.cx = ptr.x - r.left; ptr.cy = ptr.y - r.top; }
-    else autoTarget(t - t0 + 3000);
+    else if (!MDE_reduced) autoTarget(t - t0 + 3000);
+    else { ptr.cx = g.x; ptr.cy = g.y; }
     /* heavy machine on a spring */
     var ax = (ptr.cx - g.x) * FOLLOW - g.vx * DAMP, ay = (ptr.cy - g.y) * FOLLOW - g.vy * DAMP;
     g.vx += ax * dt; g.vy += ay * dt; g.x += g.vx * dt; g.y += g.vy * dt;
@@ -626,6 +647,7 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       d = Math.atan2(Math.sin(d), Math.cos(d)); g.ang += d * Math.min(1, dt * 3.2);
     }
     g.spin += SPIN * dt;
+    hose.x += (g.x + Math.cos(g.ang + 0.5) * R * 6 - hose.x) * 0.04; hose.y += (g.y + Math.sin(g.ang + 0.5) * R * 6 - hose.y) * 0.04;
     /* polish where the heads have been */
     var dist = Math.hypot(g.x - g.px, g.y - g.py), steps = Math.max(1, Math.ceil(dist / (R * 0.25)));
     for (var i = 1; i <= steps; i++) stamp(g.px + (g.x - g.px) * i / steps, g.py + (g.y - g.py) * i / steps, 1 / Math.sqrt(steps) * 0.55 + 0.1);
@@ -674,22 +696,24 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   cv.addEventListener('touchmove', function(e){ var tt = e.touches[0]; if (tt) onMove(tt.clientX, tt.clientY); }, {passive:true});
   cv.addEventListener('dragstart', function(e){ e.preventDefault(); });
 
-  build(); g.px = g.x; g.py = g.y;
-  window.addEventListener('resize', function(){ if (build()) { g.px = g.x; g.py = g.y; render(performance.now()); } });
-  if (MDE_reduced){ render(0); hint.textContent = 'Polished concrete'; return; }
-  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ visible = es[0].isIntersecting; if (visible) MDE_loop.wake(); }).observe(wrap);
-  MDE_loop.add({active:function(){ return visible; }, step:step});
-  MDE_loop.wake();
+  requestAnimationFrame(function(){                          /* let the headline paint first */
+    build(); g.px = g.x; g.py = g.y;
+    window.addEventListener('resize', function(){ if (build()) { g.px = g.x; g.py = g.y; render(performance.now()); } });
+    if (MDE_reduced) render(0);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ visible = es[0].isIntersecting; if (visible) MDE_loop.wake(); }).observe(wrap);
+    MDE_loop.add({active:function(){ return visible && (!MDE_reduced || performance.now() - ptr.last < IDLE_MS); }, step:step});
+    MDE_loop.wake();
+  });
 })();
 
 /* ---------- epoxy pour dividers ---------- */
 (function(){
-  var SPEED = 0.0011;       /* how fast the pour edge rolls */
-  var AMP = 9;              /* swell height, viewBox units */
+  var SPEED = 0.0006;       /* how fast the pour edge rolls */
+  var AMP = 7;              /* swell height, viewBox units */
   var PUSH = 16;            /* how far the edge bulges from a nearby pointer */
   var pours = [].slice.call(document.querySelectorAll('.pour'));
   var px = -1e4, py = -1e4;
-  var state = pours.map(function(svg, k){ return {svg:svg, path:svg.querySelector('path'), ph:k * 1.7, vis:true, bump:new Float32Array(73), vel:new Float32Array(73)}; });
+  var state = pours.map(function(svg, k){ return {svg:svg, path:svg.querySelector('path.top'), sh:svg.querySelector('path.sh'), ph:k * 1.7, vis:true, bump:new Float32Array(73), vel:new Float32Array(73)}; });
   function edge(s, t){
     var d = 'M0 80', n = 72;
     for (var i = 0; i <= n; i++){
@@ -709,10 +733,10 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (near){ var dx = (r.left + i / 72 * r.width) - px; var f = Math.exp(-(dx * dx) / 9000); target = (py < r.top + r.height / 2 ? 1 : -1) * PUSH * f; }
         s.vel[i] += (target - s.bump[i]) * 0.08; s.vel[i] *= 0.82; s.bump[i] += s.vel[i];
       }
-      s.path.setAttribute('d', edge(s, t));
+      var d = edge(s, t); s.path.setAttribute('d', d); s.sh.setAttribute('d', d);
     });
   }
-  state.forEach(function(s){ s.path.setAttribute('d', edge(s, 0)); });
+  state.forEach(function(s){ var d = edge(s, 0); s.path.setAttribute('d', d); s.sh.setAttribute('d', d); });
   if (MDE_reduced) return;
   window.addEventListener('pointermove', function(e){ px = e.clientX; py = e.clientY; }, {passive:true});
   window.addEventListener('touchmove', function(e){ var tt = e.touches[0]; if (tt){ px = tt.clientX; py = tt.clientY; } }, {passive:true});

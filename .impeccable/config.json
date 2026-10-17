@@ -1,0 +1,20 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "<ul> \"svc-list\": children flush against border-top on top (no inset)",
+        "createdAt": "2026-10-17T23:49:20.549Z",
+        "reason": "Claude: hairline-ruled service list; each row has 10px vertical padding inside the rule, the ul border is a divider not a container"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "<div> \"slab-wrap\": children flush against bg on all sides (no inset)",
+        "createdAt": "2026-10-17T23:54:34.865Z",
+        "reason": "Claude: slab-wrap is the hero canvas frame; the canvas is meant to fill it edge to edge"
+      }
+    ]
+  }
+}
