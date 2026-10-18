@@ -20,7 +20,7 @@ Concrete specialists: grinding, polishing, epoxy and sealing. No web presence be
 
 ## Constraints
 - Contact: phone 226-808-4556 only. Whether it takes texts is unknown. No email, no booking link.
-- No published area, hours, owner name, prices, reviews, years in business, or work photos.
+- No published area, hours, owner name, prices, reviews or years in business.
 - The Facebook post's image is the group's stock cover photo, not their work; not used.
 
 ## Brand commitments
@@ -29,7 +29,9 @@ Concrete specialists: grinding, polishing, epoxy and sealing. No web presence be
 - Tone on social: terse, services-list style.
 
 ## Evidence on hand
-- Logo, phone number, verbatim services list, Facebook profile link. Nothing else.
+- Logo, phone number, verbatim services list, Facebook profile link.
+- Two before/after pairs of their work, supplied by Ellie on 2026-10-18: a room ground and polished (dusty mid-grind → polished, stone showing) and a cracked basement slab (marked cracks → filled and ground). The room pair was shot from opposite ends of the room.
+- A close-up of a polished floor with a light tube reflecting in it, which Ellie gave as the look for the page background.
 
 ## Principles
 - Only real facts; gaps stay gaps (listed in HANDOFF.md).

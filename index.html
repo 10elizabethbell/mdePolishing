@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MDE Polishing Inc. | Concrete grinding, polishing and epoxy</title>
 <meta name="description" content="MDE Polishing Inc.: concrete grinding, epoxy coatings, concrete polishing, grind and seals, coating removals and concrete sealing. Send photos of your floor for a quote: 226-808-4556.">
-<meta name="theme-color" content="#e9e8e4">
+<meta name="theme-color" content="#aeaca7">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MDE Polishing Inc.">
 <meta property="og:description" content="Concrete grinding, polishing, epoxy coatings and sealing. Send us photos of your floor for a quote.">
@@ -18,16 +18,15 @@
 <style>
 /* ---------- tokens ---------- */
 :root{
-  --ground:#e9e8e4;      /* fresh concrete, from the logo's grey */
-  --ground-2:#f3f2ef;
+  --ground:#aeaca7;      /* polished concrete; the floor texture is drawn over it in JS */
   --ink:#0d1636;         /* navy-black, from the logo outline */
-  --ink-soft:#3c4361;
+  --ink-soft:#1f2643;
   --blue:#2c54f7;        /* logo blue */
   --blue-deep:#1d3cc4;
   --navy:#14215a;        /* logo tagline navy */
   --on-navy:#eef0fa;
   --on-navy-soft:#b9c0e0;
-  --line:#c9c7c0;
+  --line:rgba(13,22,54,.3);
   --focus:#f0a51c;       /* form outline accent: grinder warning-light amber */
   --radius:14px;
   --font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
@@ -44,6 +43,12 @@ h2{font-size:clamp(2rem,9vw,3.6rem)}
 p{margin:0}
 .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- the floor: shop lights reflecting in it ---------- */
+.lights{position:fixed;left:0;top:0;width:100%;height:100vh;height:100lvh;z-index:-1;pointer-events:none;overflow:hidden}
+.lrow{position:absolute;left:0;top:0;width:100%;height:0;will-change:transform}
+.lrow::before{content:"";position:absolute;left:-10%;right:-10%;top:-70px;height:140px;background:radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,.2),transparent 72%)}
+.tube{position:absolute;top:-5px;height:10px;border-radius:6px;background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.8) 30%,#fff 50%,rgba(255,255,255,.8) 70%,rgba(255,255,255,0));box-shadow:0 0 22px 7px rgba(255,255,255,.3)}
 
 /* ---------- buttons (outlined like the logo's letters) ---------- */
 .btn{display:flex;align-items:center;justify-content:center;gap:.6em;text-align:center;text-wrap:balance;min-height:58px;padding:0 1.4em;border:2.5px solid var(--ink);border-radius:999px;font:800 1.0625rem/1.1 var(--font);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,transform .15s}
@@ -69,10 +74,10 @@ p{margin:0}
 @media (orientation:landscape) and (max-height:500px){.slab-wrap{min-height:200px}}
 .hero-copy{padding-top:10px;padding-bottom:22px}
 .hero h1{font-size:clamp(2.75rem,13.4vw,5.6rem);line-height:.9;letter-spacing:-.025em}
-.hero h1 em{font-style:normal;color:var(--blue)}
+.hero h1 em{font-style:normal;color:var(--blue-deep)}
 .promise{margin-top:14px;max-width:34ch;font-size:clamp(1.0625rem,4.4vw,1.25rem);color:var(--ink-soft)}
 .actions{display:grid;gap:10px;margin-top:20px}
-.slab-wrap{position:relative;flex:1;min-height:250px;overflow:hidden;background:#bdbab3}
+.slab-wrap{position:relative;flex:1;min-height:250px;overflow:hidden;background:#bdbab3;box-shadow:0 -1px 0 rgba(255,255,255,.35),0 -3px 0 rgba(38,36,32,.35)}
 #slab{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
 #slab:active{cursor:grabbing}
 .slab-hint{position:absolute;left:16px;top:12px;z-index:1;margin:0;text-shadow:0 0 8px #e9e8e4,0 0 3px #e9e8e4,0 0 1px #e9e8e4;color:var(--ink);font-size:.875rem;font-weight:700;pointer-events:none;transition:opacity .6s}
@@ -80,11 +85,13 @@ p{margin:0}
 
 /* ---------- epoxy pour dividers ---------- */
 .pour{display:block;width:100%;height:46px;margin-top:-1px;margin-bottom:-1px;position:relative;z-index:2}
+.pour.down{transform:scaleY(-1)}  /* navy above, floor below */
 
 /* ---------- sections ---------- */
 section{position:relative}
 .band{padding:56px 0 64px}
-.light-2{background:var(--ground-2)}
+/* saw-cut control joint between two floor sections */
+.joint{height:3px;background:linear-gradient(rgba(38,36,32,.5) 0 2px,rgba(255,255,255,.4) 2px)}
 .on-navy{position:relative;isolation:isolate;background:var(--navy);color:var(--on-navy)}
 .on-navy::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(120% 80% at 15% 35%,rgba(44,84,247,.35),transparent 60%),radial-gradient(90% 70% at 100% 65%,rgba(9,14,40,.55),transparent 70%);-webkit-mask:linear-gradient(transparent,#000 28%,#000 72%,transparent);mask:linear-gradient(transparent,#000 28%,#000 72%,transparent)}
 .on-navy p{color:var(--on-navy-soft)}
@@ -117,6 +124,22 @@ section{position:relative}
 .fb .fbi svg{width:28px;height:28px}
 .fb .go{margin-left:auto;flex:none;width:28px;height:28px}
 
+/* before/after sliders */
+.drag-note{margin-top:12px;font-size:1rem}
+.pairs{display:grid;gap:18px;margin-top:22px}
+.ba{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:var(--radius);border:2.5px solid #fff;background:#3a3f55;touch-action:pan-y;-webkit-user-select:none;user-select:none;cursor:ew-resize;--p:50%}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.ba-before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.ba .tag{position:absolute;top:10px;padding:4px 10px;border-radius:999px;background:rgba(13,22,54,.72);color:#fff;font-size:.8125rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;pointer-events:none}
+.ba .tag-b{left:10px}
+.ba .tag-a{right:10px}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--p);width:44px;margin-left:-22px;display:grid;place-items:center;outline:none}
+.ba-handle::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 6px rgba(0,0,0,.45)}
+.ba-handle span{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--navy);box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.ba-handle svg{width:24px;height:24px}
+.ba-handle:focus-visible span{outline:3px solid var(--focus);outline-offset:2px}
+.work .fb{margin-top:22px}
+
 /* quote form */
 .quote .intro{margin-top:14px;max-width:44ch;color:var(--ink-soft)}
 form{margin-top:26px;display:grid;gap:22px;max-width:640px}
@@ -137,9 +160,9 @@ fieldset legend{padding:0;margin-bottom:10px}
 form input[type=text]:hover,form input[type=tel]:hover,form textarea:hover,.chip span:hover,form .btn:hover,
 form input[type=text]:focus,form input[type=tel]:focus,form textarea:focus,.chip input:focus-visible+span,form .btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 form input:focus,form textarea:focus,.chip input:focus-visible+span,.chip span:hover{border-color:var(--ink)}
-.err{display:none;color:#b3261e;font-weight:700;font-size:1rem}
+.err{display:none;color:#7d1610;font-weight:700;font-size:1rem}
 .field.bad .err{display:block}
-.field.bad input{border-color:#b3261e}
+.field.bad input{border-color:#7d1610}
 .sent{display:none;padding:18px;border-radius:var(--radius);background:#fff;border:2px solid var(--line)}
 .sent.show{display:grid;gap:12px}
 .sent pre{margin:0;white-space:pre-wrap;font:500 1rem/1.45 var(--font);color:var(--ink-soft)}
@@ -182,8 +205,8 @@ footer .links{display:flex;flex-wrap:wrap;gap:4px 22px}
   .svc-list,.steps{margin-top:6px}
   .quote .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:60px}
   form{margin-top:0}
-  .work .wrap{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
-  .fb{margin-top:0;min-width:420px}
+  .pairs{grid-template-columns:1fr 1fr;gap:28px;margin-top:34px}
+  .work .fb{margin-top:34px;max-width:520px}
   .pour{height:84px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
@@ -193,10 +216,10 @@ footer .links{display:flex;flex-wrap:wrap;gap:4px 22px}
 <!--
 DIRECTION CONTRACT
 THESIS: A raw, dusty slab becomes a floor you can see yourself in. The page lets you do that yourself.
-OWN-WORLD: The polishing floor. Matte grey concrete with trowel marks and an oil stain; a blue floor grinder (the logo's blue) that cuts through it to salt-and-pepper aggregate and a deep gloss that reflects the shop lights. Edges between sections are wet epoxy pours, flowing.
-STORY: Hero (watch the grinder polish, then take the handle) -> what we do (six services, each one text-to-quote) -> how a quote works (photos first) -> our work on Facebook -> quote form that writes the text -> close with the number.
+OWN-WORLD: The polishing floor. The whole page sits on polished salt-and-pepper concrete with the shop's light tubes reflecting in it; the reflections drift as you scroll. Matte grey concrete with trowel marks and an oil stain; a blue floor grinder (the logo's blue) that cuts through it to salt-and-pepper aggregate and a deep gloss that reflects the shop lights. Edges between sections are wet epoxy pours, flowing.
+STORY: Hero (watch the grinder polish, then take the handle) -> what we do (six services, each one text-to-quote) -> how a quote works (photos first) -> before/after sliders of real jobs, then Facebook -> quote form that writes the text -> close with the number.
 FIRST VIEWPORT (phone): logo + number top-right, "Make your concrete shine.", one-line promise, two buttons (text photos / get a quote), the living slab beneath.
-FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo letters, logo blue + navy on concrete grey, navy bands for depth. No black grounds.
+FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo letters, logo blue + navy on concrete grey, navy epoxy bands for depth, saw-cut joints between floor sections. No black grounds.
 -->
 <header class="top">
   <div class="wrap">
@@ -221,9 +244,9 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
     </div>
   </section>
 
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#f3f2ef"/></svg>
+  <div class="joint" aria-hidden="true"></div>
 
-  <section class="svc band light-2" aria-labelledby="h-svc">
+  <section class="svc band" aria-labelledby="h-svc">
     <div class="wrap">
       <div>
         <h2 id="h-svc">What we do</h2>
@@ -240,7 +263,7 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
     </div>
   </section>
 
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground-2)"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#e9e8e4"/></svg>
+  <div class="joint" aria-hidden="true"></div>
 
   <section class="how band" aria-labelledby="h-how">
     <div class="wrap">
@@ -253,18 +276,31 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
     </div>
   </section>
 
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#14215a"/></svg>
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#14215a"/></svg>
 
   <section class="work band on-navy" aria-labelledby="h-work">
     <div class="wrap">
-      <div>
-        <h2 id="h-work">See our latest floors</h2>
+      <h2 id="h-work">Before and after</h2>
+      <p class="drag-note">Drag the line.</p>
+      <div class="pairs">
+        <div class="ba">
+          <img src="assets/room-after.webp" width="850" height="638" alt="After: the same floor ground and polished, the stone showing through" loading="lazy" decoding="async" draggable="false">
+          <div class="ba-before"><img src="assets/room-before.webp" width="850" height="638" alt="Before: a dusty grey concrete floor partway through grinding" loading="lazy" decoding="async" draggable="false"></div>
+          <span class="tag tag-b">Before</span><span class="tag tag-a">After</span>
+          <div class="ba-handle" role="slider" tabindex="0" aria-label="Before and after divider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg></span></div>
+        </div>
+        <div class="ba">
+          <img src="assets/crack-after.webp" width="960" height="720" alt="After: the same slab with the cracks filled and ground" loading="lazy" decoding="async" draggable="false">
+          <div class="ba-before"><img src="assets/crack-before.webp" width="960" height="720" alt="Before: a cracked basement slab marked out in orange paint" loading="lazy" decoding="async" draggable="false"></div>
+          <span class="tag tag-b">Before</span><span class="tag tag-a">After</span>
+          <div class="ba-handle" role="slider" tabindex="0" aria-label="Before and after divider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg></span></div>
+        </div>
       </div>
-      <a class="fb" href="https://facebook.com/profile.php?id=61589369156324" rel="noopener"><span class="fbi"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.2L14.1 2C10.9 2 10.2 4.4 10.2 6v2.5H8v3.7h2.2V22H14v-9.8h2.8l.4-3.7z"/></svg></span>See our work on Facebook<svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="fb" href="https://facebook.com/profile.php?id=61589369156324" rel="noopener"><span class="fbi"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.2L14.1 2C10.9 2 10.2 4.4 10.2 6v2.5H8v3.7h2.2V22H14v-9.8h2.8l.4-3.7z"/></svg></span>See more of our work on Facebook<svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </section>
 
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--navy)"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#e9e8e4"/></svg>
+  <svg class="pour down" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#14215a"/></svg>
 
   <section class="quote band" id="quote" aria-labelledby="h-quote">
     <div class="wrap">
@@ -323,7 +359,7 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
     </div>
   </section>
 
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ground)"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#14215a"/></svg>
+  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#14215a"/></svg>
 
   <section class="close band on-navy" aria-labelledby="h-close">
     <div class="wrap">
@@ -345,6 +381,52 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
 </footer>
 
 <script>
+/* ---------- the floor: polished concrete under the whole page ---------- */
+(function(){
+  var TILE = 460;           /* tile size, CSS px */
+  var STONES = 3000;        /* aggregate chips per tile */
+  var BIG = 3.4;            /* largest chip radius, CSS px */
+  var CONTRAST = 0.6;       /* how far chips stray from the cement colour (0-1) */
+  var sc = Math.min(window.devicePixelRatio || 1, 2), n = Math.round(TILE * sc);
+  var cv = document.createElement('canvas'); cv.width = cv.height = n;
+  var c = cv.getContext('2d'); if (!c) return;
+  var seed = 11; function rnd(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+  function wrapped(x, y, r, draw){             /* draw near an edge twice so the tile repeats seamlessly */
+    for (var i = -1; i <= 1; i++) for (var j = -1; j <= 1; j++){
+      var X = x + i * n, Y = y + j * n;
+      if (X + r > 0 && X - r < n && Y + r > 0 && Y - r < n) draw(X, Y);
+    }
+  }
+  c.fillStyle = '#aeaca7'; c.fillRect(0, 0, n, n);
+  for (var k = 0; k < 22; k++){                 /* soft cloudy mottling */
+    var r = (70 + rnd() * 170) * sc, light = rnd() < 0.5, a = 0.04 + rnd() * 0.05;
+    wrapped(rnd() * n, rnd() * n, r, function(X, Y){
+      var g = c.createRadialGradient(X, Y, 0, X, Y, r);
+      g.addColorStop(0, light ? 'rgba(255,255,250,' + a + ')' : 'rgba(60,58,54,' + a + ')'); g.addColorStop(1, 'rgba(0,0,0,0)');
+      c.fillStyle = g; c.fillRect(X - r, Y - r, r * 2, r * 2);
+    });
+  }
+  var im = c.getImageData(0, 0, n, n), d = im.data;  /* fine cement grain */
+  for (var p = 0; p < d.length; p += 4){ var v = (rnd() - 0.5) * 22; d[p] += v; d[p + 1] += v; d[p + 2] += v; }
+  c.putImageData(im, 0, 0);
+  for (k = 0; k < STONES; k++){                 /* salt-and-pepper aggregate, ground flat */
+    var rr = (0.4 + Math.pow(rnd(), 3) * BIG) * sc, t = rnd(), col;
+    if (t < 0.5){ var l = 174 + (14 + rnd() * 50) * CONTRAST; col = 'rgb(' + (l | 0) + ',' + (l - 3 - rnd() * 6 | 0) + ',' + (l - 8 - rnd() * 14 | 0) + ')'; }
+    else if (t < 0.88){ l = 174 - (50 + rnd() * 52) * CONTRAST; col = 'rgb(' + (l | 0) + ',' + (l | 0) + ',' + (l + 2 | 0) + ')'; }
+    else { l = 120 + rnd() * 30; col = 'rgb(' + (l - 6 | 0) + ',' + (l | 0) + ',' + (l + 8 | 0) + ')'; }
+    var sides = 5 + (rnd() * 3 | 0), rot = rnd() * 6.3, jit = [];
+    for (var q = 0; q < sides; q++) jit.push(0.6 + rnd() * 0.5);
+    c.globalAlpha = 0.55 + rnd() * 0.4; c.fillStyle = col;
+    wrapped(rnd() * n, rnd() * n, rr * 1.2, function(X, Y){
+      c.beginPath();
+      for (var q = 0; q < sides; q++){ var an = rot + q / sides * 6.283; c.lineTo(X + Math.cos(an) * rr * jit[q], Y + Math.sin(an) * rr * jit[q]); }
+      c.fill();
+    });
+  }
+  c.globalAlpha = 1;
+  function use(url){ document.body.style.backgroundImage = 'url(' + url + ')'; document.body.style.backgroundSize = TILE + 'px ' + TILE + 'px'; }
+  if (cv.toBlob) cv.toBlob(function(b){ if (b) use(URL.createObjectURL(b)); }); else use(cv.toDataURL());
+})();
 /* ---------- text-message links ---------- */
 (function(){
   var NUM = '+12268084556';
@@ -426,6 +508,63 @@ var MDE_loop = (function(){
   };
 })();
 var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- shop lights reflecting in the floor, sliding as you scroll ---------- */
+(function(){
+  var RATE = 0.45;          /* reflections travel this fraction of the scroll (1 = painted on the floor) */
+  var GAP = 0.6;            /* space between light rows, in screen heights */
+  var EASE = 7;             /* how fast reflections catch up to the scroll; lower = floatier */
+  var SMEAR = 0.006;        /* how much fast scrolling stretches a reflection */
+  if (MDE_reduced) { RATE = 1; SMEAR = 0; }
+  var layer = document.createElement('div'); layer.className = 'lights'; layer.setAttribute('aria-hidden', 'true');
+  document.body.insertBefore(layer, document.body.firstChild);
+  var rows = [], W = 0, H = 0, G = 1, cur = window.scrollY || 0, target = cur, stretch = 1, last = 0;
+  function hash(n, k){ var v = Math.sin(n * 127.1 + k * 311.7) * 43758.5453; return v - Math.floor(v); }
+  function dress(row, n){                       /* each row index gets its own fixed fixture layout */
+    row.n = n;
+    var two = W > 900 && hash(n, 1) > 0.3, t = row.tubes;
+    if (two){
+      var w = W * (0.3 + hash(n, 2) * 0.12), gap = W * (0.05 + hash(n, 3) * 0.08), x = W * (0.02 + hash(n, 4) * 0.12);
+      t[0].style.cssText = 'left:' + x + 'px;width:' + w + 'px'; t[1].style.cssText = 'left:' + (x + w + gap) + 'px;width:' + w * (0.85 + hash(n, 5) * 0.3) + 'px';
+    } else {
+      t[0].style.cssText = 'left:' + W * (-0.05 + hash(n, 2) * 0.25) + 'px;width:' + W * (0.62 + hash(n, 3) * 0.45) + 'px'; t[1].style.cssText = 'display:none';
+    }
+    row.el.style.opacity = 0.6 + hash(n, 6) * 0.35;
+    row.dy = (hash(n, 7) - 0.5) * G * 0.35;
+  }
+  function size(){
+    var w = layer.clientWidth, h = layer.clientHeight;
+    if (w === W && Math.abs(h - H) < 120) return;   /* ignore the address bar sliding */
+    W = w; H = h; G = Math.max(240, H * GAP);
+    var need = Math.ceil(H / G) + 2;
+    while (rows.length < need){
+      var el = document.createElement('div'); el.className = 'lrow';
+      el.innerHTML = '<i class="tube"></i><i class="tube"></i>';
+      layer.appendChild(el); rows.push({el:el, tubes:el.children, n:null});
+    }
+    rows.forEach(function(r){ r.n = null; });
+  }
+  function place(){
+    var off = cur * RATE, n0 = Math.floor(off / G) - 1;
+    for (var i = 0; i < rows.length; i++){
+      var r = rows[(((n0 + i) % rows.length) + rows.length) % rows.length], n = n0 + i;
+      if (r.n !== n) dress(r, n);
+      r.el.style.transform = 'translate3d(0,' + (n * G + G * 0.55 + r.dy - off).toFixed(1) + 'px,0) scaleY(' + stretch.toFixed(3) + ')';
+    }
+  }
+  function step(t){
+    var dt = Math.min(0.05, (t - (last || t)) / 1000); last = t;
+    var prev = cur;
+    cur = MDE_reduced ? target : cur + (target - cur) * (1 - Math.exp(-EASE * dt));
+    var v = dt ? Math.abs(cur - prev) / dt : 0;
+    stretch += (1 + Math.min(v * SMEAR, 0.8) - stretch) * 0.25;
+    place();
+  }
+  size(); place();
+  window.addEventListener('resize', function(){ size(); place(); });
+  window.addEventListener('scroll', function(){ target = window.scrollY; last = 0; MDE_loop.wake(); }, {passive:true});
+  MDE_loop.add({active:function(){ return Math.abs(target - cur) > 0.3 || stretch > 1.003; }, step:step});
+})();
 
 /* ---------- hero: the slab you polish ---------- */
 (function(){
@@ -705,6 +844,50 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   });
 })();
 
+/* ---------- before/after sliders ---------- */
+(function(){
+  var SWEEP_MS = 1800;      /* the one-time "this moves" sweep when a slider first shows */
+  [].forEach.call(document.querySelectorAll('.ba'), function(el){
+    var h = el.querySelector('.ba-handle'), p = 50, drag = null, touched = false, sweep = null;
+    function set(v){ p = Math.max(0, Math.min(100, v)); el.style.setProperty('--p', p + '%'); h.setAttribute('aria-valuenow', Math.round(p)); }
+    function at(e){ var r = el.getBoundingClientRect(); return (e.clientX - r.left) / r.width * 100; }
+    el.addEventListener('pointerdown', function(e){
+      touched = true; sweep = null;
+      drag = {x:e.clientX, y:e.clientY, on:e.pointerType !== 'touch'};
+      if (drag.on){ try { el.setPointerCapture(e.pointerId); } catch(_){} set(at(e)); e.preventDefault(); }
+    });
+    el.addEventListener('pointermove', function(e){
+      if (!drag) return;
+      if (!drag.on){                            /* phones: only take over once the drag is clearly sideways */
+        var dx = Math.abs(e.clientX - drag.x), dy = Math.abs(e.clientY - drag.y);
+        if (dx > 8 && dx > dy){ drag.on = true; try { el.setPointerCapture(e.pointerId); } catch(_){} }
+        else if (dy > 8){ drag = null; return; }
+      }
+      if (drag.on) set(at(e));
+    });
+    el.addEventListener('pointerup', function(e){ if (drag && !drag.on) set(at(e)); drag = null; });
+    el.addEventListener('pointercancel', function(){ drag = null; });
+    h.addEventListener('keydown', function(e){
+      var k = e.key, v = k === 'ArrowLeft' ? p - 5 : k === 'ArrowRight' ? p + 5 : k === 'Home' ? 0 : k === 'End' ? 100 : null;
+      if (v !== null){ touched = true; sweep = null; set(v); e.preventDefault(); }
+    });
+    if (MDE_reduced || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(es){
+      if (!es[0].isIntersecting || touched) return;
+      io.disconnect(); sweep = {t0:null};
+      MDE_loop.add({active:function(){ return !!sweep; }, step:function(t){
+        if (!sweep) return;
+        if (sweep.t0 === null) sweep.t0 = t;
+        var u = Math.min(1, (t - sweep.t0) / SWEEP_MS);
+        set(50 + Math.sin(u * Math.PI * 2) * 22 * (1 - u * 0.35));
+        if (u >= 1){ set(50); sweep = null; }
+      }});
+      MDE_loop.wake();
+    }, {threshold:0.6});
+    io.observe(el);
+  });
+})();
+
 /* ---------- epoxy pour dividers ---------- */
 (function(){
   var SPEED = 0.0006;       /* how fast the pour edge rolls */
@@ -712,7 +895,7 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var PUSH = 16;            /* how far the edge bulges from a nearby pointer */
   var pours = [].slice.call(document.querySelectorAll('.pour'));
   var px = -1e4, py = -1e4;
-  var state = pours.map(function(svg, k){ return {svg:svg, path:svg.querySelector('path.top'), sh:svg.querySelector('path.sh'), ph:k * 1.7, vis:true, bump:new Float32Array(73), vel:new Float32Array(73)}; });
+  var state = pours.map(function(svg, k){ return {svg:svg, path:svg.querySelector('path.top'), sh:svg.querySelector('path.sh'), ph:k * 1.7, vis:true, flip:svg.classList.contains('down'), bump:new Float32Array(73), vel:new Float32Array(73)}; });
   function edge(s, t){
     var d = 'M0 80', n = 72;
     for (var i = 0; i <= n; i++){
@@ -729,7 +912,7 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var near = py > r.top - 90 && py < r.bottom + 90;
       for (var i = 0; i <= 72; i++){
         var target = 0;
-        if (near){ var dx = (r.left + i / 72 * r.width) - px; var f = Math.exp(-(dx * dx) / 9000); target = (py < r.top + r.height / 2 ? 1 : -1) * PUSH * f; }
+        if (near){ var dx = (r.left + i / 72 * r.width) - px; var f = Math.exp(-(dx * dx) / 9000); target = (py < r.top + r.height / 2 ? 1 : -1) * (s.flip ? -1 : 1) * PUSH * f; }
         s.vel[i] += (target - s.bump[i]) * 0.08; s.vel[i] *= 0.82; s.bump[i] += s.vel[i];
       }
       var d = edge(s, t); s.path.setAttribute('d', d); s.sh.setAttribute('d', d);
