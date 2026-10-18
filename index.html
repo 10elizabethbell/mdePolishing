@@ -513,12 +513,10 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 (function(){
   var RATE = 0.45;          /* reflections travel this fraction of the scroll (1 = painted on the floor) */
   var GAP = 0.6;            /* space between light rows, in screen heights */
-  var EASE = 7;             /* how fast reflections catch up to the scroll; lower = floatier */
-  var SMEAR = 0.006;        /* how much fast scrolling stretches a reflection */
-  if (MDE_reduced) { RATE = 1; SMEAR = 0; }
+  if (MDE_reduced) RATE = 1;
   var layer = document.createElement('div'); layer.className = 'lights'; layer.setAttribute('aria-hidden', 'true');
   document.body.insertBefore(layer, document.body.firstChild);
-  var rows = [], W = 0, H = 0, G = 1, cur = window.scrollY || 0, target = cur, stretch = 1, last = 0;
+  var rows = [], W = 0, H = 0, G = 1;
   function hash(n, k){ var v = Math.sin(n * 127.1 + k * 311.7) * 43758.5453; return v - Math.floor(v); }
   function dress(row, n){                       /* each row index gets its own fixed fixture layout */
     row.n = n;
@@ -536,7 +534,7 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var w = layer.clientWidth, h = layer.clientHeight;
     if (w === W && Math.abs(h - H) < 120) return;   /* ignore the address bar sliding */
     W = w; H = h; G = Math.max(240, H * GAP);
-    var need = Math.ceil(H / G) + 2;
+    var need = Math.ceil((H + 3.2 * G) / G) + 1;    /* enough rows that one is always parked off each edge */
     while (rows.length < need){
       var el = document.createElement('div'); el.className = 'lrow';
       el.innerHTML = '<i class="tube"></i><i class="tube"></i>';
@@ -544,26 +542,17 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     }
     rows.forEach(function(r){ r.n = null; });
   }
-  function place(){
-    var off = cur * RATE, n0 = Math.floor(off / G) - 1;
-    for (var i = 0; i < rows.length; i++){
-      var r = rows[(((n0 + i) % rows.length) + rows.length) % rows.length], n = n0 + i;
+  function place(){                             /* runs inside the scroll event, so it moves in the same frame as the page */
+    var off = (window.scrollY || 0) * RATE, n0 = Math.floor((off - 1.6 * G) / G), len = rows.length;
+    for (var i = 0; i < len; i++){              /* a row is only re-dressed while it's off screen */
+      var n = n0 + i, r = rows[((n % len) + len) % len];
       if (r.n !== n) dress(r, n);
-      r.el.style.transform = 'translate3d(0,' + (n * G + G * 0.55 + r.dy - off).toFixed(1) + 'px,0) scaleY(' + stretch.toFixed(3) + ')';
+      r.el.style.transform = 'translate3d(0,' + (n * G + G * 0.55 + r.dy - off).toFixed(1) + 'px,0)';
     }
-  }
-  function step(t){
-    var dt = Math.min(0.05, (t - (last || t)) / 1000); last = t;
-    var prev = cur;
-    cur = MDE_reduced ? target : cur + (target - cur) * (1 - Math.exp(-EASE * dt));
-    var v = dt ? Math.abs(cur - prev) / dt : 0;
-    stretch += (1 + Math.min(v * SMEAR, 0.8) - stretch) * 0.25;
-    place();
   }
   size(); place();
   window.addEventListener('resize', function(){ size(); place(); });
-  window.addEventListener('scroll', function(){ target = window.scrollY; last = 0; MDE_loop.wake(); }, {passive:true});
-  MDE_loop.add({active:function(){ return Math.abs(target - cur) > 0.3 || stretch > 1.003; }, step:step});
+  window.addEventListener('scroll', place, {passive:true});
 })();
 
 /* ---------- hero: the slab you polish ---------- */
