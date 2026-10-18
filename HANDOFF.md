@@ -5,7 +5,7 @@
 ## What's built
 - One page, phone first: header (real logo + `226-808-4556` top-right), hero, What we do, How a quote works, before/after proof band with the Facebook link under it, quote form, close, footer.
 - **World:** the polishing floor. The whole page sits on polished salt-and-pepper concrete, drawn in JS as a seamless tile from Ellie's reference photo. The shop's light tubes reflect in it and drift at about half the scroll speed, so they slide across the floor as you scroll. Light sections meet at saw-cut control joints, and the navy bands are epoxy poured over the floor, with flowing edges that bulge away from the pointer or finger. Logo blue `#2c54f7` and navy `#14215a`; buttons are outlined in navy-black like the logo's letters. Tunables sit at the top of the floor and lights IIFEs: chip count, size and contrast; light speed, gap, ease and smear.
-- **Signature:** the hero slab is a matte, trowel-marked concrete floor with cracks and an oil stain. A blue walk-behind grinder (handlebar, control box, vacuum hose) polishes it on autopilot down to salt-and-pepper aggregate, with the shop's light tubes reflecting in the gloss. Mouse or finger takes over, dragging in any direction, including up and down on phones. It returns to autopilot after 2.6s idle, and the polish slowly dulls back so there's always floor left to do. Tunables are at the top of the hero IIFE.
+- **Signature:** the polished floor itself: its light reflections drift as you scroll, the epoxy-pour edges bulge away from a finger or the pointer, and the before/after sliders. The hero is copy only: headline, promise and the two buttons, sitting on the floor. (Ellie removed the interactive polish-the-slab canvas on 2026-10-18.)
 - **Before/after:** two sliders in the navy band: drag the line on desktop or phone, or use the arrow keys. Each sweeps once when it first comes into view. On phones, vertical swipes still scroll the page.
 - **Contact:** the hero button "Text us photos of your floor" opens `sms:` with a pre-written message. Each service row texts about that service on phones; on desktop it jumps to the form with the service ticked. The form writes the text message: on phones it opens the text app, on desktop it shows the message with a Copy button. Calling uses the header number, plus "or call" in the close section.
 - **Verified:** Chromium and WebKit at 360/390/430/1440: no sideways scroll, tap targets ≥44px, inputs 17px, primary button on the first screen. A touch sweep polishes without scrolling the page. Form errors and the composed text decode correctly. The detector is clean apart from two suppressed false positives and one accepted note (below).
@@ -51,7 +51,6 @@
 - Real-device touch on iPhone Safari and inside Facebook's in-app browser (WebKit via Playwright stands in).
 - The scroll-driven light reflections on a real iPhone (iOS address-bar resizing of the fixed layer).
 - Real `sms:` handoff with a prefilled body on iOS and Android.
-- Frame rate on old phones (desktop ~110fps; the canvas is capped at 1.5x DPR).
-- Older iOS without `roundRect` (falls back to plain rects).
+- Frame rate on old phones while scrolling. The lights are a handful of transformed divs set straight from the scroll event, and the floor is a single repeating background image.
 - Detector note left standing: "flat type hierarchy" counts the 14–22px body/label sizes. The display scale (h1 up to 96px, h2 up to 58px) carries the hierarchy.
 - Impeccable concept-roll seed: skipped. The pitch-site pipeline chooses the world unattended.

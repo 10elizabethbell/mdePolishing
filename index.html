@@ -70,18 +70,12 @@ p{margin:0}
 .phone:hover{color:var(--blue-deep)}
 
 /* ---------- hero ---------- */
-.hero{position:relative;display:flex;flex-direction:column;min-height:min(calc(100svh - 94px),980px)}
-@media (orientation:landscape) and (max-height:500px){.slab-wrap{min-height:200px}}
-.hero-copy{padding-top:10px;padding-bottom:22px}
+.hero{position:relative}
+.hero-copy{padding-top:10px;padding-bottom:56px}
 .hero h1{font-size:clamp(2.75rem,13.4vw,5.6rem);line-height:.9;letter-spacing:-.025em}
 .hero h1 em{font-style:normal;color:var(--blue-deep)}
 .promise{margin-top:14px;max-width:34ch;font-size:clamp(1.0625rem,4.4vw,1.25rem);color:var(--ink-soft)}
 .actions{display:grid;gap:10px;margin-top:20px}
-.slab-wrap{position:relative;flex:1;min-height:250px;overflow:hidden;background:#bdbab3;box-shadow:0 -1px 0 rgba(255,255,255,.35),0 -3px 0 rgba(38,36,32,.35)}
-#slab{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
-#slab:active{cursor:grabbing}
-.slab-hint{position:absolute;left:16px;top:12px;z-index:1;margin:0;text-shadow:0 0 8px #e9e8e4,0 0 3px #e9e8e4,0 0 1px #e9e8e4;color:var(--ink);font-size:.875rem;font-weight:700;pointer-events:none;transition:opacity .6s}
-.slab-hint.gone{opacity:0}
 
 /* ---------- epoxy pour dividers ---------- */
 .pour{display:block;width:100%;height:46px;margin-top:-1px;margin-bottom:-1px;position:relative;z-index:2}
@@ -194,12 +188,9 @@ footer .links{display:flex;flex-wrap:wrap;gap:4px 22px}
   .wrap{padding:0 40px}
   .top .wrap{padding-top:18px}
   .phone{font-size:1.25rem}
-  .hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:min(calc(100vh - 92px),820px);max-width:none;padding-left:max(40px,calc((100vw - 1180px)/2 + 40px))}
-  .hero-copy{align-self:center;padding:30px 40px 60px 0;margin:0;max-width:none}
+  .hero-copy{padding-top:70px;padding-bottom:120px}
   .hero h1{font-size:clamp(4rem,6.4vw,6rem)}
   .promise{font-size:1.25rem}
-  .slab-wrap{margin:0;border-radius:28px 0 0 28px}
-  .slab-hint{left:30px;top:20px}
   .band{padding:96px 0 104px}
   .svc .wrap,.how .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:60px;align-items:start}
   .svc-list,.steps{margin-top:6px}
@@ -215,10 +206,10 @@ footer .links{display:flex;flex-wrap:wrap;gap:4px 22px}
 <body>
 <!--
 DIRECTION CONTRACT
-THESIS: A raw, dusty slab becomes a floor you can see yourself in. The page lets you do that yourself.
-OWN-WORLD: The polishing floor. The whole page sits on polished salt-and-pepper concrete with the shop's light tubes reflecting in it; the reflections drift as you scroll. Matte grey concrete with trowel marks and an oil stain; a blue floor grinder (the logo's blue) that cuts through it to salt-and-pepper aggregate and a deep gloss that reflects the shop lights. Edges between sections are wet epoxy pours, flowing.
-STORY: Hero (watch the grinder polish, then take the handle) -> what we do (six services, each one text-to-quote) -> how a quote works (photos first) -> before/after sliders of real jobs, then Facebook -> quote form that writes the text -> close with the number.
-FIRST VIEWPORT (phone): logo + number top-right, "Make your concrete shine.", one-line promise, two buttons (text photos / get a quote), the living slab beneath.
+THESIS: A raw, dusty slab becomes a floor you can see yourself in. The page itself is that floor.
+OWN-WORLD: The polishing floor. The whole page sits on polished salt-and-pepper concrete with the shop's light tubes reflecting in it; the reflections drift as you scroll. Light sections meet at saw-cut joints; navy bands are epoxy poured over the floor, with flowing edges.
+STORY: Hero (headline and the two buttons, on the floor) -> what we do (six services, each one text-to-quote) -> how a quote works (photos first) -> before/after sliders of real jobs, then Facebook -> quote form that writes the text -> close with the number.
+FIRST VIEWPORT (phone): logo + number top-right, "Make your concrete shine.", one-line promise, two buttons (text photos / get a quote), all on the polished floor with the light reflections drifting under it.
 FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo letters, logo blue + navy on concrete grey, navy epoxy bands for depth, saw-cut joints between floor sections. No black grounds.
 -->
 <header class="top">
@@ -237,10 +228,6 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
         <a class="btn btn-primary" id="hero-text" href="sms:+12268084556"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="11" r="1.6"/><path d="m21 16-5-5-8 8"/></svg>Text us photos of your floor</a>
         <a class="btn btn-ghost" href="#quote">Get a quote</a>
       </div>
-    </div>
-    <div class="slab-wrap" id="slab-wrap">
-      <canvas id="slab" aria-label="A concrete floor being polished by a floor grinder. Drag across it to polish it yourself." role="img"></canvas>
-      <p class="slab-hint" id="slab-hint">Drag to polish the floor</p>
     </div>
   </section>
 
@@ -553,284 +540,6 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   size(); place();
   window.addEventListener('resize', function(){ size(); place(); });
   window.addEventListener('scroll', place, {passive:true});
-})();
-
-/* ---------- hero: the slab you polish ---------- */
-(function(){
-  /* tunables */
-  var DPR_CAP = 1.5;           /* animated canvas sharpness cap */
-  var MASK_SCALE = 0.5;        /* polish mask resolution vs CSS px */
-  var REGROW_EVERY = 8;        /* frames between dulling steps */
-  var REGROW = 0.007;          /* how fast polish fades back to matte */
-  var POLISH_RATE = 0.6;       /* opacity per grinder stamp */
-  var FOLLOW = 7.5;            /* how hard the grinder chases your finger (spring) */
-  var DAMP = 5.2;              /* grinder damping */
-  var SPIN = 9;                /* motor cap spin, rad/s */
-  var IDLE_MS = 2600;          /* hand back to autopilot after this */
-  var AUTO_SPEED = 0.00042;    /* autopilot path speed */
-
-  var wrap = document.getElementById('slab-wrap');
-  var cv = document.getElementById('slab');
-  var hint = document.getElementById('slab-hint');
-  var ctx = cv.getContext('2d');
-  var W = 0, H = 0, dpr = 1, R = 40;
-  var raw, polished, layer, lctx, mask, mctx, lights;
-  var g = {x:0, y:0, vx:0, vy:0, ang:Math.PI*0.5, spin:0, px:0, py:0};
-  var hose = {x:0, y:0};       /* vacuum hose tail, drags behind the machine */
-  var ptr = {x:0, y:0, cx:0, cy:0, on:false, last:-1e9};
-  var dust = [], frame = 0, visible = true, lastT = 0, t0 = 0;
-
-  function rnd(a, b){ return a + Math.random() * (b - a); }
-  function mk(w, h){ var c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
-
-  /* organic hairline crack */
-  function crack(c, x, y, len, ang, alpha, w){
-    c.strokeStyle = 'rgba(40,38,36,' + alpha + ')'; c.lineWidth = w; c.lineCap = 'round';
-    c.beginPath(); c.moveTo(x, y);
-    for (var s = 0; s < len; s += 6 * dpr){
-      ang += rnd(-0.22, 0.22); x += Math.cos(ang) * 6 * dpr; y += Math.sin(ang) * 6 * dpr; c.lineTo(x, y);
-      if (Math.random() < 0.025) crack(c, x, y, len * 0.3, ang + rnd(-1, 1), alpha * 0.8, w * 0.7);
-    }
-    c.stroke();
-  }
-
-  function grain(c, w, h, amt){
-    var t = mk(160, 160), tc = t.getContext('2d'), id = tc.createImageData(160, 160), p = id.data;
-    for (var i = 0; i < p.length; i += 4){ var v = Math.random() < 0.5 ? 0 : 255; p[i] = p[i+1] = p[i+2] = v; p[i+3] = Math.random() * amt; }
-    tc.putImageData(id, 0, 0);
-    c.fillStyle = c.createPattern(t, 'repeat'); c.fillRect(0, 0, w, h);
-  }
-
-  function build(){
-    var r = wrap.getBoundingClientRect();
-    var nw = Math.round(r.width), nh = Math.round(r.height);
-    if (nw === W && nh === H) return false;           /* phones fire resize when the address bar moves */
-    W = nw; H = nh; dpr = Math.min(window.devicePixelRatio || 1, DPR_CAP);
-    var w = Math.round(W * dpr), h = Math.round(H * dpr);
-    cv.width = w; cv.height = h;
-    R = Math.max(30, Math.min(64, Math.min(W, H) * 0.13));
-    var seed = [];
-    for (var k = 0; k < 2; k++) seed.push({x:rnd(0, w), y:rnd(0, h), l:rnd(0.35, 0.8) * Math.max(w, h), a:rnd(0, 6.28)});
-    var stain = {x:w * rnd(0.55, 0.8), y:h * rnd(0.3, 0.7), r:Math.min(w, h) * rnd(0.12, 0.18)};
-
-    /* raw slab: matte, dusty, trowel-marked */
-    raw = mk(w, h); var c = raw.getContext('2d');
-    c.fillStyle = '#bcb9b2'; c.fillRect(0, 0, w, h);
-    for (var i = 0; i < 70; i++){
-      var bx = rnd(0, w), by = rnd(0, h), br = rnd(40, 220) * dpr, light = Math.random() < 0.5;
-      var gr = c.createRadialGradient(bx, by, 0, bx, by, br);
-      gr.addColorStop(0, light ? 'rgba(232,229,222,.16)' : 'rgba(120,116,108,.12)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
-      c.fillStyle = gr; c.fillRect(bx - br, by - br, br * 2, br * 2);
-    }
-    c.lineWidth = 1.2 * dpr;
-    for (i = 0; i < 26; i++){                          /* trowel swirls */
-      var tx = rnd(0, w), ty = rnd(0, h), tr = rnd(60, 180) * dpr, a0 = rnd(0, 6.28);
-      c.strokeStyle = 'rgba(236,233,226,' + rnd(0.08, 0.2) + ')';
-      c.beginPath(); c.arc(tx, ty, tr, a0, a0 + rnd(0.5, 1.4)); c.stroke();
-    }
-    var og = c.createRadialGradient(stain.x, stain.y, 0, stain.x, stain.y, stain.r);   /* oil stain */
-    og.addColorStop(0, 'rgba(70,64,56,.42)'); og.addColorStop(0.55, 'rgba(84,78,70,.28)'); og.addColorStop(1, 'rgba(90,84,76,0)');
-    c.save(); c.translate(stain.x, stain.y); c.scale(1.35, 0.85); c.translate(-stain.x, -stain.y);
-    c.fillStyle = og; c.beginPath(); c.arc(stain.x, stain.y, stain.r, 0, 6.28); c.fill(); c.restore();
-    for (i = 0; i < 160; i++){ c.fillStyle = 'rgba(90,86,80,' + rnd(0.15, 0.4) + ')'; c.beginPath(); c.arc(rnd(0, w), rnd(0, h), rnd(0.5, 1.6) * dpr, 0, 6.28); c.fill(); }  /* pits */
-    grain(c, w, h, 46);
-    seed.forEach(function(s){ crack(c, s.x, s.y, s.l, s.a, 0.42, 1.3 * dpr); });
-
-    /* polished slab: ground to the stone, clear and glossy */
-    polished = mk(w, h); c = polished.getContext('2d');
-    c.fillStyle = '#8f8c86'; c.fillRect(0, 0, w, h);
-    for (i = 0; i < 40; i++){
-      bx = rnd(0, w); by = rnd(0, h); br = rnd(60, 260) * dpr;
-      gr = c.createRadialGradient(bx, by, 0, bx, by, br);
-      gr.addColorStop(0, Math.random() < 0.5 ? 'rgba(165,161,153,.18)' : 'rgba(110,106,100,.16)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
-      c.fillStyle = gr; c.fillRect(bx - br, by - br, br * 2, br * 2);
-    }
-    var stones = ['#5e5a55','#6c675f','#4a4642','#7d776e','#9b948a','#3d3a37','#a99f90','#c9c1b3'];   /* cut aggregate, salt and pepper */
-    var n = Math.round(w * h / (9 * dpr * dpr));
-    for (i = 0; i < n; i++){
-      var sx = rnd(0, w), sy = rnd(0, h), sr = Math.pow(Math.random(), 5) * 3.4 * dpr + 0.35 * dpr, sides = 5 + (Math.random() * 4 | 0), rot = rnd(0, 6.28);
-      c.fillStyle = stones[Math.random() * stones.length | 0]; c.globalAlpha = rnd(0.8, 1);
-      c.beginPath();
-      for (var v = 0; v < sides; v++){ var aa = rot + v / sides * 6.28, rr = sr * rnd(0.6, 1.15); c[v ? 'lineTo' : 'moveTo'](sx + Math.cos(aa) * rr, sy + Math.sin(aa) * rr * rnd(0.7, 1)); }
-      c.closePath(); c.fill();
-    }
-    c.globalAlpha = 1;
-    og = c.createRadialGradient(stain.x, stain.y, 0, stain.x, stain.y, stain.r);    /* stain mostly ground away */
-    og.addColorStop(0, 'rgba(70,64,56,.08)'); og.addColorStop(1, 'rgba(70,64,56,0)');
-    c.fillStyle = og; c.fillRect(0, 0, w, h);
-    grain(c, w, h, 12);
-    seed.forEach(function(s){ crack(c, s.x, s.y, s.l, s.a, 0.5, 1.1 * dpr); });
-    var sheen = c.createLinearGradient(0, 0, w, h);                                /* clear-coat sheen */
-    sheen.addColorStop(0, 'rgba(255,255,255,.10)'); sheen.addColorStop(0.45, 'rgba(255,255,255,.02)'); sheen.addColorStop(1, 'rgba(255,255,255,.08)');
-    c.fillStyle = sheen; c.fillRect(0, 0, w, h);
-
-    /* reflection of the shop's light tubes, drawn once, slid each frame (shadowBlur, not ctx.filter: older iPhones lack filter) */
-    lights = mk(w, h * 2); c = lights.getContext('2d');
-    for (var row = 0; row < 5; row++){
-      var ly = h * 0.35 + row * h * 0.4;
-      for (var col = -1; col < 3; col++){
-        var lx = col * w * 0.55 + (row % 2) * w * 0.28, lw = w * 0.46;
-        c.save();
-        c.shadowColor = 'rgba(255,255,248,.75)'; c.shadowBlur = 18 * dpr;
-        c.fillStyle = 'rgba(255,255,250,.35)'; c.fillRect(lx, ly - 5 * dpr, lw, 10 * dpr);
-        c.shadowBlur = 3 * dpr;
-        c.fillStyle = 'rgba(255,255,255,.95)'; c.fillRect(lx + lw * 0.02, ly - 1.5 * dpr, lw * 0.96, 3 * dpr);
-        c.restore();
-      }
-    }
-    var sky = c.createLinearGradient(0, 0, w, 0);                                    /* faint blue from a garage door */
-    sky.addColorStop(0, 'rgba(120,150,255,0)'); sky.addColorStop(0.75, 'rgba(120,150,255,.10)'); sky.addColorStop(1, 'rgba(120,150,255,0)');
-    c.fillStyle = sky; c.fillRect(0, 0, w, h * 2);
-
-    layer = mk(w, h); lctx = layer.getContext('2d');
-    mask = mk(Math.max(1, Math.round(W * MASK_SCALE)), Math.max(1, Math.round(H * MASK_SCALE))); mctx = mask.getContext('2d');
-
-    /* start with a first pass already done, so there's something to see */
-    g.x = W * 0.3; g.y = H * 0.5; g.vx = g.vy = 0; hose.x = g.x + R * 3; hose.y = g.y + R * 2;
-    for (var s = 0; s < 260; s++){ autoTarget(s * 40); g.x += (ptr.cx - g.x) * 0.08; g.y += (ptr.cy - g.y) * 0.08; stamp(g.x, g.y, 0.5); }
-    return true;
-  }
-
-  function autoTarget(t){
-    var u = t * AUTO_SPEED;
-    ptr.cx = W * (0.5 + 0.36 * Math.sin(u * 1.0 + 0.4) + 0.06 * Math.sin(u * 3.1));
-    ptr.cy = H * (0.52 + 0.3 * Math.sin(u * 1.7 + 1.1) + 0.06 * Math.cos(u * 2.3));
-  }
-
-  function stamp(x, y, k){
-    var s = MASK_SCALE, rr = R * 1.05 * s;
-    var gr = mctx.createRadialGradient(x * s, y * s, 0, x * s, y * s, rr);
-    gr.addColorStop(0, 'rgba(0,0,0,' + (POLISH_RATE * k) + ')'); gr.addColorStop(0.86, 'rgba(0,0,0,' + (POLISH_RATE * k) + ')'); gr.addColorStop(1, 'rgba(0,0,0,0)');
-    mctx.globalCompositeOperation = 'source-over'; mctx.fillStyle = gr;
-    mctx.beginPath(); mctx.arc(x * s, y * s, rr, 0, 6.28); mctx.fill();
-  }
-
-  function rr(c, x, y, w, h, r){ c.beginPath(); if (c.roundRect) c.roundRect(x, y, w, h, r); else c.rect(x, y, w, h); c.fill(); }
-
-  function drawGrinder(c, x, y, ang, spin){
-    var r = R, i, a;
-    /* vacuum hose from the shroud port back to the dust extractor */
-    var pa = ang + 0.9, portX = x + Math.cos(pa) * r * 0.95, portY = y + Math.sin(pa) * r * 0.95;
-    var midX = x + Math.cos(ang + 0.7) * r * 2.4, midY = y + Math.sin(ang + 0.7) * r * 2.4;
-    c.save(); c.lineCap = 'round';
-    c.lineWidth = r * 0.3; c.strokeStyle = 'rgba(30,28,26,.18)';
-    c.beginPath(); c.moveTo(portX + r * 0.1, portY + r * 0.18); c.quadraticCurveTo(midX + r * 0.1, midY + r * 0.18, hose.x + r * 0.1, hose.y + r * 0.18); c.stroke();
-    c.lineWidth = r * 0.24; c.strokeStyle = '#3b3e46';
-    c.beginPath(); c.moveTo(portX, portY); c.quadraticCurveTo(midX, midY, hose.x, hose.y); c.stroke();
-    c.setLineDash([r * 0.05, r * 0.07]); c.lineWidth = r * 0.2; c.strokeStyle = 'rgba(255,255,255,.12)'; c.stroke(); c.setLineDash([]);
-    c.restore();
-
-    c.save(); c.translate(x, y);
-    /* handle: two rails back to a wide handlebar, control box on the rails (+x = toward the operator) */
-    c.save(); c.rotate(ang);
-    c.shadowColor = 'rgba(30,28,26,.3)'; c.shadowBlur = r * 0.2; c.shadowOffsetX = r * 0.08; c.shadowOffsetY = r * 0.14;
-    c.strokeStyle = '#2b2f3a'; c.lineWidth = r * 0.1; c.lineCap = 'round';
-    c.beginPath(); c.moveTo(r * 0.7, -r * 0.3); c.lineTo(r * 3.3, -r * 0.5); c.moveTo(r * 0.7, r * 0.3); c.lineTo(r * 3.3, r * 0.5); c.stroke();
-    c.lineWidth = r * 0.12; c.beginPath(); c.moveTo(r * 3.3, -r * 0.8); c.lineTo(r * 3.3, r * 0.8); c.stroke();
-    c.fillStyle = '#1f222b'; rr(c, r * 2.2, -r * 0.3, r * 0.5, r * 0.6, r * 0.06);
-    c.shadowColor = 'transparent';
-    c.fillStyle = '#f0a51c'; c.beginPath(); c.arc(r * 2.45, 0, r * 0.07, 0, 6.28); c.fill();      /* power light */
-    c.fillStyle = '#0f1116'; rr(c, r * 3.18, -r * 0.98, r * 0.24, r * 0.34, r * 0.08); rr(c, r * 3.18, r * 0.64, r * 0.24, r * 0.34, r * 0.08);
-    c.restore();
-    /* brush skirt, with the machine's shadow on the floor */
-    c.save(); c.shadowColor = 'rgba(30,28,26,.35)'; c.shadowBlur = r * 0.35; c.shadowOffsetX = r * 0.12; c.shadowOffsetY = r * 0.22;
-    c.fillStyle = '#23252b'; c.beginPath(); c.arc(0, 0, r * 1.04, 0, 6.28); c.fill(); c.restore();
-    c.strokeStyle = 'rgba(255,255,255,.07)'; c.lineWidth = 1;
-    for (i = 0; i < 48; i++){ a = i / 48 * 6.28; c.beginPath(); c.moveTo(Math.cos(a) * r * 0.9, Math.sin(a) * r * 0.9); c.lineTo(Math.cos(a) * r * 1.03, Math.sin(a) * r * 1.03); c.stroke(); }
-    /* blue shroud, lit from the top left */
-    var deck = c.createRadialGradient(-r * 0.35, -r * 0.4, r * 0.1, 0, 0, r * 0.92);
-    deck.addColorStop(0, '#5f80ff'); deck.addColorStop(0.55, '#2c54f7'); deck.addColorStop(1, '#1631a8');
-    c.fillStyle = deck; c.beginPath(); c.arc(0, 0, r * 0.9, 0, 6.28); c.fill();
-    /* the three grinding heads turning under the shroud, seen through its vents */
-    c.save(); c.rotate(spin * 0.35); c.fillStyle = 'rgba(10,18,60,.35)';
-    for (i = 0; i < 3; i++){ c.save(); c.rotate(i / 3 * 6.28); c.beginPath(); c.arc(r * 0.68, 0, r * 0.1, 0, 6.28); c.fill(); c.restore(); }
-    c.restore();
-    /* motor housing with cooling fins */
-    c.fillStyle = 'rgba(10,16,50,.35)'; c.beginPath(); c.arc(r * 0.05, r * 0.08, r * 0.5, 0, 6.28); c.fill();
-    c.fillStyle = '#1b1e26';
-    for (i = 0; i < 18; i++){ c.save(); c.rotate(i / 18 * 6.28); c.fillRect(r * 0.36, -r * 0.025, r * 0.12, r * 0.05); c.restore(); }
-    var mot = c.createRadialGradient(-r * 0.1, -r * 0.12, r * 0.03, 0, 0, r * 0.4);
-    mot.addColorStop(0, '#5d6270'); mot.addColorStop(1, '#22252e');
-    c.fillStyle = mot; c.beginPath(); c.arc(0, 0, r * 0.38, 0, 6.28); c.fill();
-    c.fillStyle = '#2f333d'; c.beginPath(); c.arc(0, 0, r * 0.22, 0, 6.28); c.fill();
-    c.restore();
-  }
-
-  function step(t){
-    if (!lastT) { lastT = t; t0 = t; }
-    var dt = Math.min(0.05, (t - lastT) / 1000); lastT = t; frame++;
-    var r = cv.getBoundingClientRect();                       /* read every frame: the page scrolls under a finger */
-    var manual = (t - ptr.last) < IDLE_MS;
-    if (manual){ ptr.cx = ptr.x - r.left; ptr.cy = ptr.y - r.top; }
-    else if (!MDE_reduced) autoTarget(t - t0 + 3000);
-    else { ptr.cx = g.x; ptr.cy = g.y; }
-    /* heavy machine on a spring */
-    var ax = (ptr.cx - g.x) * FOLLOW - g.vx * DAMP, ay = (ptr.cy - g.y) * FOLLOW - g.vy * DAMP;
-    g.vx += ax * dt; g.vy += ay * dt; g.x += g.vx * dt; g.y += g.vy * dt;
-    g.x = Math.max(-R * 0.4, Math.min(W + R * 0.4, g.x)); g.y = Math.max(-R * 0.4, Math.min(H + R * 0.4, g.y));
-    var sp = Math.hypot(g.vx, g.vy);
-    if (sp > 12){                                              /* handle trails behind the direction of travel */
-      var want = Math.atan2(-g.vy, -g.vx), d = want - g.ang;
-      d = Math.atan2(Math.sin(d), Math.cos(d)); g.ang += d * Math.min(1, dt * 3.2);
-    }
-    g.spin += SPIN * dt;
-    hose.x += (g.x + Math.cos(g.ang + 0.5) * R * 6 - hose.x) * 0.04; hose.y += (g.y + Math.sin(g.ang + 0.5) * R * 6 - hose.y) * 0.04;
-    /* polish where the heads have been */
-    var dist = Math.hypot(g.x - g.px, g.y - g.py), steps = Math.max(1, Math.ceil(dist / (R * 0.25)));
-    for (var i = 1; i <= steps; i++) stamp(g.px + (g.x - g.px) * i / steps, g.py + (g.y - g.py) * i / steps, 1 / Math.sqrt(steps) * 0.55 + 0.1);
-    g.px = g.x; g.py = g.y;
-    if (frame % REGROW_EVERY === 0){ mctx.globalCompositeOperation = 'destination-out'; mctx.fillStyle = 'rgba(0,0,0,' + REGROW + ')'; mctx.fillRect(0, 0, mask.width, mask.height); }
-    /* dust flung off the skirt */
-    var count = W < 600 ? 1 : 2;
-    for (i = 0; i < count; i++){
-      var a = Math.random() * 6.28, tv = rnd(30, 90);
-      dust.push({x:g.x + Math.cos(a) * R * 1.05, y:g.y + Math.sin(a) * R * 1.05, vx:-Math.sin(a) * tv + Math.cos(a) * 20 + g.vx * 0.3, vy:Math.cos(a) * tv + Math.sin(a) * 20 + g.vy * 0.3, life:1, s:rnd(0.8, 2.2)});
-    }
-    if (dust.length > 140) dust.splice(0, dust.length - 140);
-    render(t);
-  }
-
-  function render(t){
-    var w = cv.width, h = cv.height;
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.drawImage(raw, 0, 0);
-    /* polished layer: stone + moving reflection, cut by the mask */
-    lctx.globalCompositeOperation = 'source-over'; lctx.drawImage(polished, 0, 0);
-    var sc = window.scrollY || 0, par = (g.x / Math.max(1, W) - 0.5);
-    lctx.globalCompositeOperation = 'screen';
-    lctx.drawImage(lights, -par * w * 0.06, -h * 0.5 - (sc * 0.35 * dpr) % (h * 0.34) + Math.sin(t * 0.0003) * 6 * dpr);
-    lctx.globalCompositeOperation = 'destination-in';
-    lctx.imageSmoothingEnabled = true; lctx.drawImage(mask, 0, 0, w, h);
-    ctx.drawImage(layer, 0, 0);
-    /* dust */
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    for (var i = dust.length - 1; i >= 0; i--){
-      var p = dust[i]; p.life -= 0.022; if (p.life <= 0){ dust.splice(i, 1); continue; }
-      p.x += p.vx / 60; p.y += p.vy / 60; p.vx *= 0.94; p.vy *= 0.94;
-      ctx.fillStyle = 'rgba(236,233,226,' + (p.life * 0.7) + ')';
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.s * (1.4 - p.life * 0.4), 0, 6.28); ctx.fill();
-    }
-    drawGrinder(ctx, g.x, g.y, g.ang, g.spin);
-  }
-
-  function onMove(x, y){
-    ptr.x = x; ptr.y = y; ptr.last = performance.now();
-    if (!hint.classList.contains('gone')) hint.classList.add('gone');
-    MDE_loop.wake();
-  }
-  cv.addEventListener('pointerdown', function(e){ e.preventDefault(); try { cv.setPointerCapture(e.pointerId); } catch (_) {} onMove(e.clientX, e.clientY); });
-  cv.addEventListener('pointermove', function(e){ if (e.pointerType === 'mouse' || e.buttons || e.pressure > 0) onMove(e.clientX, e.clientY); });
-  cv.addEventListener('touchmove', function(e){ var tt = e.touches[0]; if (tt) onMove(tt.clientX, tt.clientY); }, {passive:true});
-  cv.addEventListener('dragstart', function(e){ e.preventDefault(); });
-
-  requestAnimationFrame(function(){                          /* let the headline paint first */
-    build(); g.px = g.x; g.py = g.y;
-    window.addEventListener('resize', function(){ if (build()) { g.px = g.x; g.py = g.y; render(performance.now()); } });
-    if (MDE_reduced) render(0);
-    if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ visible = es[0].isIntersecting; if (visible) MDE_loop.wake(); }).observe(wrap);
-    MDE_loop.add({active:function(){ return visible && (!MDE_reduced || performance.now() - ptr.last < IDLE_MS); }, step:step});
-    MDE_loop.wake();
-  });
 })();
 
 /* ---------- before/after sliders ---------- */
