@@ -62,7 +62,6 @@ typography:
 rounded:
   field: "12px"
   card: "14px"
-  slab: "28px"
   pill: "999px"
   round: "50%"
 spacing:
@@ -155,7 +154,7 @@ components:
 
 **Creative North Star: "The Polishing Floor"**
 
-The page is a polished concrete shop floor under shop lights. Its ground is salt-and-pepper concrete, ground flat and honed: a warm mid-grey cement with fine grain, soft mottling and small cut aggregate chips, tiled seamlessly under the whole page and scrolling with it. The shop's light tubes reflect in it, and the reflections drift at a slower rate than the floor as you scroll, the way real reflections slide across a gloss. Its voice is a heavy, uppercase sans set tight like stencilled trade lettering; its colour is the logo's royal blue (the grinder) and tagline navy (epoxy). The hero slab tells the story in miniature: a blue floor grinder on a dusty, trowel-marked slab that you can grab and steer, cutting through to the same aggregate and gloss the rest of the page stands on. Everything else is calm and built to get a phone visitor to send a text.
+The page is a polished concrete shop floor under shop lights. Its ground is salt-and-pepper concrete, ground flat and honed: a warm mid-grey cement with fine grain, soft mottling and small cut aggregate chips, tiled seamlessly under the whole page and scrolling with it. The shop's light tubes reflect in it, and the reflections drift at a slower rate than the floor as you scroll, the way real reflections slide across a gloss. Its voice is a heavy, uppercase sans set tight like stencilled trade lettering; its colour is the logo's royal blue (the grinder) and tagline navy (epoxy). The hero is copy only, standing directly on that floor: the page itself is the finished slab, and its living elements are the drifting light reflections, the rolling epoxy-pour edges and the before/after sliders. All of it is calm and built to get a phone visitor to send a text.
 
 Density is low and phone-first: one column, big touch targets (44px floor, 58px buttons), generous bands between sections. The light sections are one continuous floor, divided only by saw-cut control joints. Navy bands are epoxy poured over that floor: opaque, and edged by slow, rolling pour lines that swell away from a nearby finger. Depth comes from the floor's own reflections and the navy pours, not from cards and shadows.
 
@@ -166,7 +165,7 @@ Rejections confirmed by the build and the direction contract: no black grounds (
 - Navy epoxy bands for depth, logo blue as the single action colour.
 - Uppercase, weight 900, negative-tracked headings in the system sans (owner preference).
 - Outlined pill buttons echoing the logo's outlined letters.
-- A live, steerable "polish the slab" canvas as the hero signature.
+- A copy-only hero (headline, promise, two buttons) standing directly on the floor.
 - Saw-cut joints between floor sections; animated epoxy-pour edges where floor meets navy.
 - Drag-to-compare before/after photos of real jobs.
 - Phone number is the only header element besides the logo.
@@ -183,7 +182,7 @@ Two logo blues and a navy on polished concrete, with one warm amber reserved for
 - **Tagline Navy** (`navy`): full-bleed, opaque epoxy bands (work, close, footer) and the fill of every pour edge. Carries a soft internal glow (a blue radial at 35% and a darker radial, masked to fade at top and bottom) so the band reads as poured, not painted. Also the colour of the icon inside white discs (Facebook card, slider knob).
 
 ### Tertiary
-- **Warning-Light Amber** (`focus`): the grinder's power light. Used only as the outline on hands-on controls: form controls on hover and focus, and the before/after knob on keyboard focus (and as the power light drawn on the grinder itself). Nowhere else.
+- **Warning-Light Amber** (`focus`): named for a grinder's warning light. Used only as the outline on hands-on controls: form controls on hover and focus, and the before/after knob on keyboard focus. Nowhere else.
 
 ### Neutral
 - **Polished Concrete** (`ground`): the floor's base cement tone, the colour the floor tile is painted from, the body fallback before the tile is ready, and the `theme-color`.
@@ -227,30 +226,28 @@ Two logo blues and a navy on polished concrete, with one warm amber reserved for
 
 Single column on phones inside a 1180px container with 20px gutters (40px from 1024px). Sections are full-bleed bands with 56px top / 64px bottom padding, growing to 96px / 104px at 1024px. Buttons stack full-width in a 10px grid on phones and sit side by side (auto columns, left-aligned) from 600px.
 
-From 1024px: the hero becomes a 5fr/6fr grid with copy left and the slab bleeding off the right edge (its left corners rounded 28px); services, how-it-works and the quote section become 4fr/7fr two-column grids with a 60px gap (heading left, content right); the work band stacks heading, drag note, a two-column row of before/after sliders (28px gap; 18px stacked on phones) and the Facebook card (max 520px) beneath them.
+The hero is copy only (headline, promise, two buttons) sitting directly on the floor, with no min-height and no grid: 10px top / 56px bottom padding on phones, a single column at 70px / 120px from 1024px.
 
-The hero fills the first screen: `min(100svh - 94px, 980px)` on phones, `min(100vh - 92px, 820px)` on desktop, with the slab taking whatever height the copy leaves (never under 250px; 200px on short landscape phones).
+From 1024px: services, how-it-works and the quote section become 4fr/7fr two-column grids with a 60px gap (heading left, content right); the work band stacks heading, drag note, a two-column row of before/after sliders (28px gap; 18px stacked on phones) and the Facebook card (max 520px) beneath them.
 
 ### Named Rules
 **The Number Up Top Rule.** The first screen's header holds the logo left and the tap-to-call number right, nothing else. No nav menu, no sticky bar; the header scrolls away.
 
 ## Elevation & Depth
 
-Depth is material, not stacked. The floor is one tiled surface (a 460px seamless tile drawn once in JS: cement grain, 22 soft mottling blooms, about 3,000 cut aggregate chips) set as the body background so it scrolls with the page. Behind all content, a fixed, pointer-transparent reflection layer holds rows of shop light tubes: soft white bars with a glow, one long tube or (over 900px wide) a pair per row, rows 60% of a screen height apart, each row at its own opacity. They travel at 0.45x the scroll with eased catch-up and stretch slightly vertically at speed, so they drift against the floor like real reflections. Navy bands are opaque, so reflections show only on the floor. UI itself is flat; the few DOM shadows are soft and downward.
+Depth is material, not stacked. The floor is one tiled surface (a 460px seamless tile drawn once in JS: cement grain, 22 soft mottling blooms, about 3,000 cut aggregate chips) set as the body background so it scrolls with the page. Behind all content, a fixed, pointer-transparent reflection layer holds rows of shop light tubes: soft white bars with a glow, one long tube or (over 900px wide) a pair per row, rows 60% of a screen height apart, each row at its own opacity. Each row is set directly from scrollY inside the scroll event (row position minus scrollY x 0.45), so they drift against the floor like real reflections in the same frame as the page; rows are recycled only while off screen. Navy bands are opaque, so reflections show only on the floor. UI itself is flat; the few DOM shadows are soft and downward.
 
 ### Shadow Vocabulary
 - **Button lift** (`box-shadow: 0 6px 14px -6px rgba(13,22,54,.45)`): primary button on the floor only; removed on navy.
 - **Pour shadow** (a duplicate of the pour edge path, filled `rgba(13,22,54,.13)`, offset 4px): under every epoxy-pour edge.
 - **Tube glow** (`box-shadow: 0 0 22px 7px rgba(255,255,255,.3)` plus a 140px white radial wash behind each row): the reflected light tubes.
-- **Saw-cut** (2px of `rgba(38,36,32,.5)` over 1px of `rgba(255,255,255,.4)`): the joint between floor sections; the same dark-under-light pair edges the top of the hero slab.
+- **Saw-cut** (2px of `rgba(38,36,32,.5)` over 1px of `rgba(255,255,255,.4)`): the joint between floor sections.
 - **Knob lift** (`0 2px 8px rgba(0,0,0,.4)` on the knob, `0 0 6px rgba(0,0,0,.45)` on the divider line): keeps the slider's white handle legible over any photo.
-
-The hero canvas draws its own physical shadows (grinder skirt and handle cast soft offset shadows onto the slab); these belong to the illustration, not the UI.
 
 ### Named Rules
 **The Poured Depth Rule.** Floor meets floor at a saw-cut joint; floor meets navy at an epoxy pour. Never separate sections with a card, border box or decorative rule.
 
-**The One Floor Rule.** Light sections have no background of their own: they are the same polished floor, and its reflections move at a different rate than the page. Under reduced motion the reflections lock to the floor (1x, no stretch).
+**The One Floor Rule.** Light sections have no background of their own: they are the same polished floor, and its reflections move at a different rate than the page. Under reduced motion the reflections lock to the floor (1x).
 
 ## Shapes
 
@@ -287,15 +284,6 @@ A ruled list, not cards. Each row is a full-width link (66px minimum) with the u
 ### Before/After Slider (signature)
 Real jobs, compared by hand, in the navy work band under the heading "Before and after" and a one-line "Drag the line." note. Each frame is 4:3 with a 2.5px white border and 14px corners; the after photo fills it and the before photo is clipped from the left to the divider position. Uppercase Tag pills read "Before" (top-left) and "After" (top-right) on a 72% Outline Ink wash. The divider is a 3px white line with a 44px white round knob carrying a navy double-arrow; the knob is a keyboard slider (arrows step 5%, Home/End to the ends) with an amber focus ring. Mouse and pen drag immediately; touch only takes over once the drag is clearly sideways (8px, more horizontal than vertical), so vertical scrolling still works. The first time a slider is 60% in view and untouched, it sweeps once either side of centre over 1.8s and settles at 50%; no sweep under reduced motion.
 
-### Hero Slab (signature)
-A canvas filling the hero's lower half (right half on desktop) on a `#bdbab3` underlay, its top edge cut like a joint. A raw slab (matte grey, 70 mottling blooms, 26 trowel arcs, an oval oil stain, pits, grain, two branching hairline cracks) sits over a polished slab (cut salt-and-pepper aggregate in eight stone tones, faded stain, a clear-coat sheen, and reflections of shop light tubes that slide with scroll and grinder position). A polish mask reveals the polished slab wherever the grinder has been, and slowly dulls back to matte.
-
-The grinder is drawn top-down in the logo's blue: brush skirt, lit blue shroud, three grinding heads turning under it, finned motor cap, twin-rail handle with control box and amber power light, and a vacuum hose trailing to the extractor. It is driven by a damped spring toward the pointer; the handle swings to trail the direction of travel; dust flies off the skirt.
-
-Behaviour: an autopilot path polishes on load (a first pass is pre-stamped so there is something to see); drag takes the handle; 2.6s after the last touch it hands back to autopilot. A 14px bold hint, "Drag to polish the floor", sits top-left and fades out on first touch. The loop pauses when the slab is off-screen.
-
-Tunables (in the source): `DPR_CAP 1.5`, `MASK_SCALE 0.5`, `REGROW_EVERY 8` frames, `REGROW 0.007`, `POLISH_RATE 0.6`, `FOLLOW 7.5`, `DAMP 5.2`, `SPIN 9` rad/s, `IDLE_MS 2600`, `AUTO_SPEED 0.00042`; grinder radius is 13% of the slab's short side, clamped 30-64px.
-
 ### Saw-Cut Joint
 The divider between two floor sections: a 3px strip, 2px dark groove over a 1px highlight, full-bleed. It is part of the floor, not a rule drawn on it.
 
@@ -303,7 +291,7 @@ The divider between two floor sections: a 3px strip, 2px dark groove over a 1px 
 An inline SVG (viewBox 1440x80, stretched) only where the floor meets a navy band. Its background is transparent so the floor shows through; the path is navy, with the pour shadow beneath. Where navy sits above the floor the edge is flipped vertically (`scaleY(-1)`). Height 46px, 64px from 600px, 84px from 1024px. The edge is three summed sines that roll slowly (`SPEED 0.0006`, `AMP 7` viewBox units) with a per-edge phase offset; a nearby pointer pushes the edge away by up to `PUSH 16` units on a springy, damped bump. Only animates while on-screen.
 
 ### Motion and Reduced Motion
-One shared requestAnimationFrame loop runs only while a visible job needs it. UI transitions are 0.15-0.2s colour changes; the hint fades over 0.6s; smooth anchor scrolling. Reflections ease toward 0.45x scroll (`EASE 7`, stretch `SMEAR 0.006`, capped at +80%). Under `prefers-reduced-motion: reduce`: all CSS transitions are removed, scroll is instant, reflections move 1:1 with the floor and never stretch, pour edges render once and stay still, sliders skip their sweep, and the slab renders a single still frame with no autopilot; it still responds while someone actively drags it, and stops 2.6s after they let go.
+One shared requestAnimationFrame loop runs only while a visible job needs it (pour edges, slider sweeps). UI transitions are 0.15-0.2s colour changes; smooth anchor scrolling. Reflections are not on the loop: they are set directly in the scroll event, translateY = row position minus scrollY x `RATE 0.45`, with no easing and no stretch; rows (`GAP 0.6` screen heights, min 240px) are re-dressed only while off screen. Under `prefers-reduced-motion: reduce`: all CSS transitions are removed, scroll is instant, reflections move 1:1 with the floor, pour edges render once and stay still, and sliders skip their sweep.
 
 ## Do's and Don'ts
 
@@ -317,7 +305,7 @@ One shared requestAnimationFrame loop runs only while a visible job needs it. UI
 - **Do** give every form control (inputs, textarea, chips, the submit button) a 3px Warning-Light Amber outline on hover and focus, paired with the Outline Ink border shift on text fields so focus never depends on amber alone.
 - **Do** let only the arrow react when a service row is hovered or focused.
 - **Do** keep touch targets at or above 44px and use tabular numerals for the phone number.
-- **Do** honour reduced motion exactly as above: reflections locked to the floor, still pours, no slider sweep, a still slab, no transitions.
+- **Do** honour reduced motion exactly as above: reflections locked to the floor, still pours, no slider sweep, no transitions.
 
 ### Don't:
 - **Don't** load a webfont; the system stack is the owner's choice.
@@ -326,6 +314,6 @@ One shared requestAnimationFrame loop runs only while a visible job needs it. UI
 - **Don't** add an email address, mailto link, or contact channel other than phone/text and Facebook.
 - **Don't** highlight, underline, outline or tint a whole service row on hover; the arrow carries the state.
 - **Don't** use black or near-black grounds.
-- **Don't** use amber outside hands-on controls (form controls, the slider knob) and the grinder's power light.
+- **Don't** use amber outside hands-on controls (form controls, the slider knob).
 - **Don't** separate sections with boxes, cards or decorative rules; the saw-cut joint is the only straight divider.
 - **Don't** put a pour between two floor sections; pours exist only where navy meets the floor.

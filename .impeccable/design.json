@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-18T13:10:18+00:00",
+  "generatedAt": "2026-10-18T00:00:00+00:00",
   "title": "Design System: MDE Polishing Inc.",
   "extensions": {
     "colorMeta": {
@@ -237,8 +237,8 @@
       },
       {
         "name": "saw-cut",
-        "value": "linear-gradient(rgba(38,36,32,.5) 0 2px, rgba(255,255,255,.4) 2px), 3px tall; hero slab top edge: 0 -1px 0 rgba(255,255,255,.35), 0 -3px 0 rgba(38,36,32,.35)",
-        "purpose": "Control joint between floor sections and the cut edge of the hero slab."
+        "value": "linear-gradient(rgba(38,36,32,.5) 0 2px, rgba(255,255,255,.4) 2px), 3px tall",
+        "purpose": "Control joint between floor sections."
       },
       {
         "name": "knob-lift",
@@ -258,24 +258,14 @@
         "purpose": "Inputs and chips."
       },
       {
-        "name": "hint-fade",
-        "value": "opacity .6s",
-        "purpose": "Slab hint disappears on first touch."
-      },
-      {
         "name": "floor-tile",
         "value": "TILE 460px; STONES 3000; BIG 3.4px; CONTRAST 0.6; 22 mottling blooms; grain ±11; DPR cap 2",
         "purpose": "Seamless polished salt-and-pepper concrete tile painted once in JS, set as the body background (scrolls with the page)."
       },
       {
         "name": "light-reflections",
-        "value": "RATE 0.45; GAP 0.6 screen heights (min 240px); EASE 7; SMEAR 0.006 (stretch capped +80%)",
-        "purpose": "Fixed z-index -1 layer of light-tube rows drifting against the floor with eased catch-up and a slight stretch at speed."
-      },
-      {
-        "name": "slab-tunables",
-        "value": "DPR_CAP 1.5; MASK_SCALE 0.5; REGROW_EVERY 8; REGROW 0.007; POLISH_RATE 0.6; FOLLOW 7.5; DAMP 5.2; SPIN 9 rad/s; IDLE_MS 2600; AUTO_SPEED 0.00042; R = 13% of short side, 30-64px",
-        "purpose": "Hero 'polish the slab' canvas: spring-driven grinder, polish mask that dulls back to matte, autopilot after 2.6s idle."
+        "value": "RATE 0.45; GAP 0.6 screen heights (min 240px); translateY = row position - scrollY x RATE, set in the scroll event; no easing, no stretch",
+        "purpose": "Fixed z-index -1 layer of light-tube rows drifting against the floor, moved in the same frame as the page; rows are re-dressed only while off screen."
       },
       {
         "name": "pour-tunables",
@@ -290,7 +280,7 @@
       {
         "name": "reduced-motion",
         "value": "prefers-reduced-motion: reduce",
-        "purpose": "No CSS transitions, instant scroll, reflections locked to the floor (RATE 1, no stretch), static pours, no slider sweep, single still slab frame; slab only moves while actively dragged and stops 2.6s after release."
+        "purpose": "No CSS transitions, instant scroll, reflections locked to the floor (RATE 1), static pours, no slider sweep."
       }
     ],
     "breakpoints": [
@@ -305,10 +295,6 @@
       {
         "name": "lg",
         "value": "1024px"
-      },
-      {
-        "name": "short-landscape",
-        "value": "orientation: landscape and max-height 500px"
       }
     ]
   },
@@ -396,13 +382,13 @@
   ],
   "narrative": {
     "northStar": "The Polishing Floor",
-    "overview": "**Creative North Star: \"The Polishing Floor\"**\n\nThe page is a polished concrete shop floor under shop lights. Its ground is salt-and-pepper concrete, ground flat and honed: a warm mid-grey cement with fine grain, soft mottling and small cut aggregate chips, tiled seamlessly under the whole page and scrolling with it. The shop's light tubes reflect in it, and the reflections drift at a slower rate than the floor as you scroll, the way real reflections slide across a gloss. Its voice is a heavy, uppercase sans set tight like stencilled trade lettering; its colour is the logo's royal blue (the grinder) and tagline navy (epoxy). The hero slab tells the story in miniature: a blue floor grinder on a dusty, trowel-marked slab that you can grab and steer, cutting through to the same aggregate and gloss the rest of the page stands on. Everything else is calm and built to get a phone visitor to send a text.\n\nDensity is low and phone-first: one column, big touch targets (44px floor, 58px buttons), generous bands between sections. The light sections are one continuous floor, divided only by saw-cut control joints. Navy bands are epoxy poured over that floor: opaque, and edged by slow, rolling pour lines that swell away from a nearby finger. Depth comes from the floor's own reflections and the navy pours, not from cards and shadows.\n\nRejections confirmed by the build and the direction contract: no black grounds (navy carries the dark bands), no sticky header or bottom bar, no email anywhere, no stock imagery (the before/after photos are the company's own jobs).",
+    "overview": "**Creative North Star: \"The Polishing Floor\"**\n\nThe page is a polished concrete shop floor under shop lights. Its ground is salt-and-pepper concrete, ground flat and honed: a warm mid-grey cement with fine grain, soft mottling and small cut aggregate chips, tiled seamlessly under the whole page and scrolling with it. The shop's light tubes reflect in it, and the reflections drift at a slower rate than the floor as you scroll, the way real reflections slide across a gloss. Its voice is a heavy, uppercase sans set tight like stencilled trade lettering; its colour is the logo's royal blue (the grinder) and tagline navy (epoxy). The hero is copy only, standing directly on that floor: the page itself is the finished slab, and its living elements are the drifting light reflections, the rolling epoxy-pour edges and the before/after sliders. All of it is calm and built to get a phone visitor to send a text.\n\nDensity is low and phone-first: one column, big touch targets (44px floor, 58px buttons), generous bands between sections. The light sections are one continuous floor, divided only by saw-cut control joints. Navy bands are epoxy poured over that floor: opaque, and edged by slow, rolling pour lines that swell away from a nearby finger. Depth comes from the floor's own reflections and the navy pours, not from cards and shadows.\n\nRejections confirmed by the build and the direction contract: no black grounds (navy carries the dark bands), no sticky header or bottom bar, no email anywhere, no stock imagery (the before/after photos are the company's own jobs).",
     "keyCharacteristics": [
       "Polished salt-and-pepper concrete under the whole page, with drifting shop-light reflections.",
       "Navy epoxy bands for depth, logo blue as the single action colour.",
       "Uppercase, weight 900, negative-tracked headings in the system sans (owner preference).",
       "Outlined pill buttons echoing the logo's outlined letters.",
-      "A live, steerable \"polish the slab\" canvas as the hero signature.",
+      "A copy-only hero (headline, promise, two buttons) standing directly on the floor.",
       "Saw-cut joints between floor sections; animated epoxy-pour edges where floor meets navy.",
       "Drag-to-compare before/after photos of real jobs.",
       "Phone number is the only header element besides the logo."
@@ -440,7 +426,7 @@
       },
       {
         "name": "The One Floor Rule",
-        "body": "Light sections have no background of their own: they are the same polished floor, and its reflections move at a different rate than the page. Under reduced motion the reflections lock to the floor (1x, no stretch).",
+        "body": "Light sections have no background of their own: they are the same polished floor, and its reflections move at a different rate than the page. Under reduced motion the reflections lock to the floor (1x).",
         "section": "elevation"
       }
     ],
@@ -454,7 +440,7 @@
       "**Do** give every form control (inputs, textarea, chips, the submit button) a 3px Warning-Light Amber outline on hover and focus, paired with the Outline Ink border shift on text fields so focus never depends on amber alone.",
       "**Do** let only the arrow react when a service row is hovered or focused.",
       "**Do** keep touch targets at or above 44px and use tabular numerals for the phone number.",
-      "**Do** honour reduced motion exactly as above: reflections locked to the floor, still pours, no slider sweep, a still slab, no transitions."
+      "**Do** honour reduced motion exactly as above: reflections locked to the floor, still pours, no slider sweep, no transitions."
     ],
     "donts": [
       "**Don't** load a webfont; the system stack is the owner's choice.",
@@ -463,7 +449,7 @@
       "**Don't** add an email address, mailto link, or contact channel other than phone/text and Facebook.",
       "**Don't** highlight, underline, outline or tint a whole service row on hover; the arrow carries the state.",
       "**Don't** use black or near-black grounds.",
-      "**Don't** use amber outside hands-on controls (form controls, the slider knob) and the grinder's power light.",
+      "**Don't** use amber outside hands-on controls (form controls, the slider knob).",
       "**Don't** separate sections with boxes, cards or decorative rules; the saw-cut joint is the only straight divider.",
       "**Don't** put a pour between two floor sections; pours exist only where navy meets the floor."
     ]
