@@ -212,7 +212,7 @@
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Form labels and legends; chips at 700; slider drag note at 400. Slider Before/After tags: 800, .8125rem, uppercase, +0.04em."
+        "purpose": "Form labels and legends; chips at 700. Before/After photo tags: 800, .8125rem, uppercase, +0.04em."
       },
       "button": {
         "displayName": "Button",
@@ -239,11 +239,6 @@
         "name": "saw-cut",
         "value": "linear-gradient(rgba(38,36,32,.5) 0 2px, rgba(255,255,255,.4) 2px), 3px tall",
         "purpose": "Control joint between floor sections."
-      },
-      {
-        "name": "knob-lift",
-        "value": "knob 0 2px 8px rgba(0,0,0,.4); divider 0 0 6px rgba(0,0,0,.45)",
-        "purpose": "Keeps the before/after handle legible over any photo."
       }
     ],
     "motion": [
@@ -273,14 +268,9 @@
         "purpose": "Epoxy-pour divider roll and pointer bulge."
       },
       {
-        "name": "slider-sweep",
-        "value": "SWEEP_MS 1800; ±22% sine sweep decaying 35%; trigger at 60% in view; touch drag threshold 8px sideways; keys ±5%, Home/End",
-        "purpose": "One-time 'this moves' sweep on each before/after slider; drag and keyboard control."
-      },
-      {
         "name": "reduced-motion",
         "value": "prefers-reduced-motion: reduce",
-        "purpose": "No CSS transitions, instant scroll, reflections locked to the floor (RATE 1), static pours, no slider sweep."
+        "purpose": "No CSS transitions, instant scroll, reflections locked to the floor (RATE 1), static pours."
       }
     ],
     "breakpoints": [
@@ -348,18 +338,18 @@
       "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-phone{display:inline-flex;align-items:center;gap:.4em;min-height:44px;padding:0 2px;color:var(--ink,#0d1636);font:800 1.0625rem/1 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}.ds-phone svg{color:var(--blue,#2c54f7)}.ds-phone:hover{color:var(--blue-deep,#1d3cc4)}.ds-phone:focus-visible{outline:3px solid var(--blue,#2c54f7);outline-offset:3px}"
     },
     {
-      "name": "Before/After Slider",
+      "name": "Before/After Pair",
       "kind": "custom",
-      "refersTo": "before-after",
-      "description": "4:3 white-framed photo pair on navy; drag the white divider or use arrow keys to compare.",
-      "html": "<div class=\"ds-navy\"><div class=\"ds-ba\" style=\"--p:50%\"><div class=\"ds-ba-after\"></div><div class=\"ds-ba-before\"></div><span class=\"ds-tag ds-tag-b\">Before</span><span class=\"ds-tag ds-tag-a\">After</span><div class=\"ds-ba-handle\" role=\"slider\" tabindex=\"0\" aria-label=\"Before and after divider\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"50\"><span><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 6 3 12l6 6M15 6l6 6-6 6\"/></svg></span></div></div></div>",
-      "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-navy{background:var(--navy,#14215a);padding:24px}.ds-ba{position:relative;aspect-ratio:4/3;max-width:420px;overflow:hidden;border-radius:14px;border:2.5px solid #fff;background:#3a3f55;cursor:ew-resize;font-family:var(--font,system-ui,sans-serif)}.ds-ba-after,.ds-ba-before{position:absolute;inset:0}.ds-ba-after{background:linear-gradient(135deg,#8a8781,#c9c4ba 60%,#efece6)}.ds-ba-before{background:linear-gradient(135deg,#6e6b66,#9d9a94);clip-path:inset(0 calc(100% - var(--p)) 0 0)}.ds-tag{position:absolute;top:10px;padding:4px 10px;border-radius:999px;background:rgba(13,22,54,.72);color:#fff;font-size:.8125rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.ds-tag-b{left:10px}.ds-tag-a{right:10px}.ds-ba-handle{position:absolute;top:0;bottom:0;left:var(--p);width:44px;margin-left:-22px;display:grid;place-items:center;outline:none}.ds-ba-handle::before{content:\"\";position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 6px rgba(0,0,0,.45)}.ds-ba-handle span{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--navy,#14215a);box-shadow:0 2px 8px rgba(0,0,0,.4)}.ds-ba-handle:focus-visible span{outline:3px solid var(--focus,#f0a51c);outline-offset:2px}"
+      "refersTo": "before-after-shot",
+      "description": "Two static 3:4 white-framed photos side by side on navy, each with one top-left Before or After tag. Static because the photos were not shot from the same spot.",
+      "html": "<div class=\"ds-navy\"><div class=\"ds-pair\"><figure class=\"ds-shot\"><div class=\"ds-img ds-img-b\"></div><span class=\"ds-tag\">Before</span></figure><figure class=\"ds-shot\"><div class=\"ds-img ds-img-a\"></div><span class=\"ds-tag\">After</span></figure></div></div>",
+      "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-navy{background:var(--navy,#14215a);padding:24px}.ds-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:420px;font-family:var(--font,system-ui,sans-serif)}.ds-shot{position:relative;margin:0;aspect-ratio:3/4;overflow:hidden;border-radius:14px;border:2.5px solid #fff;background:#3a3f55}.ds-img{width:100%;height:100%}.ds-img-b{background:linear-gradient(135deg,#6e6b66,#9d9a94)}.ds-img-a{background:linear-gradient(135deg,#8a8781,#c9c4ba 60%,#efece6)}.ds-tag{position:absolute;left:8px;top:8px;padding:4px 10px;border-radius:999px;background:rgba(13,22,54,.72);color:#fff;font-size:.8125rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}"
     },
     {
       "name": "Facebook Link Card",
       "kind": "card",
       "refersTo": "link-card-on-navy",
-      "description": "White-outlined 14px card under the before/after sliders, linking to more work on Facebook.",
+      "description": "White-outlined 14px card under the before/after pairs, linking to more work on Facebook.",
       "html": "<div class=\"ds-navy\"><a class=\"ds-fb\" href=\"#\"><span class=\"ds-fbi\"><svg viewBox=\"0 0 24 24\" width=\"28\" height=\"28\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M14 8.5V6.8c0-.8.5-1 .9-1H17V2.2L14.1 2C10.9 2 10.2 4.4 10.2 6v2.5H8v3.7h2.2V22H14v-9.8h2.8l.4-3.7z\"/></svg></span>See more of our work on Facebook</a></div>",
       "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-navy{background:var(--navy,#14215a);padding:24px}.ds-fb{display:flex;align-items:center;gap:16px;padding:18px 20px;border:2.5px solid #fff;border-radius:14px;background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font:800 1.25rem/1.15 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);transition:background .2s}.ds-fb:hover{background:rgba(255,255,255,.14)}.ds-fb:focus-visible{outline:3px solid #fff;outline-offset:3px}.ds-fbi{flex:none;width:52px;height:52px;border-radius:50%;background:#fff;color:var(--navy,#14215a);display:grid;place-items:center}"
     },
@@ -382,7 +372,7 @@
   ],
   "narrative": {
     "northStar": "The Polishing Floor",
-    "overview": "**Creative North Star: \"The Polishing Floor\"**\n\nThe page is a polished concrete shop floor under shop lights. Its ground is salt-and-pepper concrete, ground flat and honed: a warm mid-grey cement with fine grain, soft mottling and small cut aggregate chips, tiled seamlessly under the whole page and scrolling with it. The shop's light tubes reflect in it, and the reflections drift at a slower rate than the floor as you scroll, the way real reflections slide across a gloss. Its voice is a heavy, uppercase sans set tight like stencilled trade lettering; its colour is the logo's royal blue (the grinder) and tagline navy (epoxy). The hero is copy only, standing directly on that floor: the page itself is the finished slab, and its living elements are the drifting light reflections, the rolling epoxy-pour edges and the before/after sliders. All of it is calm and built to get a phone visitor to send a text.\n\nDensity is low and phone-first: one column, big touch targets (44px floor, 58px buttons), generous bands between sections. The light sections are one continuous floor, divided only by saw-cut control joints. Navy bands are epoxy poured over that floor: opaque, and edged by slow, rolling pour lines that swell away from a nearby finger. Depth comes from the floor's own reflections and the navy pours, not from cards and shadows.\n\nRejections confirmed by the build and the direction contract: no black grounds (navy carries the dark bands), no sticky header or bottom bar, no email anywhere, no stock imagery (the before/after photos are the company's own jobs).",
+    "overview": "**Creative North Star: \"The Polishing Floor\"**\n\nThe page is a polished concrete shop floor under shop lights. Its ground is salt-and-pepper concrete, ground flat and honed: a warm mid-grey cement with fine grain, soft mottling and small cut aggregate chips, tiled seamlessly under the whole page and scrolling with it. The shop's light tubes reflect in it, and the reflections drift at a slower rate than the floor as you scroll, the way real reflections slide across a gloss. Its voice is a heavy, uppercase sans set tight like stencilled trade lettering; its colour is the logo's royal blue (the grinder) and tagline navy (epoxy). The hero is copy only, standing directly on that floor: the page itself is the finished slab, and its living elements are the drifting light reflections, the rolling epoxy-pour edges. All of it is calm and built to get a phone visitor to send a text.\n\nDensity is low and phone-first: one column, big touch targets (44px floor, 58px buttons), generous bands between sections. The light sections are one continuous floor, divided only by saw-cut control joints. Navy bands are epoxy poured over that floor: opaque, and edged by slow, rolling pour lines that swell away from a nearby finger. Depth comes from the floor's own reflections and the navy pours, not from cards and shadows.\n\nRejections confirmed by the build and the direction contract: no black grounds (navy carries the dark bands), no sticky header or bottom bar, no email anywhere, no stock imagery (the before/after photos are the company's own jobs).",
     "keyCharacteristics": [
       "Polished salt-and-pepper concrete under the whole page, with drifting shop-light reflections.",
       "Navy epoxy bands for depth, logo blue as the single action colour.",
@@ -390,7 +380,7 @@
       "Outlined pill buttons echoing the logo's outlined letters.",
       "A copy-only hero (headline, promise, two buttons) standing directly on the floor.",
       "Saw-cut joints between floor sections; animated epoxy-pour edges where floor meets navy.",
-      "Drag-to-compare before/after photos of real jobs.",
+      "Static before/after photo pairs of real jobs, side by side.",
       "Phone number is the only header element besides the logo."
     ],
     "rules": [
@@ -401,7 +391,7 @@
       },
       {
         "name": "The One Machine Rule",
-        "body": "Grinder Blue is the only colour that means \"do something\". Amber is feedback on hands-on controls, not a second accent.",
+        "body": "Grinder Blue is the only colour that means \"do something\". Amber is feedback on form controls, not a second accent.",
         "section": "colors"
       },
       {
@@ -440,7 +430,7 @@
       "**Do** give every form control (inputs, textarea, chips, the submit button) a 3px Warning-Light Amber outline on hover and focus, paired with the Outline Ink border shift on text fields so focus never depends on amber alone.",
       "**Do** let only the arrow react when a service row is hovered or focused.",
       "**Do** keep touch targets at or above 44px and use tabular numerals for the phone number.",
-      "**Do** honour reduced motion exactly as above: reflections locked to the floor, still pours, no slider sweep, no transitions."
+      "**Do** honour reduced motion exactly as above: reflections locked to the floor, still pours, no transitions."
     ],
     "donts": [
       "**Don't** load a webfont; the system stack is the owner's choice.",
@@ -449,7 +439,7 @@
       "**Don't** add an email address, mailto link, or contact channel other than phone/text and Facebook.",
       "**Don't** highlight, underline, outline or tint a whole service row on hover; the arrow carries the state.",
       "**Don't** use black or near-black grounds.",
-      "**Don't** use amber outside hands-on controls (form controls, the slider knob).",
+      "**Don't** use amber anywhere but the outline on form controls.",
       "**Don't** separate sections with boxes, cards or decorative rules; the saw-cut joint is the only straight divider.",
       "**Don't** put a pour between two floor sections; pours exist only where navy meets the floor."
     ]
