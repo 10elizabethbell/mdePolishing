@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-17T23:57:09+00:00",
+  "generatedAt": "2026-10-18T13:10:18+00:00",
   "title": "Design System: MDE Polishing Inc.",
   "extensions": {
     "colorMeta": {
@@ -66,32 +66,17 @@
       },
       "ground": {
         "role": "neutral",
-        "displayName": "Fresh Concrete",
-        "canonical": "#e9e8e4",
+        "displayName": "Polished Concrete",
+        "canonical": "#aeaca7",
         "tonalRamp": [
-          "#2a2922",
-          "#49463c",
-          "#686455",
-          "#87826e",
-          "#a19d8c",
-          "#bab7ab",
-          "#d6d4cc",
-          "#f4f3f1"
-        ]
-      },
-      "ground-2": {
-        "role": "neutral",
-        "displayName": "Honed Concrete",
-        "canonical": "#f3f2ef",
-        "tonalRamp": [
-          "#2c2921",
-          "#4c4739",
-          "#6c6551",
-          "#8c8369",
-          "#a59e88",
-          "#bdb8a8",
-          "#d8d4cb",
-          "#f4f3f0"
+          "#0c0b08",
+          "#282622",
+          "#474541",
+          "#686661",
+          "#8b8984",
+          "#b0aea9",
+          "#d3d1cc",
+          "#f0eee9"
         ]
       },
       "ink": {
@@ -112,31 +97,31 @@
       "ink-soft": {
         "role": "neutral",
         "displayName": "Soft Ink",
-        "canonical": "#3c4361",
+        "canonical": "#1f2643",
         "tonalRamp": [
-          "#1d212f",
-          "#333952",
-          "#485175",
-          "#5e6897",
-          "#7e87af",
-          "#a0a7c5",
-          "#c6cadc",
-          "#eff0f5"
+          "#050822",
+          "#1d2441",
+          "#3b4362",
+          "#5b6486",
+          "#7d88ab",
+          "#a2acd1",
+          "#c4d0f6",
+          "#e9eeff"
         ]
       },
       "line": {
         "role": "neutral",
         "displayName": "Joint Line",
-        "canonical": "#c9c7c0",
+        "canonical": "rgba(13,22,54,.3)",
         "tonalRamp": [
-          "#292823",
-          "#47453d",
-          "#666257",
-          "#848071",
-          "#9e9b8e",
-          "#b8b6ad",
-          "#d5d3ce",
-          "#f3f3f1"
+          "#0a0b0f",
+          "#25262b",
+          "#44454a",
+          "#65666b",
+          "#88898f",
+          "#acadb4",
+          "#cfd0d7",
+          "#edeef5"
         ]
       },
       "paper": {
@@ -187,23 +172,23 @@
       "error": {
         "role": "error",
         "displayName": "Error Red",
-        "canonical": "#b3261e",
+        "canonical": "#7d1610",
         "tonalRamp": [
-          "#420e0b",
-          "#721813",
-          "#a2221b",
-          "#d22d23",
-          "#e1544c",
-          "#e9827c",
-          "#f2b4b0",
-          "#fbeae9"
+          "#1e0000",
+          "#4d0704",
+          "#7f1812",
+          "#a74035",
+          "#cf6457",
+          "#f98a7a",
+          "#febfb6",
+          "#fee9e6"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Hero headline only; uppercase 900, one word may be Grinder Blue. Grows to clamp(4rem, 6.4vw, 6rem) from 1024px."
+        "purpose": "Hero headline only; uppercase 900, one word may be Pressed Blue. Grows to clamp(4rem, 6.4vw, 6rem) from 1024px."
       },
       "headline": {
         "displayName": "Headline",
@@ -215,7 +200,7 @@
       },
       "row": {
         "displayName": "Row",
-        "purpose": "Uppercase service-row labels; the only positively tracked text."
+        "purpose": "Uppercase service-row labels, +0.01em."
       },
       "body": {
         "displayName": "Body",
@@ -227,7 +212,7 @@
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Form labels and legends; chips at 700."
+        "purpose": "Form labels and legends; chips at 700; slider drag note at 400. Slider Before/After tags: 800, .8125rem, uppercase, +0.04em."
       },
       "button": {
         "displayName": "Button",
@@ -238,12 +223,27 @@
       {
         "name": "button-lift",
         "value": "0 6px 14px -6px rgba(13,22,54,.45)",
-        "purpose": "Primary button on light grounds only; removed on navy."
+        "purpose": "Primary button on the floor only; removed on navy."
       },
       {
         "name": "pour-shadow",
         "value": "duplicate pour path, fill rgba(13,22,54,.13), translate(0 -4)",
         "purpose": "Soft shadow under every epoxy-pour edge."
+      },
+      {
+        "name": "tube-glow",
+        "value": "0 0 22px 7px rgba(255,255,255,.3); row wash radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,.2), transparent 72%) 140px tall",
+        "purpose": "Reflected shop light tubes in the floor."
+      },
+      {
+        "name": "saw-cut",
+        "value": "linear-gradient(rgba(38,36,32,.5) 0 2px, rgba(255,255,255,.4) 2px), 3px tall; hero slab top edge: 0 -1px 0 rgba(255,255,255,.35), 0 -3px 0 rgba(38,36,32,.35)",
+        "purpose": "Control joint between floor sections and the cut edge of the hero slab."
+      },
+      {
+        "name": "knob-lift",
+        "value": "knob 0 2px 8px rgba(0,0,0,.4); divider 0 0 6px rgba(0,0,0,.45)",
+        "purpose": "Keeps the before/after handle legible over any photo."
       }
     ],
     "motion": [
@@ -263,6 +263,16 @@
         "purpose": "Slab hint disappears on first touch."
       },
       {
+        "name": "floor-tile",
+        "value": "TILE 460px; STONES 3000; BIG 3.4px; CONTRAST 0.6; 22 mottling blooms; grain ±11; DPR cap 2",
+        "purpose": "Seamless polished salt-and-pepper concrete tile painted once in JS, set as the body background (scrolls with the page)."
+      },
+      {
+        "name": "light-reflections",
+        "value": "RATE 0.45; GAP 0.6 screen heights (min 240px); EASE 7; SMEAR 0.006 (stretch capped +80%)",
+        "purpose": "Fixed z-index -1 layer of light-tube rows drifting against the floor with eased catch-up and a slight stretch at speed."
+      },
+      {
         "name": "slab-tunables",
         "value": "DPR_CAP 1.5; MASK_SCALE 0.5; REGROW_EVERY 8; REGROW 0.007; POLISH_RATE 0.6; FOLLOW 7.5; DAMP 5.2; SPIN 9 rad/s; IDLE_MS 2600; AUTO_SPEED 0.00042; R = 13% of short side, 30-64px",
         "purpose": "Hero 'polish the slab' canvas: spring-driven grinder, polish mask that dulls back to matte, autopilot after 2.6s idle."
@@ -273,9 +283,14 @@
         "purpose": "Epoxy-pour divider roll and pointer bulge."
       },
       {
+        "name": "slider-sweep",
+        "value": "SWEEP_MS 1800; ±22% sine sweep decaying 35%; trigger at 60% in view; touch drag threshold 8px sideways; keys ±5%, Home/End",
+        "purpose": "One-time 'this moves' sweep on each before/after slider; drag and keyboard control."
+      },
+      {
         "name": "reduced-motion",
         "value": "prefers-reduced-motion: reduce",
-        "purpose": "No CSS transitions, instant scroll, static pours, single still slab frame; slab only moves while actively dragged and stops 2.6s after release."
+        "purpose": "No CSS transitions, instant scroll, reflections locked to the floor (RATE 1, no stretch), static pours, no slider sweep, single still slab frame; slab only moves while actively dragged and stops 2.6s after release."
       }
     ],
     "breakpoints": [
@@ -304,7 +319,7 @@
       "refersTo": "button-primary",
       "description": "Outlined blue pill for the main action (text us photos, submit).",
       "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Text us photos of your floor</a>",
-      "css": ":host{--ground:#e9e8e4;--ground-2:#f3f2ef;--ink:#0d1636;--ink-soft:#3c4361;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:#c9c7c0;--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:58px;padding:0 1.4em;border:2.5px solid var(--ink,#0d1636);border-radius:999px;font:800 1.0625rem/1.1 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,transform .15s}.ds-btn:active{transform:translateY(1px) scale(.99)}.ds-btn:focus-visible{outline:3px solid var(--blue,#2c54f7);outline-offset:3px}.ds-btn-primary{background:var(--blue,#2c54f7);color:#fff;box-shadow:0 6px 14px -6px rgba(13,22,54,.45)}.ds-btn-primary:hover{background:var(--blue-deep,#1d3cc4)}"
+      "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:58px;padding:0 1.4em;border:2.5px solid var(--ink,#0d1636);border-radius:999px;font:800 1.0625rem/1.1 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,transform .15s}.ds-btn:active{transform:translateY(1px) scale(.99)}.ds-btn:focus-visible{outline:3px solid var(--blue,#2c54f7);outline-offset:3px}.ds-btn-primary{background:var(--blue,#2c54f7);color:#fff;box-shadow:0 6px 14px -6px rgba(13,22,54,.45)}.ds-btn-primary:hover{background:var(--blue-deep,#1d3cc4)}"
     },
     {
       "name": "Ghost Button",
@@ -312,7 +327,7 @@
       "refersTo": "button-ghost",
       "description": "Outlined transparent pill for the secondary action; fills ink on hover.",
       "html": "<a class=\"ds-btn ds-btn-ghost\" href=\"#\">Get a quote</a>",
-      "css": ":host{--ground:#e9e8e4;--ground-2:#f3f2ef;--ink:#0d1636;--ink-soft:#3c4361;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:#c9c7c0;--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:58px;padding:0 1.4em;border:2.5px solid var(--ink,#0d1636);border-radius:999px;font:800 1.0625rem/1.1 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,transform .15s}.ds-btn:active{transform:translateY(1px) scale(.99)}.ds-btn:focus-visible{outline:3px solid var(--blue,#2c54f7);outline-offset:3px}.ds-btn-ghost{background:transparent;color:var(--ink,#0d1636)}.ds-btn-ghost:hover{background:var(--ink,#0d1636);color:#fff}"
+      "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:58px;padding:0 1.4em;border:2.5px solid var(--ink,#0d1636);border-radius:999px;font:800 1.0625rem/1.1 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,transform .15s}.ds-btn:active{transform:translateY(1px) scale(.99)}.ds-btn:focus-visible{outline:3px solid var(--blue,#2c54f7);outline-offset:3px}.ds-btn-ghost{background:transparent;color:var(--ink,#0d1636)}.ds-btn-ghost:hover{background:var(--ink,#0d1636);color:#fff}"
     },
     {
       "name": "Service Row",
@@ -320,7 +335,7 @@
       "refersTo": "service-row",
       "description": "Ruled uppercase list row; only the circular arrow reacts on hover and focus.",
       "html": "<ul class=\"ds-svc\"><li><a class=\"ds-row\" href=\"#\">Concrete grinding<span class=\"ds-arrow\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></a></li><li><a class=\"ds-row\" href=\"#\">Epoxy coatings<span class=\"ds-arrow\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></a></li></ul>",
-      "css": ":host{--ground:#e9e8e4;--ground-2:#f3f2ef;--ink:#0d1636;--ink-soft:#3c4361;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:#c9c7c0;--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-svc{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--line,#c9c7c0);font-family:var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);color:var(--ink,#0d1636)}.ds-svc li{border-bottom:1.5px solid var(--line,#c9c7c0)}.ds-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px;padding:10px 2px;color:inherit;text-decoration:none;font-weight:800;font-size:1.375rem;text-transform:uppercase;letter-spacing:.01em}.ds-row:hover,.ds-row:focus-visible{outline:none;background:none}.ds-arrow{display:grid;place-items:center;flex:none;width:44px;height:44px;border:2px solid var(--line,#c9c7c0);border-radius:50%;transition:background .2s,border-color .2s,color .2s}.ds-row:hover .ds-arrow,.ds-row:focus-visible .ds-arrow{background:var(--blue,#2c54f7);border-color:var(--blue,#2c54f7);color:#fff}.ds-row:focus-visible .ds-arrow{outline:3px solid var(--blue,#2c54f7);outline-offset:3px}"
+      "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-svc{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--line,rgba(13,22,54,.3));font-family:var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);color:var(--ink,#0d1636)}.ds-svc li{border-bottom:1.5px solid var(--line,rgba(13,22,54,.3))}.ds-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px;padding:10px 2px;color:inherit;text-decoration:none;font-weight:800;font-size:1.375rem;text-transform:uppercase;letter-spacing:.01em}.ds-row:hover,.ds-row:focus-visible{outline:none;background:none}.ds-arrow{display:grid;place-items:center;flex:none;width:44px;height:44px;border:2px solid var(--line,rgba(13,22,54,.3));border-radius:50%;transition:background .2s,border-color .2s,color .2s}.ds-row:hover .ds-arrow,.ds-row:focus-visible .ds-arrow{background:var(--blue,#2c54f7);border-color:var(--blue,#2c54f7);color:#fff}.ds-row:focus-visible .ds-arrow{outline:3px solid var(--blue,#2c54f7);outline-offset:3px}"
     },
     {
       "name": "Text Field",
@@ -328,7 +343,7 @@
       "refersTo": "input-text",
       "description": "White 12px field with joint-line border; amber outline on hover and focus, ink border on focus.",
       "html": "<label class=\"ds-field\"><span>Your name</span><input class=\"ds-input\" type=\"text\"></label>",
-      "css": ":host{--ground:#e9e8e4;--ground-2:#f3f2ef;--ink:#0d1636;--ink-soft:#3c4361;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:#c9c7c0;--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-field{display:grid;gap:8px;font:800 1rem/1.4 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);color:var(--ink,#0d1636)}.ds-input{width:100%;min-height:54px;padding:13px 15px;border:2px solid var(--line,#c9c7c0);border-radius:12px;background:#fff;color:var(--ink,#0d1636);font:500 1.0625rem/1.4 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);transition:border-color .15s,outline-color .15s}.ds-input:hover,.ds-input:focus{outline:3px solid var(--focus,#f0a51c);outline-offset:2px}.ds-input:focus{border-color:var(--ink,#0d1636)}"
+      "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-field{display:grid;gap:8px;font:800 1rem/1.4 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);color:var(--ink,#0d1636)}.ds-input{width:100%;min-height:54px;padding:13px 15px;border:2px solid var(--line,rgba(13,22,54,.3));border-radius:12px;background:#fff;color:var(--ink,#0d1636);font:500 1.0625rem/1.4 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);transition:border-color .15s,outline-color .15s}.ds-input:hover,.ds-input:focus{outline:3px solid var(--focus,#f0a51c);outline-offset:2px}.ds-input:focus{border-color:var(--ink,#0d1636)}"
     },
     {
       "name": "Choice Chip",
@@ -336,7 +351,7 @@
       "refersTo": "chip",
       "description": "Pill radio/checkbox; selected fills ink; amber outline on hover and keyboard focus.",
       "html": "<div class=\"ds-chips\"><label class=\"ds-chip\"><input type=\"radio\" name=\"f\" checked><span>Garage</span></label><label class=\"ds-chip\"><input type=\"radio\" name=\"f\"><span>Basement</span></label></div>",
-      "css": ":host{--ground:#e9e8e4;--ground-2:#f3f2ef;--ink:#0d1636;--ink-soft:#3c4361;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:#c9c7c0;--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-chips{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif)}.ds-chip{position:relative}.ds-chip input{position:absolute;opacity:0;width:1px;height:1px}.ds-chip span{display:flex;align-items:center;min-height:46px;padding:0 16px;border:2px solid var(--line,#c9c7c0);border-radius:999px;background:#fff;color:var(--ink,#0d1636);font-weight:700;font-size:1rem;cursor:pointer;transition:background .15s,border-color .15s,color .15s}.ds-chip input:checked+span{background:var(--ink,#0d1636);border-color:var(--ink,#0d1636);color:#fff}.ds-chip span:hover,.ds-chip input:focus-visible+span{outline:3px solid var(--focus,#f0a51c);outline-offset:2px}"
+      "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-chips{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif)}.ds-chip{position:relative}.ds-chip input{position:absolute;opacity:0;width:1px;height:1px}.ds-chip span{display:flex;align-items:center;min-height:46px;padding:0 16px;border:2px solid var(--line,rgba(13,22,54,.3));border-radius:999px;background:#fff;color:var(--ink,#0d1636);font-weight:700;font-size:1rem;cursor:pointer;transition:background .15s,border-color .15s,color .15s}.ds-chip input:checked+span{background:var(--ink,#0d1636);border-color:var(--ink,#0d1636);color:#fff}.ds-chip span:hover,.ds-chip input:focus-visible+span{outline:3px solid var(--focus,#f0a51c);outline-offset:2px}"
     },
     {
       "name": "Header Phone Link",
@@ -344,34 +359,52 @@
       "refersTo": "phone-link",
       "description": "The only header element besides the logo: tap-to-call number, top right.",
       "html": "<a class=\"ds-phone\" href=\"tel:+12268084556\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg>226-808-4556</a>",
-      "css": ":host{--ground:#e9e8e4;--ground-2:#f3f2ef;--ink:#0d1636;--ink-soft:#3c4361;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:#c9c7c0;--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-phone{display:inline-flex;align-items:center;gap:.4em;min-height:44px;padding:0 2px;color:var(--ink,#0d1636);font:800 1.0625rem/1 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}.ds-phone svg{color:var(--blue,#2c54f7)}.ds-phone:hover{color:var(--blue-deep,#1d3cc4)}.ds-phone:focus-visible{outline:3px solid var(--blue,#2c54f7);outline-offset:3px}"
+      "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-phone{display:inline-flex;align-items:center;gap:.4em;min-height:44px;padding:0 2px;color:var(--ink,#0d1636);font:800 1.0625rem/1 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}.ds-phone svg{color:var(--blue,#2c54f7)}.ds-phone:hover{color:var(--blue-deep,#1d3cc4)}.ds-phone:focus-visible{outline:3px solid var(--blue,#2c54f7);outline-offset:3px}"
+    },
+    {
+      "name": "Before/After Slider",
+      "kind": "custom",
+      "refersTo": "before-after",
+      "description": "4:3 white-framed photo pair on navy; drag the white divider or use arrow keys to compare.",
+      "html": "<div class=\"ds-navy\"><div class=\"ds-ba\" style=\"--p:50%\"><div class=\"ds-ba-after\"></div><div class=\"ds-ba-before\"></div><span class=\"ds-tag ds-tag-b\">Before</span><span class=\"ds-tag ds-tag-a\">After</span><div class=\"ds-ba-handle\" role=\"slider\" tabindex=\"0\" aria-label=\"Before and after divider\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"50\"><span><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 6 3 12l6 6M15 6l6 6-6 6\"/></svg></span></div></div></div>",
+      "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-navy{background:var(--navy,#14215a);padding:24px}.ds-ba{position:relative;aspect-ratio:4/3;max-width:420px;overflow:hidden;border-radius:14px;border:2.5px solid #fff;background:#3a3f55;cursor:ew-resize;font-family:var(--font,system-ui,sans-serif)}.ds-ba-after,.ds-ba-before{position:absolute;inset:0}.ds-ba-after{background:linear-gradient(135deg,#8a8781,#c9c4ba 60%,#efece6)}.ds-ba-before{background:linear-gradient(135deg,#6e6b66,#9d9a94);clip-path:inset(0 calc(100% - var(--p)) 0 0)}.ds-tag{position:absolute;top:10px;padding:4px 10px;border-radius:999px;background:rgba(13,22,54,.72);color:#fff;font-size:.8125rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.ds-tag-b{left:10px}.ds-tag-a{right:10px}.ds-ba-handle{position:absolute;top:0;bottom:0;left:var(--p);width:44px;margin-left:-22px;display:grid;place-items:center;outline:none}.ds-ba-handle::before{content:\"\";position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 6px rgba(0,0,0,.45)}.ds-ba-handle span{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--navy,#14215a);box-shadow:0 2px 8px rgba(0,0,0,.4)}.ds-ba-handle:focus-visible span{outline:3px solid var(--focus,#f0a51c);outline-offset:2px}"
     },
     {
       "name": "Facebook Link Card",
       "kind": "card",
       "refersTo": "link-card-on-navy",
-      "description": "White-outlined 14px card on a navy band linking to the work on Facebook.",
-      "html": "<div class=\"ds-navy\"><a class=\"ds-fb\" href=\"#\"><span class=\"ds-fbi\"><svg viewBox=\"0 0 24 24\" width=\"28\" height=\"28\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M14 8.5V6.8c0-.8.5-1 .9-1H17V2.2L14.1 2C10.9 2 10.2 4.4 10.2 6v2.5H8v3.7h2.2V22H14v-9.8h2.8l.4-3.7z\"/></svg></span>See our work on Facebook</a></div>",
-      "css": ":host{--ground:#e9e8e4;--ground-2:#f3f2ef;--ink:#0d1636;--ink-soft:#3c4361;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:#c9c7c0;--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-navy{background:var(--navy,#14215a);padding:24px}.ds-fb{display:flex;align-items:center;gap:16px;padding:18px 20px;border:2.5px solid #fff;border-radius:14px;background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font:800 1.25rem/1.15 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);transition:background .2s}.ds-fb:hover{background:rgba(255,255,255,.14)}.ds-fb:focus-visible{outline:3px solid #fff;outline-offset:3px}.ds-fbi{flex:none;width:52px;height:52px;border-radius:50%;background:#fff;color:var(--navy,#14215a);display:grid;place-items:center}"
+      "description": "White-outlined 14px card under the before/after sliders, linking to more work on Facebook.",
+      "html": "<div class=\"ds-navy\"><a class=\"ds-fb\" href=\"#\"><span class=\"ds-fbi\"><svg viewBox=\"0 0 24 24\" width=\"28\" height=\"28\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M14 8.5V6.8c0-.8.5-1 .9-1H17V2.2L14.1 2C10.9 2 10.2 4.4 10.2 6v2.5H8v3.7h2.2V22H14v-9.8h2.8l.4-3.7z\"/></svg></span>See more of our work on Facebook</a></div>",
+      "css": ":host{--ground:#aeaca7;--ink:#0d1636;--ink-soft:#1f2643;--blue:#2c54f7;--blue-deep:#1d3cc4;--navy:#14215a;--on-navy:#eef0fa;--on-navy-soft:#b9c0e0;--line:rgba(13,22,54,.3);--focus:#f0a51c;--radius:14px;--font:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}.ds-navy{background:var(--navy,#14215a);padding:24px}.ds-fb{display:flex;align-items:center;gap:16px;padding:18px 20px;border:2.5px solid #fff;border-radius:14px;background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font:800 1.25rem/1.15 var(--font,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif);transition:background .2s}.ds-fb:hover{background:rgba(255,255,255,.14)}.ds-fb:focus-visible{outline:3px solid #fff;outline-offset:3px}.ds-fbi{flex:none;width:52px;height:52px;border-radius:50%;background:#fff;color:var(--navy,#14215a);display:grid;place-items:center}"
     },
     {
-      "name": "Epoxy-Pour Divider",
+      "name": "Saw-Cut Joint",
+      "kind": "custom",
+      "refersTo": "joint",
+      "description": "3px control joint between two floor sections: 2px dark groove over a 1px highlight.",
+      "html": "<div class=\"ds-floor\"><div class=\"ds-joint\"></div></div>",
+      "css": ".ds-floor{background:#aeaca7;padding:32px 0}.ds-joint{height:3px;background:linear-gradient(rgba(38,36,32,.5) 0 2px,rgba(255,255,255,.4) 2px)}"
+    },
+    {
+      "name": "Epoxy-Pour Edge",
       "kind": "custom",
       "refersTo": "pour",
-      "description": "Organic three-sine edge between bands; background is the band above, fill the band below, with a soft shadow copy. Animated in the build; static here.",
+      "description": "Organic three-sine navy edge, only where floor meets navy; transparent background so the floor shows through, soft shadow copy beneath, flipped with scaleY(-1) where navy is above. Animated in the build; static here.",
       "html": "<svg class=\"ds-pour\" viewBox=\"0 0 1440 80\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path fill=\"rgba(13,22,54,.13)\" transform=\"translate(0 -4)\" d=\"M0 80 L0 44 C240 30 420 52 720 38 S1200 50 1440 36 L1440 80 Z\"/><path fill=\"#14215a\" d=\"M0 80 L0 44 C240 30 420 52 720 38 S1200 50 1440 36 L1440 80 Z\"/></svg>",
-      "css": ".ds-pour{display:block;width:100%;height:64px;background:#e9e8e4}"
+      "css": ".ds-pour{display:block;width:100%;height:64px;background:#aeaca7}"
     }
   ],
   "narrative": {
     "northStar": "The Polishing Floor",
-    "overview": "**Creative North Star: \"The Polishing Floor\"**\n\nThe page is a concrete shop floor under shop lights. Its ground is matte, fresh-poured grey taken from the logo's background; its voice is a heavy, uppercase sans set tight like stencilled trade lettering; its colour is the logo's royal blue (the grinder) and tagline navy (depth). The one thing that moves for the sake of the world is the hero slab: a blue floor grinder on a dusty, trowel-marked slab that you can grab and steer, cutting through to salt-and-pepper aggregate and a gloss that reflects light tubes. Everything else is calm, flat, and built to get a phone visitor to send a text.\n\nDensity is low and phone-first: one column, big touch targets (44px floor, 58px buttons), generous bands between sections. Sections do not meet at straight rules; they meet at slow, rolling epoxy-pour edges that swell away from a nearby finger. Depth comes from alternating concrete greys and navy bands, not from cards and shadows.\n\nRejections confirmed by the build and the direction contract: no black grounds (navy carries the dark bands), no sticky header or bottom bar, no email anywhere, no stock imagery.",
+    "overview": "**Creative North Star: \"The Polishing Floor\"**\n\nThe page is a polished concrete shop floor under shop lights. Its ground is salt-and-pepper concrete, ground flat and honed: a warm mid-grey cement with fine grain, soft mottling and small cut aggregate chips, tiled seamlessly under the whole page and scrolling with it. The shop's light tubes reflect in it, and the reflections drift at a slower rate than the floor as you scroll, the way real reflections slide across a gloss. Its voice is a heavy, uppercase sans set tight like stencilled trade lettering; its colour is the logo's royal blue (the grinder) and tagline navy (epoxy). The hero slab tells the story in miniature: a blue floor grinder on a dusty, trowel-marked slab that you can grab and steer, cutting through to the same aggregate and gloss the rest of the page stands on. Everything else is calm and built to get a phone visitor to send a text.\n\nDensity is low and phone-first: one column, big touch targets (44px floor, 58px buttons), generous bands between sections. The light sections are one continuous floor, divided only by saw-cut control joints. Navy bands are epoxy poured over that floor: opaque, and edged by slow, rolling pour lines that swell away from a nearby finger. Depth comes from the floor's own reflections and the navy pours, not from cards and shadows.\n\nRejections confirmed by the build and the direction contract: no black grounds (navy carries the dark bands), no sticky header or bottom bar, no email anywhere, no stock imagery (the before/after photos are the company's own jobs).",
     "keyCharacteristics": [
-      "Concrete-grey ground, navy depth bands, logo blue as the single action colour.",
+      "Polished salt-and-pepper concrete under the whole page, with drifting shop-light reflections.",
+      "Navy epoxy bands for depth, logo blue as the single action colour.",
       "Uppercase, weight 900, negative-tracked headings in the system sans (owner preference).",
       "Outlined pill buttons echoing the logo's outlined letters.",
       "A live, steerable \"polish the slab\" canvas as the hero signature.",
-      "Animated epoxy-pour SVG edges between every section.",
+      "Saw-cut joints between floor sections; animated epoxy-pour edges where floor meets navy.",
+      "Drag-to-compare before/after photos of real jobs.",
       "Phone number is the only header element besides the logo."
     ],
     "rules": [
@@ -382,12 +415,12 @@
       },
       {
         "name": "The One Machine Rule",
-        "body": "Grinder Blue is the only colour that means \"do something\". Amber is feedback inside the form, not a second accent.",
+        "body": "Grinder Blue is the only colour that means \"do something\". Amber is feedback on hands-on controls, not a second accent.",
         "section": "colors"
       },
       {
         "name": "The Heavy Caps Rule",
-        "body": "Every h1-h3 is uppercase, weight 900, negative tracking, line-height at or under 1.05. Body copy is never uppercase.",
+        "body": "Every h1-h3 is uppercase, weight 900, negative tracking, line-height at or under 1.05. Body copy is never uppercase; only headings, service rows and image tags are.",
         "section": "typography"
       },
       {
@@ -402,29 +435,37 @@
       },
       {
         "name": "The Poured Depth Rule",
-        "body": "Separate sections with colour change plus a pour edge, never with a card, border box or straight rule.",
+        "body": "Floor meets floor at a saw-cut joint; floor meets navy at an epoxy pour. Never separate sections with a card, border box or decorative rule.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Floor Rule",
+        "body": "Light sections have no background of their own: they are the same polished floor, and its reflections move at a different rate than the page. Under reduced motion the reflections lock to the floor (1x, no stretch).",
         "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** set dark bands in Tagline Navy with its masked radial glow, and text on them in On-Navy / On-Navy Soft.",
-      "**Do** join every pair of bands with an epoxy-pour divider whose colours match the band above and below.",
+      "**Do** set dark bands in opaque Tagline Navy with its masked radial glow, and text on them in On-Navy / On-Navy Soft.",
+      "**Do** join floor to floor with a saw-cut joint, and floor to navy with an epoxy-pour edge (flipped when navy is above).",
+      "**Do** let light sections sit directly on the tiled floor, with no background colour of their own.",
       "**Do** keep the first-screen header to the logo and the tap-to-call number (top right), and let it scroll away.",
       "**Do** use outlined pills (2.5px Outline Ink, 58px) for actions, with Grinder Blue fill for the primary.",
+      "**Do** set blue type on the concrete in Pressed Blue.",
       "**Do** give every form control (inputs, textarea, chips, the submit button) a 3px Warning-Light Amber outline on hover and focus, paired with the Outline Ink border shift on text fields so focus never depends on amber alone.",
       "**Do** let only the arrow react when a service row is hovered or focused.",
       "**Do** keep touch targets at or above 44px and use tabular numerals for the phone number.",
-      "**Do** honour reduced motion exactly as above: still pours, a still slab, no transitions."
+      "**Do** honour reduced motion exactly as above: reflections locked to the floor, still pours, no slider sweep, a still slab, no transitions."
     ],
     "donts": [
       "**Don't** load a webfont; the system stack is the owner's choice.",
-      "**Don't** add a sticky header, sticky call bar, or any fixed UI.",
+      "**Don't** add a sticky header, sticky call bar, or any fixed UI; the only fixed layer is the reflections, behind content and ignoring the pointer.",
       "**Don't** repeat the phone number elsewhere in the first screen; it appears top right, then in the close band.",
       "**Don't** add an email address, mailto link, or contact channel other than phone/text and Facebook.",
       "**Don't** highlight, underline, outline or tint a whole service row on hover; the arrow carries the state.",
       "**Don't** use black or near-black grounds.",
-      "**Don't** use amber outside the form (and the grinder's power light).",
-      "**Don't** separate sections with straight rules, boxes or cards."
+      "**Don't** use amber outside hands-on controls (form controls, the slider knob) and the grinder's power light.",
+      "**Don't** separate sections with boxes, cards or decorative rules; the saw-cut joint is the only straight divider.",
+      "**Don't** put a pour between two floor sections; pours exist only where navy meets the floor."
     ]
   }
 }
