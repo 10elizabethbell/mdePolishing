@@ -118,20 +118,12 @@ section{position:relative}
 .fb .fbi svg{width:28px;height:28px}
 .fb .go{margin-left:auto;flex:none;width:28px;height:28px}
 
-/* before/after sliders */
-.drag-note{margin-top:12px;font-size:1rem}
-.pairs{display:grid;gap:18px;margin-top:22px}
-.ba{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:var(--radius);border:2.5px solid #fff;background:#3a3f55;touch-action:pan-y;-webkit-user-select:none;user-select:none;cursor:ew-resize;--p:50%}
-.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
-.ba-before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--p)) 0 0)}
-.ba .tag{position:absolute;top:10px;padding:4px 10px;border-radius:999px;background:rgba(13,22,54,.72);color:#fff;font-size:.8125rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;pointer-events:none}
-.ba .tag-b{left:10px}
-.ba .tag-a{right:10px}
-.ba-handle{position:absolute;top:0;bottom:0;left:var(--p);width:44px;margin-left:-22px;display:grid;place-items:center;outline:none}
-.ba-handle::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 6px rgba(0,0,0,.45)}
-.ba-handle span{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--navy);box-shadow:0 2px 8px rgba(0,0,0,.4)}
-.ba-handle svg{width:24px;height:24px}
-.ba-handle:focus-visible span{outline:3px solid var(--focus);outline-offset:2px}
+/* before/after pairs: two photos side by side */
+.pairs{display:grid;gap:22px;margin-top:22px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.shot{position:relative;margin:0;aspect-ratio:3/4;overflow:hidden;border-radius:var(--radius);border:2.5px solid #fff;background:#3a3f55}
+.shot img{width:100%;height:100%;object-fit:cover}
+.shot .tag{position:absolute;left:8px;top:8px;padding:4px 10px;border-radius:999px;background:rgba(13,22,54,.72);color:#fff;font-size:.8125rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
 .work .fb{margin-top:22px}
 
 /* quote form */
@@ -197,6 +189,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:4px 22px}
   .quote .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:60px}
   form{margin-top:0}
   .pairs{grid-template-columns:1fr 1fr;gap:28px;margin-top:34px}
+  .pair{gap:12px}
   .work .fb{margin-top:34px;max-width:520px}
   .pour{height:84px}
 }
@@ -208,7 +201,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:4px 22px}
 DIRECTION CONTRACT
 THESIS: A raw, dusty slab becomes a floor you can see yourself in. The page itself is that floor.
 OWN-WORLD: The polishing floor. The whole page sits on polished salt-and-pepper concrete with the shop's light tubes reflecting in it; the reflections drift as you scroll. Light sections meet at saw-cut joints; navy bands are epoxy poured over the floor, with flowing edges.
-STORY: Hero (headline and the two buttons, on the floor) -> what we do (six services, each one text-to-quote) -> how a quote works (photos first) -> before/after sliders of real jobs, then Facebook -> quote form that writes the text -> close with the number.
+STORY: Hero (headline and the two buttons, on the floor) -> what we do (six services, each one text-to-quote) -> how a quote works (photos first) -> before/after photo pairs of real jobs, then Facebook -> quote form that writes the text -> close with the number.
 FIRST VIEWPORT (phone): logo + number top-right, "Make your concrete shine.", one-line promise, two buttons (text photos / get a quote), all on the polished floor with the light reflections drifting under it.
 FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo letters, logo blue + navy on concrete grey, navy epoxy bands for depth, saw-cut joints between floor sections. No black grounds.
 -->
@@ -268,19 +261,14 @@ FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo le
   <section class="work band on-navy" aria-labelledby="h-work">
     <div class="wrap">
       <h2 id="h-work">Before and after</h2>
-      <p class="drag-note">Drag the line.</p>
       <div class="pairs">
-        <div class="ba">
-          <img src="assets/room-after.webp" width="850" height="638" alt="After: the same floor ground and polished, the stone showing through" loading="lazy" decoding="async" draggable="false">
-          <div class="ba-before"><img src="assets/room-before.webp" width="850" height="638" alt="Before: a dusty grey concrete floor partway through grinding" loading="lazy" decoding="async" draggable="false"></div>
-          <span class="tag tag-b">Before</span><span class="tag tag-a">After</span>
-          <div class="ba-handle" role="slider" tabindex="0" aria-label="Before and after divider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg></span></div>
+        <div class="pair">
+          <figure class="shot"><img src="assets/room-before.webp" width="720" height="961" alt="Before: a dusty concrete floor mid-grind, with the grinder in the room" loading="lazy" decoding="async"><span class="tag">Before</span></figure>
+          <figure class="shot"><img src="assets/room-after.webp" width="720" height="960" alt="After: the same room, the floor ground and polished with the stone showing" loading="lazy" decoding="async"><span class="tag">After</span></figure>
         </div>
-        <div class="ba">
-          <img src="assets/crack-after.webp" width="960" height="720" alt="After: the same slab with the cracks filled and ground" loading="lazy" decoding="async" draggable="false">
-          <div class="ba-before"><img src="assets/crack-before.webp" width="960" height="720" alt="Before: a cracked basement slab marked out in orange paint" loading="lazy" decoding="async" draggable="false"></div>
-          <span class="tag tag-b">Before</span><span class="tag tag-a">After</span>
-          <div class="ba-handle" role="slider" tabindex="0" aria-label="Before and after divider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg></span></div>
+        <div class="pair">
+          <figure class="shot"><img src="assets/crack-before.webp" width="720" height="960" alt="Before: a cracked basement slab marked out in orange paint" loading="lazy" decoding="async"><span class="tag">Before</span></figure>
+          <figure class="shot"><img src="assets/crack-after.webp" width="720" height="960" alt="After: the slab with the cracks filled and ground" loading="lazy" decoding="async"><span class="tag">After</span></figure>
         </div>
       </div>
       <a class="fb" href="https://facebook.com/profile.php?id=61589369156324" rel="noopener"><span class="fbi"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.2L14.1 2C10.9 2 10.2 4.4 10.2 6v2.5H8v3.7h2.2V22H14v-9.8h2.8l.4-3.7z"/></svg></span>See more of our work on Facebook<svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -540,50 +528,6 @@ var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   size(); place();
   window.addEventListener('resize', function(){ size(); place(); });
   window.addEventListener('scroll', place, {passive:true});
-})();
-
-/* ---------- before/after sliders ---------- */
-(function(){
-  var SWEEP_MS = 1800;      /* the one-time "this moves" sweep when a slider first shows */
-  [].forEach.call(document.querySelectorAll('.ba'), function(el){
-    var h = el.querySelector('.ba-handle'), p = 50, drag = null, touched = false, sweep = null;
-    function set(v){ p = Math.max(0, Math.min(100, v)); el.style.setProperty('--p', p + '%'); h.setAttribute('aria-valuenow', Math.round(p)); }
-    function at(e){ var r = el.getBoundingClientRect(); return (e.clientX - r.left) / r.width * 100; }
-    el.addEventListener('pointerdown', function(e){
-      touched = true; sweep = null;
-      drag = {x:e.clientX, y:e.clientY, on:e.pointerType !== 'touch'};
-      if (drag.on){ try { el.setPointerCapture(e.pointerId); } catch(_){} set(at(e)); e.preventDefault(); }
-    });
-    el.addEventListener('pointermove', function(e){
-      if (!drag) return;
-      if (!drag.on){                            /* phones: only take over once the drag is clearly sideways */
-        var dx = Math.abs(e.clientX - drag.x), dy = Math.abs(e.clientY - drag.y);
-        if (dx > 8 && dx > dy){ drag.on = true; try { el.setPointerCapture(e.pointerId); } catch(_){} }
-        else if (dy > 8){ drag = null; return; }
-      }
-      if (drag.on) set(at(e));
-    });
-    el.addEventListener('pointerup', function(e){ if (drag && !drag.on) set(at(e)); drag = null; });
-    el.addEventListener('pointercancel', function(){ drag = null; });
-    h.addEventListener('keydown', function(e){
-      var k = e.key, v = k === 'ArrowLeft' ? p - 5 : k === 'ArrowRight' ? p + 5 : k === 'Home' ? 0 : k === 'End' ? 100 : null;
-      if (v !== null){ touched = true; sweep = null; set(v); e.preventDefault(); }
-    });
-    if (MDE_reduced || !('IntersectionObserver' in window)) return;
-    var io = new IntersectionObserver(function(es){
-      if (!es[0].isIntersecting || touched) return;
-      io.disconnect(); sweep = {t0:null};
-      MDE_loop.add({active:function(){ return !!sweep; }, step:function(t){
-        if (!sweep) return;
-        if (sweep.t0 === null) sweep.t0 = t;
-        var u = Math.min(1, (t - sweep.t0) / SWEEP_MS);
-        set(50 + Math.sin(u * Math.PI * 2) * 22 * (1 - u * 0.35));
-        if (u >= 1){ set(50); sweep = null; }
-      }});
-      MDE_loop.wake();
-    }, {threshold:0.6});
-    io.observe(el);
-  });
 })();
 
 /* ---------- epoxy pour dividers ---------- */
