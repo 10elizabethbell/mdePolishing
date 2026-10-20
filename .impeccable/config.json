@@ -83,7 +83,7 @@
       },
       {
         "rule": "low-contrast",
-        "value": "3.7:1 (need 4.5:1) \u2014 text #1d3cc4 on #aeaca7",
+        "value": "3.7:1 (need 4.5:1) — text #1d3cc4 on #aeaca7",
         "createdAt": "2026-10-18T13:10:59.512Z",
         "reason": "Claude: Pressed Blue display type (hero 'shine.' at 44-96px, step numerals 36px bold); large text, passes the 3:1 large-text bar"
       },
@@ -98,6 +98,15 @@
         "value": "6rem",
         "createdAt": "2026-10-18T13:21:13.015Z",
         "reason": "Claude: endpoints of the desktop hero headline clamp(4rem,6.4vw,6rem), documented in DESIGN.md"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-20T01:22:54.646Z",
+        "reason": "Ellie (pitch-site calm-photo-style.md, 2026-10-19): faint 135deg band texture on deep navy is a house-style requirement"
       }
     ]
   }

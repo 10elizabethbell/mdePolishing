@@ -33,7 +33,7 @@
   --navy:#1d3cc4;        /* logo blue, deepened so white text sits on it: services, quote */
   --deep:#14215a;        /* how it works, footer (line texture) */
   --on-dark:#f4f6fb;
-  --on-dark-soft:#c9d4f5;
+  --on-dark-soft:#d3dcf7;
   --amber:#f2a51a;       /* fills only; text on it is --ink */
   --amber-2:#f7bb4a;
   --amber-ink:#8a5a00;   /* amber as text on light (5.5:1) */
@@ -98,7 +98,7 @@ section{padding:64px 0}
 .hero{padding:0;position:relative;background:var(--deep);color:var(--on-dark);overflow:hidden;isolation:isolate}
 .hero-photo{position:absolute;inset:0;z-index:-2}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,33,90,.86) 0%,rgba(20,33,90,.8) 55%,rgba(20,33,90,.9) 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,33,90,.8) 0%,rgba(20,33,90,.72) 55%,rgba(20,33,90,.88) 100%)}
 .hero-copy{position:relative;display:grid;gap:20px;justify-items:start;padding-top:56px;padding-bottom:64px}
 .hero h1{color:#fff;font-size:clamp(44px,12.6vw,84px);line-height:1.02;max-width:11ch}
 /* H1 bounce-in (after lpmr.co.uk): each letter slides in from 50px right with a slight overshoot, 20ms apart */
