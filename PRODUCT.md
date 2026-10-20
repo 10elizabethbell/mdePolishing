@@ -25,15 +25,17 @@ Concrete specialists: grinding, polishing, epoxy and sealing. No web presence be
 
 ## Brand commitments
 - Logo (Facebook profile picture): stacked "MDE" in royal blue with a black outline, a four-point sparkle, serif "POLISHING", tagline "CONCRETE GRINDING AND POLISHING", on light grey.
-- Colors from the logo: royal blue, deep navy, black outline, light grey ground.
+- Colors from the logo: royal blue, deep navy, black outline, light grey ground. The logo has no warm colour; the amber accent comes from the orange grinders in their own job photos (inferred).
 - Tone on social: terse, services-list style.
 
 ## Evidence on hand
 - Logo, phone number, verbatim services list, Facebook profile link.
 - Two before/after pairs of their work, supplied by Ellie on 2026-10-18: a room ground and polished (dusty mid-grind → polished, stone showing) and a cracked basement slab (marked cracks → filled and ground). The room pair was shot from opposite ends of the room.
-- A close-up of a polished floor with a light tube reflecting in it, which Ellie gave as the look for the page background.
+- A close-up of a polished floor with a light tube reflecting in it, which Ellie gave as the look for the earlier polished-floor background (not used since the 2026-10-19 calm-style revamp).
 
 ## Principles
 - Only real facts; gaps stay gaps (listed in HANDOFF.md).
 - Speak as "we" (an incorporated company; crew size unknown — inferred).
 - Phone first: the first phone screen shows what they do and how to reach them.
+
+- House look (since 2026-10-19): the calm band style (paper and navy bands, one warm accent, Cal Sans headings, H1 bounce-in, fade-up, floating text circle).

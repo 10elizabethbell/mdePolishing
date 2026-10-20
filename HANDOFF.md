@@ -1,53 +1,51 @@
-# MDE Polishing Inc. — handoff at ~60%
+# MDE Polishing Inc. — handoff at ~60% (calm-style revamp)
 
-**Live:** https://10elizabethbell.github.io/mdePolishing/ · **Repo:** https://github.com/10elizabethbell/mdePolishing · **Built:** 2026-10-17 from Muse brief (run 2026-10-17, Essex County Contractor Referrals post)
+**Live:** https://10elizabethbell.github.io/mdePolishing/ · **Repo:** https://github.com/10elizabethbell/mdePolishing · **Built:** 2026-10-17 from Muse brief (run 2026-10-17, Essex County Contractor Referrals post) · **Revamped:** 2026-10-19 into the calm band style
+
+## What changed in the revamp (2026-10-19)
+The business hasn't been contacted, so the whole page was rebuilt from DPG's calm-style `index.html` under the new house rules. Facts, photos and contact wiring carried over; the look, structure and motion are new.
+- **Gone:** the polished-concrete floor drawn under the whole page, the scroll-driven light reflections, the epoxy-pour band edges that bulged from the finger, saw-cut joints, heavy uppercase system type, outlined buttons. All of it is in git history (`ae90afd`) if Ellie wants any of it back as the opt-in signature.
+- **New look:** paper (#f4f6fb), logo blue deepened to #1d3cc4 (services/quote band), logo navy #14215a with the faint diagonal texture (How it works, footer), one warm accent: grinder amber #f2a51a as a fill (navy text on it; #8a5a00 when it has to be text on light). Cal Sans headings, system body 16/1.7, 24px cards, pill buttons, 10px fields on their own #e6ecf5 fill.
+- **New hero:** their own job photo (the grinder mid-job, from the room pair) under a navy overlay; white text measures 6.3:1 or better by pixel sampling at 360, 390 and 1440. Eyebrow pill with their logo tagline, H1 "Floors that shine in Essex County" (bounces in letter by letter, then restores the plain heading), the care promise, two pill buttons.
+- **New motion:** H1 bounce-in, one 12px fade-up for things below the first screen, and the 60px floating text circle (shows after the hero, hides over the form). Reduced motion and no-JS show everything at once.
+- **Structure now:** header (logo, 226-808-4556 top right) → hero → What we do (six rows) → How a quote works (3 steps) → Before and after (two pairs, then the Facebook link) → Get a quote (form on the blue band) → close (name, big number) → footer (name, Facebook).
+- **Form:** job chips now match all six services (plus "Not sure yet"); floor type is optional; name and town required. Phones open Messages; desktop shows the message with Open in Messages / Copy message and the number as plain text.
 
 ## What's built
-- One page, phone first: header (real logo + `226-808-4556` top-right), hero, What we do, How a quote works, before/after proof band with the Facebook link under it, quote form, close, footer.
-- **World:** the polishing floor. The whole page sits on polished salt-and-pepper concrete, drawn in JS as a seamless tile from Ellie's reference photo. The shop's light tubes reflect in it and drift at about half the scroll speed, so they slide across the floor as you scroll. Light sections meet at saw-cut control joints, and the navy bands are epoxy poured over the floor, with flowing edges that bulge away from the pointer or finger. Logo blue `#2c54f7` and navy `#14215a`; buttons are outlined in navy-black like the logo's letters. Tunables sit at the top of the floor and lights IIFEs: chip count, size and contrast; light speed, gap, ease and smear.
-- **Signature:** the polished floor itself: its light reflections drift as you scroll, and the epoxy-pour edges bulge away from a finger or the pointer. The hero is copy only: headline, promise and the two buttons, sitting on the floor. (Ellie removed the interactive polish-the-slab canvas on 2026-10-18.)
-- **Before/after:** two pairs of real job photos side by side (Before | After) in the navy band, as shot, cropped to matching 3:4 frames. The Facebook link sits under them. Sliders were tried and dropped: the photos aren't shot from the same spot, so they can't line up.
-- **Contact:** the hero button "Text us photos of your floor" opens `sms:` with a pre-written message. Each service row texts about that service on phones; on desktop it jumps to the form with the service ticked. The form writes the text message: on phones it opens the text app, on desktop it shows the message with a Copy button. Calling uses the header number, plus "or call" in the close section.
-- **Verified:** Chromium and WebKit at 360/390/430/1440: no sideways scroll, tap targets ≥44px, inputs 17px, primary button on the first screen. A touch sweep polishes without scrolling the page. Form errors and the composed text decode correctly. The detector is clean apart from two suppressed false positives and one accepted note (below).
+- Phone first: first 390px screen shows logo, number, what they do, the headline and both buttons.
+- **Contact:** hero "Text us photos of your floor" and the floating circle open `sms:` with a pre-written photos message. Each service row texts about that service on phones; on desktop it jumps to the form with that job ticked. Calling is the header number and the close's big number (one per screen).
+- **Proof:** the two before/after pairs, as shot (3:4), labels Before/After only, then "Click to see more of our work on Facebook".
+- og image re-rendered from the new hero (`assets/og.jpg`); favicon and apple-touch icon unchanged (from the logo).
 
 ## Assumptions I made
-- **Voice "we":** it's an Inc. Crew size unknown.
-- **Colors:** sampled from the Facebook profile logo. No other brand material exists.
-- **Hero promise** ("We take a tired, stained floor down to fresh stone…"): describes what grinding and polishing does, not a claim about this owner. The reviewer suggested an alternative: "We treat your floor like it's our own, from the first pass of the grinder to the last coat."
-- **"How a quote works" steps 2–3** ("We tell you straight… sometimes a grind and seal does the job for less", "the part we don't rush") are tone, not facts. Confirm the owner is OK with them.
-- **Customers** (garages, basements, shops) are inferred from the services list. Form floor types follow from that.
-- **Texting is the main path, but the brief says "accepts texts: unknown".** Calling stays one tap away in the header and close. Confirm with the owner before pitching.
-- **Phone number:** removed from the footer because it would sit on the same phone screen as the close section's "or call" line (once-per-screen rule).
+- **"Essex County" in the H1.** The brief says area unknown; the only evidence is that they posted in the Essex County Contractor Referrals group and the 226 area code. The calm style needs the place in the H1, so I used it. Confirm with the owner, or swap for their real towns.
+- **Amber accent.** The logo has no warm colour. Amber comes from the orange grinders in their own photos.
+- **Hero promise** ("We treat your floor like it's our own, from the first pass of the grinder to the last coat.") is tone, not a fact. Same for steps 2–3 ("We tell you straight", "Proper prep comes first…").
+- **Voice "we":** it's an Inc.; crew size unknown.
+- **Texting is the main path, but the brief says "accepts texts: unknown".** Calling stays one tap away in the header and close.
+- The hero photo is also the "Before" in the first pair (different crop). It was the only photo that reads as their trade at a glance and survives the wide desktop band.
 
 ## Placeholders and gaps
-- **Only two before/after pairs, neither shot from the same spot.** The room pair was taken from opposite ends of the room. Raw originals are in `src-assets/pairs/` (git-ignored).
-- **Service area:** unknown. The 226 area code says southwestern Ontario and the post was in an Essex County group, but no towns appear on the page.
-- No email (footer has none), hours, owner name, reviews, prices, years in business, insurance or certifications.
-- **Favicon:** drawn as "MDE" in the logo's blue and outline style. The apple-touch icon is the logo's stacked MDE mark cropped from the profile picture (720px source).
-- **og image** (`assets/og.jpg`): a render of the desktop hero.
+- Service area (towns), email (footer has none), hours, owner name, reviews, prices, years in business, insurance.
+- Only two before/after pairs; neither is shot from the same spot, so no sliders.
 
 ## Questions for the owner
-- Do you take texts at 226-808-4556? (The whole quote flow leans on it.)
-- Which towns do you cover? (Windsor–Essex? Chatham-Kent? London?)
-- More before/after pairs (garage epoxy, polished floors)? Shot from the same spot and angle, they could become drag sliders. Two pairs are on the page now.
-- Your first name, so the page can speak as you?
-- Which services bring in the most work (epoxy garages vs polished commercial)? That would set the service order.
-- Insured? Years doing this? Any product lines you use (metallic epoxy, flake systems)?
+- Do you take texts at 226-808-4556?
+- Which towns do you cover? Is "Essex County" right?
 - An email for the footer?
+- More before/after pairs (garage epoxy, polished floors), ideally from the same spot?
+- Your first name, so the page can speak as you?
+- Which services bring in the most work (sets the row order)?
+- Insured? Years doing this?
 
 ## Ideas not built (yours to pick)
-- **Runner-up world:** metallic epoxy pour. Marbled blue/navy metallic epoxy that swirls under the finger like a fresh pour. Would carry the logo blue harder.
-- Finish swatches for each service row (polished, flake epoxy, metallic, sealed wet-look, peeled coating), drawn live in canvas.
-- Desktop: hover a service row to swap a matching before/after pair into one viewer (house recipe in `ellie-taste.md` §4), once there's a pair per service.
-- The light reflections could also glide across the glossy navy bands (epoxy reflects too); for now they only show on the concrete.
-- A stain-gone moment: make the oil stain stronger so grinding over it visibly removes it.
-- A garage-door "reveal" for the close section.
-- A photo-upload form is impossible without a backend. Texting photos is the honest equivalent; a hosted upload (e.g. Formspree) is possible later as paid work.
+- **Opt-in signature motion (runner-up worlds):** (1) the polished floor with scroll-driven light reflections from the previous build (in history at `ae90afd`); (2) metallic epoxy that swirls under the finger like a fresh pour; (3) a grinder pass that wipes dust off a slab as you scroll; (4) flake epoxy scattering onto a wet coat. Best: (1), since it's already built.
+- A third hero option once a wide, bright photo of a finished floor exists (the current photo is mid-job).
+- Finish swatches per service row.
+- Photo-upload quote form (needs a backend such as Formspree; paid follow-up).
+<!-- reviewer findings go below -->
 
 ## Not verified
-- Real-device touch on iPhone Safari and inside Facebook's in-app browser (WebKit via Playwright stands in).
-- The scroll-driven light reflections on a real iPhone (iOS address-bar resizing of the fixed layer).
+- Real-device touch on iPhone Safari and inside Facebook's in-app browser (Playwright WebKit stands in).
 - Real `sms:` handoff with a prefilled body on iOS and Android.
-- Frame rate on old phones while scrolling. The lights are a handful of transformed divs set straight from the scroll event, and the floor is a single repeating background image.
-- Detector note left standing: "flat type hierarchy" counts the 14–22px body/label sizes. The display scale (h1 up to 96px, h2 up to 58px) carries the hierarchy.
-- Impeccable concept-roll seed: skipped. The pitch-site pipeline chooses the world unattended.
+- Cal Sans load time on slow cellular (headings fall back to Avenir Next / Segoe UI until it arrives; `display=swap`).
