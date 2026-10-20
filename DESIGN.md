@@ -1,313 +1,381 @@
 ---
 name: MDE Polishing Inc.
-description: A raw, dusty slab becomes a floor you can see yourself in. One phone-first page in logo blue and navy on polished salt-and-pepper concrete.
+description: A calm, phone-first page for a concrete grinding and polishing crew. Their own grinder photo under navy, paper and navy bands, one grinder-amber accent, Cal Sans headings.
 colors:
-  ground: "#aeaca7"
-  ink: "#0d1636"
-  ink-soft: "#1f2643"
-  blue: "#2c54f7"
-  blue-deep: "#1d3cc4"
-  navy: "#14215a"
-  on-navy: "#eef0fa"
-  on-navy-soft: "#b9c0e0"
-  line: "rgba(13,22,54,.3)"
-  focus: "#f0a51c"
-  paper: "#ffffff"
-  error: "#7d1610"
+  paper: "#f4f6fb"
+  card: "#ffffff"
+  field: "#e6ecf5"
+  ink: "#14215a"
+  body: "#2a3352"
+  soft: "#4a5868"
+  navy: "#1d3cc4"
+  deep: "#14215a"
+  on-dark: "#f4f6fb"
+  on-dark-soft: "#d3dcf7"
+  amber: "#f2a51a"
+  amber-2: "#f7bb4a"
+  amber-ink: "#8a5a00"
+  focus: "#1d3cc4"
+  error: "#b3261e"
 typography:
   display:
-    fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(2.75rem, 13.4vw, 5.6rem)"
-    fontWeight: 900
-    lineHeight: 0.9
-    letterSpacing: "-0.025em"
+    fontFamily: "Cal Sans, Avenir Next, Segoe UI, system-ui, sans-serif"
+    fontSize: "clamp(44px, 12.6vw, 84px)"
+    fontWeight: 400
+    lineHeight: 1.02
+    letterSpacing: "-0.005em"
+  display-tel:
+    fontFamily: "Cal Sans, Avenir Next, Segoe UI, system-ui, sans-serif"
+    fontSize: "clamp(34px, 10vw, 56px)"
+    fontWeight: 400
+    lineHeight: 1
   headline:
-    fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(2rem, 9vw, 3.6rem)"
-    fontWeight: 900
-    lineHeight: 0.95
-    letterSpacing: "-0.015em"
+    fontFamily: "Cal Sans, Avenir Next, Segoe UI, system-ui, sans-serif"
+    fontSize: "clamp(30px, 7.6vw, 48px)"
+    fontWeight: 400
+    lineHeight: 1.08
+    letterSpacing: "-0.005em"
   title:
-    fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.375rem"
-    fontWeight: 900
-    lineHeight: 1.05
-    letterSpacing: "-0.015em"
-  row:
-    fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.125rem, 5vw, 1.5rem)"
-    fontWeight: 800
-    lineHeight: 1.55
-    letterSpacing: "0.01em"
-  body:
-    fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.0625rem"
+    fontFamily: "Cal Sans, Avenir Next, Segoe UI, system-ui, sans-serif"
+    fontSize: "clamp(19px, 5.2vw, 22px)"
     fontWeight: 400
-    lineHeight: 1.55
-  lede:
-    fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.25rem"
+    lineHeight: 1.2
+  title-step:
+    fontFamily: "Cal Sans, Avenir Next, Segoe UI, system-ui, sans-serif"
+    fontSize: "21px"
     fontWeight: 400
-    lineHeight: 1.55
-  label:
-    fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1rem"
-    fontWeight: 800
-    lineHeight: 1.55
+    lineHeight: 1.2
+  label-display:
+    fontFamily: "Cal Sans, Avenir Next, Segoe UI, system-ui, sans-serif"
+    fontSize: "17px"
+    fontWeight: 400
+    lineHeight: 1.2
   button:
-    fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.0625rem"
-    fontWeight: 800
-    lineHeight: 1.1
+    fontFamily: "Cal Sans, Avenir Next, Segoe UI, system-ui, sans-serif"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: 1.15
+  lede:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(17px, 4.6vw, 19px)"
+    fontWeight: 400
+    lineHeight: 1.7
+  promise:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(17px, 4.7vw, 20px)"
+    fontWeight: 400
+    lineHeight: 1.5
+  body:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: 1.7
+  body-small:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: 1.5
+  label:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif"
+    fontSize: "14px"
+    fontWeight: 500
+    lineHeight: 1
+    letterSpacing: "0.02em"
 rounded:
-  field: "12px"
-  card: "14px"
+  focus: "6px"
+  field: "10px"
+  panel: "16px"
+  row: "20px"
+  card: "24px"
   pill: "999px"
-  round: "50%"
 spacing:
-  chip-gap: "8px"
-  action-gap: "10px"
-  form-gap: "22px"
   gutter: "20px"
-  gutter-wide: "40px"
-  band: "56px"
-  band-wide: "96px"
-  column-gap: "60px"
-  container: "1180px"
+  gutter-desktop: "40px"
+  section: "64px"
+  section-desktop: "96px"
+  container: "1160px"
+  card-pad: "clamp(20px, 5vw, 32px)"
 components:
   button-primary:
-    backgroundColor: "{colors.blue}"
-    textColor: "{colors.paper}"
+    backgroundColor: "{colors.amber}"
+    textColor: "{colors.ink}"
     typography: "{typography.button}"
     rounded: "{rounded.pill}"
-    padding: "0 1.4em"
-    height: "58px"
+    padding: "0 26px"
+    height: "56px"
   button-primary-hover:
-    backgroundColor: "{colors.blue-deep}"
-    textColor: "{colors.paper}"
+    backgroundColor: "{colors.amber-2}"
+    textColor: "{colors.ink}"
   button-ghost:
     backgroundColor: "transparent"
+    textColor: "{colors.on-dark}"
+    typography: "{typography.button}"
+    rounded: "{rounded.pill}"
+    padding: "0 26px"
+    height: "56px"
+  button-line:
+    backgroundColor: "transparent"
     textColor: "{colors.ink}"
     typography: "{typography.button}"
     rounded: "{rounded.pill}"
-    padding: "0 1.4em"
-    height: "58px"
-  button-ghost-hover:
+    padding: "0 20px"
+    height: "48px"
+  button-line-hover:
     backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-  service-row:
-    textColor: "{colors.ink}"
-    typography: "{typography.row}"
-    padding: "10px 2px"
-    height: "66px"
-  service-row-arrow:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.round}"
-    size: "44px"
-  service-row-arrow-hover:
-    backgroundColor: "{colors.blue}"
-    textColor: "{colors.paper}"
-  input-text:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.field}"
-    padding: "13px 15px"
-    height: "54px"
-  chip:
-    backgroundColor: "{colors.paper}"
+    textColor: "{colors.card}"
+  eyebrow:
     textColor: "{colors.ink}"
     typography: "{typography.label}"
     rounded: "{rounded.pill}"
-    padding: "0 16px"
-    height: "46px"
+    padding: "9px 14px"
+  service-row:
+    backgroundColor: "{colors.card}"
+    textColor: "{colors.ink}"
+    typography: "{typography.title}"
+    rounded: "{rounded.row}"
+    padding: "10px 12px 10px 22px"
+    height: "68px"
+  facebook-row:
+    backgroundColor: "{colors.card}"
+    textColor: "{colors.ink}"
+    typography: "{typography.title}"
+    rounded: "{rounded.row}"
+    padding: "14px 16px 14px 22px"
+    height: "76px"
+  step-numeral:
+    backgroundColor: "{colors.amber}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.pill}"
+    size: "48px"
+  shot-card:
+    backgroundColor: "{colors.field}"
+    textColor: "{colors.card}"
+    rounded: "{rounded.card}"
+  form-card:
+    backgroundColor: "{colors.card}"
+    textColor: "{colors.body}"
+    rounded: "{rounded.card}"
+    padding: "{spacing.card-pad}"
+  input:
+    backgroundColor: "{colors.field}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body}"
+    rounded: "{rounded.field}"
+    padding: "13px 14px"
+    height: "52px"
+  chip:
+    backgroundColor: "{colors.field}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body}"
+    rounded: "{rounded.pill}"
+    padding: "0 18px"
+    height: "48px"
   chip-selected:
     backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-  before-after-shot:
-    backgroundColor: "#3a3f55"
-    rounded: "{rounded.card}"
-  before-after-tag:
-    backgroundColor: "rgba(13,22,54,.72)"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.pill}"
-    padding: "4px 10px"
-  link-card-on-navy:
-    backgroundColor: "rgba(255,255,255,.06)"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.card}"
-    padding: "18px 20px"
-  phone-link:
+    textColor: "{colors.card}"
+  sent-panel:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.body}"
+    rounded: "{rounded.panel}"
+    padding: "18px"
+  float-circle:
+    backgroundColor: "{colors.amber}"
     textColor: "{colors.ink}"
-    typography: "{typography.button}"
-    height: "44px"
+    rounded: "{rounded.pill}"
+    size: "60px"
 ---
 
 # Design System: MDE Polishing Inc.
 
 ## Overview
 
-**Creative North Star: "The Polishing Floor"**
+**Creative North Star: "The Calm Crew Sheet"**
 
-The page is a polished concrete shop floor under shop lights. Its ground is salt-and-pepper concrete, ground flat and honed: a warm mid-grey cement with fine grain, soft mottling and small cut aggregate chips, tiled seamlessly under the whole page and scrolling with it. The shop's light tubes reflect in it, and the reflections drift at a slower rate than the floor as you scroll, the way real reflections slide across a gloss. Its voice is a heavy, uppercase sans set tight like stencilled trade lettering; its colour is the logo's royal blue (the grinder) and tagline navy (epoxy). The hero is copy only, standing directly on that floor: the page itself is the finished slab, and its living elements are the drifting light reflections, the rolling epoxy-pour edges. All of it is calm and built to get a phone visitor to send a text.
+Calm order gets trust before any claim does. The page is a stack of full-bleed bands that switch between light and dark, so every new section is easy to spot: the crew's own grinder photo under a navy wash, paper for the services, deep navy for how a quote works, paper for real before/afters, logo blue for the quote form, paper for the closing phone number, deep navy for the footer. Each band does one thing. Shapes are soft and have no borders: 24px cards, 20px rows and full pills. The page reads like a tidy job sheet from a crew that preps properly.
 
-Density is low and phone-first: one column, big touch targets (44px floor, 58px buttons), generous bands between sections. The light sections are one continuous floor, divided only by saw-cut control joints. Navy bands are epoxy poured over that floor: opaque, and edged by slow, rolling pour lines that swell away from a nearby finger. Depth comes from the floor's own reflections and the navy pours, not from cards and shadows.
+Colour comes from the logo. Its royal blue is deepened so white text sits on it, and its tagline navy is used twice: for the text and for the darkest bands. Grinder amber, taken from the orange machines in their own photos, is the one warm note and is always a fill. Headings are Cal Sans at weight 400 and carry the whole hierarchy. Body text is the system stack at 16/1.7 and stays quiet. The page is phone-first and works in one column, with two columns for rows and photo pairs from 760px up.
 
-Rejections confirmed by the build and the direction contract: no black grounds (navy carries the dark bands), no sticky header or bottom bar, no email anywhere, no stock imagery (the before/after photos are the company's own jobs).
+Motion stays small. The hero H1 bounces in letter by letter once. Anything that starts below the first screen fades up 12px. A single amber text circle slides in once the hero has scrolled away. With JS off or reduced motion on, every item is visible at rest and the heading is plain.
 
 **Key Characteristics:**
-- Polished salt-and-pepper concrete under the whole page, with drifting shop-light reflections.
-- Navy epoxy bands for depth, logo blue as the single action colour.
-- Uppercase, weight 900, negative-tracked headings in the system sans (owner preference).
-- Outlined pill buttons echoing the logo's outlined letters.
-- A copy-only hero (headline, promise, two buttons) standing directly on the floor.
-- Saw-cut joints between floor sections; animated epoxy-pour edges where floor meets navy.
-- Static before/after photo pairs of real jobs, side by side.
-- Phone number is the only header element besides the logo.
+- Full-bleed bands that alternate light and dark, in a fixed order, with a faint diagonal line texture on deep navy only
+- Logo blue (#1d3cc4) and tagline navy (#14215a) as the band colours; grinder amber as the single fill accent
+- Cal Sans 400 for every heading, button, row and label; system stack for running text
+- Borderless soft shapes: 24px cards, 20px rows, 10px fields, full pills
+- One real job photo in the hero, real before/after photos below, no stock or illustration
+- One-shot H1 bounce-in, a 12px fade-up only below the first screen, and one floating text circle
 
 ## Colors
 
-Two logo blues and a navy on polished concrete, with one warm amber reserved for form-control feedback.
+Paper and two navies, with one grinder-amber accent that is always a fill and never a text colour on light.
 
 ### Primary
-- **Grinder Blue** (`blue`): the logo's royal blue. Primary button fill, the phone icon, the service-row arrow on hover, the default focus outline, text selection. It is the colour of the machine; it means "act".
-- **Pressed Blue** (`blue-deep`): hover state of the primary button and the header phone link, and the accent word in the hero headline, where it carries blue type on the concrete at a legible contrast.
+- **Logo Blue** (navy): the mid band behind the quote form, and the colour of the Facebook mark. It also serves as the hover colour for the header and closing phone numbers. It is the logo's royal blue deepened until white text passes on it.
+- **Form Focus Blue** (focus): the same hue used as the hover and focus outline for form controls on the white form card, kept apart from the amber fill so focus never looks like a selection.
 
 ### Secondary
-- **Tagline Navy** (`navy`): full-bleed, opaque epoxy bands (work, close, footer) and the fill of every pour edge. Carries a soft internal glow (a blue radial at 35% and a darker radial, masked to fade at top and bottom) so the band reads as poured, not painted. Also the colour of the icon inside the Facebook card's white disc.
+- **Tagline Navy** (deep): the hero base under the photo, the how-it-works band and the footer, always with the diagonal texture on the bands. It shares its hex with Ink because the logo uses one navy for both jobs.
 
 ### Tertiary
-- **Warning-Light Amber** (`focus`): named for a grinder's warning light. Used only as the outline on form controls on hover and focus. Nowhere else.
+- **Grinder Amber** (amber): fills only. The primary button, the step numeral discs, the floating circle, a service row's arrow disc on hover, the eyebrow dot, text selection, focus outlines on dark bands, and the accent phrase in headings on dark bands.
+- **Lit Amber** (amber-2): the primary button's hover fill.
+- **Amber Ink** (amber-ink): amber as a text colour on light, at 5.5:1. Used for the phone icons in the white header and on the paper close band; it is also the `.accent` colour on paper.
 
 ### Neutral
-- **Polished Concrete** (`ground`): the floor's base cement tone, the colour the floor tile is painted from, the body fallback before the tile is ready, and the `theme-color`.
-- **Outline Ink** (`ink`): navy-black from the logo outline. All text on the floor, button borders, selected chip fill. Not black.
-- **Soft Ink** (`ink-soft`): secondary copy (promise line, service note, step descriptions, form intro, optional-field markers). Dark enough to hold on the speckled floor.
-- **Joint Line** (`line`): a translucent ink hairline so it reads on any part of the floor: rules between service rows, resting borders of inputs, chips and arrows.
-- **Paper** (`paper`): input, chip and confirmation-panel surfaces; text on blue and navy; before/after photo frames.
-- **On-Navy** (`on-navy`) and **On-Navy Soft** (`on-navy-soft`): headings/links and body copy inside navy bands.
-- **Error Red** (`error`): validation message text and the invalid input's border only; deep enough to read on the concrete.
+- **Paper** (paper): the page ground and the light bands, plus the sent-message panel inside the form.
+- **Card White** (card): the header, service and Facebook rows, the form card, and white text on photos and selected chips.
+- **Field Tint** (field): fill for inputs and chips on the white form card, and the placeholder colour behind loading photos. It is its own token because paper on white is about 1.08:1 and fails as a control boundary.
+- **Ink** (ink): headings and strong text on light, and text on amber.
+- **Body** (body): running text on light.
+- **Soft** (soft): ledes, hints, placeholders and secondary lines on light.
+- **On-Dark** (on-dark): headings and the ghost button on navy and deep bands.
+- **On-Dark Soft** (on-dark-soft): running text on navy and deep bands, and in the footer.
+- **Error Red** (error): inline error sentences and the invalid field border.
 
 ### Named Rules
-**The No Black Ground Rule.** Dark surfaces are Tagline Navy, never black or near-black. Text "black" is Outline Ink.
+**The Amber Is a Fill Rule.** Amber never carries text on a light ground; text on amber is always Ink. When amber has to be text on paper or white, use Amber Ink.
 
-**The One Machine Rule.** Grinder Blue is the only colour that means "do something". Amber is feedback on form controls, not a second accent.
+**The Accent-Phrase-on-Dark Rule.** A heading's last phrase may switch to amber only on a dark band or the hero ("Essex County", "works", "quote"). Paper headings stay Ink all the way through.
+
+**The Logo Colours Only Rule.** The blues and navies come from the logo, and the amber comes from their own grinders. Don't add another hue.
 
 ## Typography
 
-**Display Font:** system-ui (with -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif)
-**Body Font:** the same stack
-**Label/Mono Font:** none; phone numbers use tabular numerals from the same stack
+**Display Font:** Cal Sans (Google Fonts, `display=swap`, preconnected), with Avenir Next, Segoe UI, system-ui fallback
+**Body Font:** System stack (-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial)
 
-**Character:** One family, pushed to its heaviest weight and set uppercase with tight tracking for headings, so it reads like stencilled trade lettering; body stays at regular weight and generous leading. The system stack is the owner's stated preference and loads instantly inside Facebook's in-app browser.
+**Character:** A rounded, friendly geometric display face at one weight (400) does all the talking. It sets headings, buttons, service rows, form labels, phone numbers and step numerals. The system body stays neutral, so the display face is the only voice.
 
 ### Hierarchy
-- **Display** (900, clamp(2.75rem, 13.4vw, 5.6rem) on phones, clamp(4rem, 6.4vw, 6rem) from 1024px, line-height 0.9, -0.025em, uppercase): the hero headline only. One word may be set in Pressed Blue (non-italic).
-- **Headline** (900, clamp(2rem, 9vw, 3.6rem), 0.95, -0.015em, uppercase, balanced wrap): section headings, held to 12-14ch where they would otherwise run long.
-- **Title** (900, 1.375rem, 1.05, uppercase): step titles.
-- **Row** (800, clamp(1.125rem, 5vw, 1.5rem), +0.01em, uppercase): service-row labels.
-- **Body** (400, 1.0625rem, 1.55): all running copy, held to 34-44ch.
-- **Lede** (400, 1.125-1.25rem): the one-line promise and band intros.
-- **Label** (800, 1rem): form labels, legends, chip text (700), Facebook card text (800, larger).
-- **Tag** (800, .8125rem, +0.04em, uppercase): the Before/After pills on the photo pairs.
-- **Numeral** (900, 2.25rem, line-height 1, blue): step counters, drawn by CSS counters; on the concrete they follow the Pressed Blue rule for blue type.
+- **Display** (400, clamp(44px, 12.6vw, 84px), 1.02, max 11ch): the hero H1 only, set in white on the photo.
+- **Display Tel** (400, clamp(34px, 10vw, 56px), 1): the closing tap-to-call number, with a 0.75em amber-ink phone icon.
+- **Headline** (400, clamp(30px, 7.6vw, 48px), 1.08, balanced wrap): every section H2.
+- **Title** (400, clamp(19px, 5.2vw, 22px), 1.2): service row and Facebook row labels. Photo tags use the same face at clamp(18px, 5vw, 22px)/1 in white.
+- **Title Step** (400, 21px, rising to 22px at 1024px, 1.2): how-it-works step titles (h3).
+- **Label Display** (400, 17px, 1.2): form labels and legends. The header phone number uses the display face at 17px, or 21px on desktop. Step numerals use it at 20px.
+- **Button** (400, 18px, 1.15): all buttons. Buttons in the sent panel drop to 16px.
+- **Promise** (system, clamp(17px, 4.7vw, 20px), 1.5, 32ch, or 40ch on desktop): the hero's single care line.
+- **Lede** (system, clamp(17px, 4.6vw, 19px), max 38ch): a section intro under a headline.
+- **Body** (system, 16px, 1.7): running text, step descriptions (36ch), inputs and chips. Inputs never go below 16px, so iOS doesn't zoom.
+- **Body Small** (system, 15px, 1.5): inline errors, the "opens your messages" note and the composed message preview.
+- **Label** (system 500, 14px, 1, +0.02em): eyebrow pills, plus the "(optional)" hints and the footer copyright at weight 400.
 
 ### Named Rules
-**The Heavy Caps Rule.** Every h1-h3 is uppercase, weight 900, negative tracking, line-height at or under 1.05. Body copy is never uppercase; only headings, service rows and image tags are.
+**The One Display Weight Rule.** Cal Sans is only ever used at 400. Hierarchy comes from size, never from bold.
 
-**The Owner's Stack Rule.** Type is the system sans stack, by owner preference. Do not introduce a webfont; express hierarchy through weight, case and size.
+**The Display Carries Hierarchy Rule.** Body and label sizes stay deliberately close together (14–20px). The ramp lives in the display scale (84 / 56 / 48 / 22px). A detector reading this as a flat hierarchy is looking only at the body tier, and that flatness is intentional.
 
 ## Layout
 
-Single column on phones inside a 1180px container with 20px gutters (40px from 1024px). Sections are full-bleed bands with 56px top / 64px bottom padding, growing to 96px / 104px at 1024px. Buttons stack full-width in a 10px grid on phones and sit side by side (auto columns, left-aligned) from 600px.
+A single centred container (1160px max) with a 20px gutter on phones and 40px from 760px up. Bands run full-bleed with 64px vertical padding, or 96px on desktop. The hero copy pads 56/64px on phones and 112/120px on desktop, over a photo set to `object-fit: cover` (focal point 50% 55%, or 62% from 1024px).
 
-The hero is copy only (headline, promise, two buttons) sitting directly on the floor, with no min-height and no grid: 10px top / 56px bottom padding on phones, a single column at 70px / 120px from 1024px.
+- **Phones (default):** one column. Hero buttons stack full width. Service rows, photo pairs and steps stack.
+- **760px and up:** service rows and the two before/after pairs go to two columns (pair gap 24px). Hero buttons sit side by side, each at least 220px wide.
+- **1024px and up:** the quote band splits 1fr / 1.25fr with a 64px gap, and its heading block sticks at 40px from the top. Steps go to three columns with a 40px gap. The close band places the name block and the big phone number on one row, aligned to the bottom.
+- **380px and down:** chip and submit padding tighten.
 
-From 1024px: services, how-it-works and the quote section become 4fr/7fr two-column grids with a 60px gap (heading left, content right); the work band stacks heading, a two-column row of before/after pairs (28px gap, 34px below the heading; on phones the pairs stack with a 22px gap, 22px below the heading) and the Facebook card (max 520px) beneath them.
+Rhythm inside bands is a short run of gaps: 10–12px between siblings, 16–24px within groups, 28–36px between a headline and its content. Text measures are capped (11ch for H1, 32–40ch for the promise, 38ch for ledes, 36ch for steps). The form card stays at 620px or narrower.
 
 ### Named Rules
-**The Number Up Top Rule.** The first screen's header holds the logo left and the tap-to-call number right, nothing else. No nav menu, no sticky bar; the header scrolls away.
+**The Fixed Band Order Rule.** Hero photo under navy, then paper services, deep how-it-works, paper before/after with the Facebook row, navy quote form, paper close, deep footer. Light and dark alternate, so a new section is always obvious. Don't put two dark bands next to each other.
 
 ## Elevation & Depth
 
-Depth is material, not stacked. The floor is one tiled surface (a 460px seamless tile drawn once in JS: cement grain, 22 soft mottling blooms, about 3,000 cut aggregate chips) set as the body background so it scrolls with the page. Behind all content, a fixed, pointer-transparent reflection layer holds rows of shop light tubes: soft white bars with a glow, one long tube or (over 900px wide) a pair per row, rows 60% of a screen height apart, each row at its own opacity. Each row is set directly from scrollY inside the scroll event (row position minus scrollY x 0.45), so they drift against the floor like real reflections in the same frame as the page; rows are recycled only while off screen. Navy bands are opaque, so reflections show only on the floor. UI itself is flat; the few DOM shadows are soft and downward.
+The system is flat. Depth comes from band colour and from white cards sitting on paper or navy, not from shadows. Rows and cards have no shadow at rest or on hover. There are only two layered effects. The hero photo sits under a vertical navy gradient (80% → 72% → 88% opacity of Tagline Navy), which keeps white text at 4.5:1 or better while the grinder stays readable. Photo cards carry a bottom 40% gradient from transparent to 78% navy, so their white tag reads.
 
 ### Shadow Vocabulary
-- **Button lift** (`box-shadow: 0 6px 14px -6px rgba(13,22,54,.45)`): primary button on the floor only; removed on navy.
-- **Pour shadow** (a duplicate of the pour edge path, filled `rgba(13,22,54,.13)`, offset 4px): under every epoxy-pour edge.
-- **Tube glow** (`box-shadow: 0 0 22px 7px rgba(255,255,255,.3)` plus a 140px white radial wash behind each row): the reflected light tubes.
-- **Saw-cut** (2px of `rgba(38,36,32,.5)` over 1px of `rgba(255,255,255,.4)`): the joint between floor sections.
+- **Float lift** (`box-shadow: 0 10px 28px rgba(10,18,52,.3)`): the floating text circle only, because it is the one element above the page.
 
 ### Named Rules
-**The Poured Depth Rule.** Floor meets floor at a saw-cut joint; floor meets navy at an epoxy pour. Never separate sections with a card, border box or decorative rule.
+**The Only the Float Floats Rule.** Nothing but the fixed text circle casts a shadow. Hover never adds one.
 
-**The One Floor Rule.** Light sections have no background of their own: they are the same polished floor, and its reflections move at a different rate than the page. Under reduced motion the reflections lock to the floor (1x).
+**The Faint Texture Rule.** Deep navy bands (how-it-works, footer) carry `repeating-linear-gradient(135deg, transparent 0 22px, rgba(255,255,255,.035) 22px 23px)`. Keep it at about 4% white or fainter so it never reads as lines through the text. Use it only on deep navy, never on paper or Logo Blue. This is an intentional house-style exception to the striped-gradient detector rule.
 
 ## Shapes
 
-Round and outlined, like the logo's letters. Actions are full pills (999px) with a 2.5px Outline Ink border; small circular controls (arrows, the Facebook icon disc) are true circles; containers that hold content (Facebook card, before/after photo frames, confirmation panel) use 14px corners; text fields use 12px. Borders are thick (2-2.5px) on interactive things and framed photos, 1.5px for the service-row rules. The only straight structural line is the saw-cut joint, which belongs to the floor. The only organic shape is the pour edge: a sum of three sine waves, never a regular wave.
+Soft and borderless. Containers are rounded rectangles with no stroke. The radius steps down with the size of the element: 24px for photo cards and the form card, 20px for service and Facebook rows, 16px for the sent panel inside the form, and 10px for inputs. Every button, chip and eyebrow is a full pill, and every round marker (arrow discs, step numerals, the float, the eyebrow dot) is a true circle. Focus rings get a 6px radius. Photos are clipped to their card radius and never stretched. Before/after shots are 3:4.
 
 ## Components
 
 ### Buttons
-Tactile, outlined, chunky.
-- **Shape:** full pill (`rounded.pill`), 2.5px Outline Ink border, minimum height 58px (48px inside the confirmation panel), 1.4em side padding, optional 22px leading SVG icon with 0.6em gap.
-- **Primary:** Grinder Blue fill, Paper text, button-lift shadow. On navy bands the border turns white and the shadow drops.
-- **Ghost:** transparent with Outline Ink text; fills Outline Ink with Paper text on hover.
-- **Hover / Focus:** 0.2s colour transitions; primary darkens to Pressed Blue. Press nudges down 1px and scales to 0.99. Focus is a 3px Grinder Blue outline at 3px offset (white on navy; amber inside the form).
+Big, soft pills set in the display face. They feel tactile: a press shrinks them slightly.
+- **Shape:** full pill (999px), at least 56px tall, 26px side padding, 2px border, an optional 20px leading icon.
+- **Primary:** Grinder Amber fill and border with Ink text. Used for "Text us photos of your floor", the form submit (full width) and the sent panel's main action.
+- **Hover / Focus:** primary moves to Lit Amber. Every button scales to 0.98 on `:active`, with 0.2s colour transitions. Hover styles apply only under `(hover:hover)`. Inside the form, hover and focus add a 2px Form Focus Blue outline at 2px offset.
+- **Ghost:** transparent, On-Dark text and a 70% On-Dark border, used on the hero only. On hover the border goes fully white over a 10% white wash.
+- **Line:** transparent, with Ink text and an Ink border. It fills with Ink and turns white on hover. Used for "Copy message" in the sent panel at 48px tall and 16px type.
+
+### Eyebrow (intentional exception)
+- **Style:** a small pill set at system 500, 14px, +0.02em. It has a 7px amber dot, 9px/14px padding and a 6% ink tint on paper, or On-Dark text on a 12% white tint on the hero and dark bands.
+- **Use:** above three headings only: the hero ("Concrete grinding and polishing", the company tagline), "Our work" and "Photos help". It is marked up as a `<p>`, never a heading. It has no arrow, no hover, no shadow and no full-strength fill, so it can't be mistaken for a button.
+- **Status:** Ellie's house rule (calm-photo-style, 2026-10-19) overrides the craft-floor ban on eyebrows. Use it on a few key headings only, not as a label on every section.
 
 ### Chips
-- **Style:** Paper pill, 2px Joint Line border, 46px tall, 16px side padding, 700 weight. The native radio/checkbox is visually hidden.
-- **State:** selected fills Outline Ink with Paper text. Same look for single-choice (radio) and multi-choice (checkbox) groups.
+- **Style:** a Field Tint pill, 48px tall with 18px padding, 16px system text in Ink and a 2px transparent border. The native checkbox or radio is visually hidden behind the label.
+- **State:** selected becomes an Ink fill with white text. Hover gives a Form Focus Blue border. Keyboard focus adds a Form Focus Blue border plus a 3px outline at 3px offset, so focus stays visible on the selected Ink fill.
 
 ### Cards / Containers
-- **Facebook link card (navy only):** 14px corners, 2.5px white border, 6% white wash rising to 14% on hover, 52px white icon disc, trailing arrow pushed right. Sits under the before/after pairs and reads "See more of our work on Facebook".
-- **Confirmation panel:** Paper, 2px Joint Line border, 14px corners, 18px padding; shows the composed message in body-sized pre text.
+- **Corner Style:** 24px (form card, photo cards), 16px (sent panel).
+- **Background:** Card White for the form on Logo Blue, Paper for the sent panel inside it, and Field Tint behind photos while they load.
+- **Shadow Strategy:** none (see Elevation & Depth).
+- **Border:** none.
+- **Internal Padding:** form clamp(20px, 5vw, 32px) with 22px between fields. Sent panel 18px.
 
 ### Inputs / Fields
-- **Style:** Paper fill, 2px Joint Line border, 12px corners, 54px minimum (textarea 110px, vertical resize), 13px/15px padding, 500 weight at body size. Labels sit above at Label weight; "(optional)" in Soft Ink at 500.
-- **Focus:** border turns Outline Ink and a 3px Warning-Light Amber outline appears at 2px offset.
-- **Error:** border and message in Error Red; message is plain, specific, and says why the field matters.
+- **Style:** Field Tint fill, a 2px transparent border, 10px radius, 52px minimum height (textarea 110px, resizes vertically), 16px system text in Ink with a Logo Blue caret. Placeholders use Soft. Labels sit above in the 17px display face, with "(optional)" hints in 14px Soft.
+- **Focus:** the border turns Form Focus Blue (0.15s), with no outline ring. Hover does the same on pointer devices.
+- **Error:** a plain-sentence message in 15px Error Red appears under the field, and the border turns Error Red. A later, more specific rule keeps the red border while the field is focused.
 
 ### Navigation
-There is no navigation. The header is the logo (138-200px wide) and the tap-to-call number (800 weight, tabular numerals, Grinder Blue phone icon; 1.25rem from 1024px). The footer holds only the company name and a Facebook link.
+- **Header:** a white bar, 68px tall on phones and 84px on desktop, with no shadow. The real logo sits left (52px, or 64px on desktop) and links to the top. The tap-to-call number sits right in the display face (17px, or 21px on desktop), with an 18px amber-ink phone icon. The number turns Logo Blue on hover. The header is the only top navigation. There is no menu.
+- **Footer:** deep navy with the texture. It holds 14px copyright and underlined On-Dark links (Facebook) at least 44px tall, with the underline at 40% On-Dark and 4px offset. Links turn amber on hover. Bottom padding leaves room for the float.
 
-### Service Rows
-A ruled list, not cards. Each row is a full-width link (66px minimum) with the uppercase service name left and a 44px circular arrow right, separated by 1.5px Joint Line rules top and bottom. On hover or focus, only the arrow reacts: it fills Grinder Blue with a white arrow, and keyboard focus draws the outline around the arrow, not the row. On phones a row opens a pre-written text; on hover-capable desktops it jumps to the form with that service ticked.
+### Service Row (signature)
+Each of the six services is a whole-row link that texts about that job (on desktop it opens the quote form with that chip ticked). A Card White rounded row (20px radius, at least 68px tall) holds the service name in the Title display size and a 44px arrow disc at the right on a 7% ink tint. **Only the arrow changes:** on hover the disc fills Grinder Amber. On keyboard focus the disc fills amber and takes a 3px Form Focus Blue outline at 3px offset, while the row's own outline and background stay put. Rows sit one per line on phones and two per line from 760px.
 
-### Before/After Pair (signature)
-Real jobs, side by side, in the navy work band under the heading "Before and after". The photos were not shot from the same spot, so they are shown as static pairs, never overlaid. `.pairs` is a grid (22px gap, 22px below the heading; two columns with a 28px gap and 34px margin-top from 1024px). Each pair is two figures side by side (8px gap, 12px from 1024px). Each shot is a 3:4 frame with a 2.5px white border and 14px corners over a `#3a3f55` underlay that shows while the image loads; the photo is `object-fit: cover`. One uppercase Tag pill sits 8px in from the top-left, reading "Before" or "After" on a 72% Outline Ink wash. Nothing on it moves or responds to input; every photo carries alt text describing the job.
+### Facebook Row
+The same row anatomy as a service row, made larger (76px, 14px/16px padding). It has a 30px Facebook mark in Logo Blue, then "Click to see more of our work on Facebook", then the same arrow disc. Hover and focus behave exactly like the service row. It closes the before/after band.
 
-### Saw-Cut Joint
-The divider between two floor sections: a 3px strip, 2px dark groove over a 1px highlight, full-bleed. It is part of the floor, not a rule drawn on it.
+### Steps
+A numbered list on deep navy. Each step has a 48px Grinder Amber disc with an Ink numeral (Cal Sans 20px, from a CSS counter) and a 16px gap to its text. The title is an h3 in Title Step size in On-Dark, followed by a 36ch On-Dark Soft description. Steps stack with a 24px gap on phones and sit in three columns at 1024px.
 
-### Epoxy-Pour Edge (signature)
-An inline SVG (viewBox 1440x80, stretched) only where the floor meets a navy band. Its background is transparent so the floor shows through; the path is navy, with the pour shadow beneath. Where navy sits above the floor the edge is flipped vertically (`scaleY(-1)`). Height 46px, 64px from 600px, 84px from 1024px. The edge is three summed sines that roll slowly (`SPEED 0.0006`, `AMP 7` viewBox units) with a per-edge phase offset; a nearby pointer pushes the edge away by up to `PUSH 16` units on a springy, damped bump. Only animates while on-screen.
+### Shot Card (Before / After)
+A pair of real job photos side by side (10px gap), each a 3:4 figure clipped to 24px. A bottom navy gradient sits under a white "Before"/"After" tag at bottom-left (16px/12px inset). The tag repeats what the alt text already says, so it is aria-hidden. There is no caption and no arrow.
+
+### Sent Panel
+After submit, a Paper panel (16px radius, 18px padding) appears inside the form as a `role="status"` region. It shows a bold Ink line, the composed message in 15px pre-wrapped body text, and pill buttons (48px). On phones the main action is "Open in Messages" and the Line button is "Copy message". On desktop, where nothing opens, only "Copy message" shows, promoted to Primary. The Ink-coloured number stays as a plain fallback.
+
+### Close Phone Number
+The closing band ends on the business name (headline), a soft one-line description and the number itself in Display Tel size, Ink, with an amber-ink phone icon. It turns Logo Blue on hover. On desktop it sits bottom-right of the name block.
+
+### Floating Text Circle
+One 60px Grinder Amber circle with a 26px Ink chat icon, fixed 16px from the bottom-right corner (inside the safe area), and the only shadowed element. It stays hidden (translated 120px down, `visibility:hidden`, `tabIndex=-1`, `aria-hidden`) until the hero has scrolled away. It hides again while the quote form is on screen, so two controls that do the same thing are never in view together. It slides in over 0.35s `cubic-bezier(.2,.8,.2,1)`. On phones it opens a pre-filled `sms:`. On desktop it links to the form. Without IntersectionObserver it is removed. It is always one circle, never a bottom bar.
 
 ### Motion and Reduced Motion
-One shared requestAnimationFrame loop runs only while a visible pour edge needs it. UI transitions are 0.15-0.2s colour changes; smooth anchor scrolling. Reflections are not on the loop: they are set directly in the scroll event, translateY = row position minus scrollY x `RATE 0.45`, with no easing and no stretch; rows (`GAP 0.6` screen heights, min 240px) are re-dressed only while off screen. Under `prefers-reduced-motion: reduce`: all CSS transitions are removed, scroll is instant, reflections move 1:1 with the floor, and pour edges render once and stay still.
+- **H1 bounce-in (hero only):** JS splits the H1 into letter spans inside `white-space:nowrap` word wrappers, keeping the `.accent` span. Each letter runs from `opacity:0; translateX(50px)` to rest over `1s cubic-bezier(.34,1.56,.64,1)`, 20ms apart. The H1 gets an `aria-label` and the letter wrappers are `aria-hidden`. When the last letter's `animationend` fires, the original HTML comes back, which restores kerning and text selection.
+- **Fade-up:** elements marked `.rise` that start below the first screen get a `.below` class (12px down, opacity 0). They rise over 400ms ease-out as they enter (IntersectionObserver, -8% bottom margin). Anything already on screen is never hidden.
+- **Reduced motion / no JS:** no split, no hidden content, no float slide and no button transitions. A CSS backstop forces the letters visible. Smooth scrolling turns off.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** set dark bands in opaque Tagline Navy with its masked radial glow, and text on them in On-Navy / On-Navy Soft.
-- **Do** join floor to floor with a saw-cut joint, and floor to navy with an epoxy-pour edge (flipped when navy is above).
-- **Do** let light sections sit directly on the tiled floor, with no background colour of their own.
-- **Do** keep the first-screen header to the logo and the tap-to-call number (top right), and let it scroll away.
-- **Do** use outlined pills (2.5px Outline Ink, 58px) for actions, with Grinder Blue fill for the primary.
-- **Do** set blue type on the concrete in Pressed Blue.
-- **Do** give every form control (inputs, textarea, chips, the submit button) a 3px Warning-Light Amber outline on hover and focus, paired with the Outline Ink border shift on text fields so focus never depends on amber alone.
-- **Do** let only the arrow react when a service row is hovered or focused.
-- **Do** keep touch targets at or above 44px and use tabular numerals for the phone number.
-- **Do** honour reduced motion exactly as above: reflections locked to the floor, still pours, no transitions.
+- **Do** keep the band order: photo hero under navy, paper, deep, paper, navy form, paper close, deep footer.
+- **Do** use Grinder Amber as a fill with Ink text on it, and Amber Ink (#8a5a00) whenever amber has to be text on light.
+- **Do** set every heading, button, row label and form label in Cal Sans at 400, and running text in the system stack at 16/1.7.
+- **Do** put inputs and chips on Field Tint (#e6ecf5), not Paper, when they sit on the white form card.
+- **Do** keep service and Facebook rows still on hover: only the 44px arrow disc fills amber.
+- **Do** use focus outlines that show on their ground: 3px amber on dark bands and the hero, 3px Form Focus Blue (#1d3cc4) at 3px offset on light and inside the form.
+- **Do** keep everything visible at rest. Hide only `.rise` elements that start below the first screen, and only when JS is on and reduced motion is off.
+- **Do** keep tap targets at 44px or more (buttons 56px, chips 48px, rows 68px).
+- **Do** keep eyebrows to a few key headings, quiet (14px, tinted, amber dot), and marked up as `<p>`.
 
 ### Don't:
-- **Don't** load a webfont; the system stack is the owner's choice.
-- **Don't** add a sticky header, sticky call bar, or any fixed UI; the only fixed layer is the reflections, behind content and ignoring the pointer.
-- **Don't** repeat the phone number elsewhere in the first screen; it appears top right, then in the close band.
-- **Don't** add an email address, mailto link, or contact channel other than phone/text and Facebook.
-- **Don't** highlight, underline, outline or tint a whole service row on hover; the arrow carries the state.
-- **Don't** use black or near-black grounds.
-- **Don't** use amber anywhere but the outline on form controls.
-- **Don't** separate sections with boxes, cards or decorative rules; the saw-cut joint is the only straight divider.
-- **Don't** put a pour between two floor sections; pours exist only where navy meets the floor.
+- **Don't** add shadows to cards, rows or the header. The floating circle is the only element that casts one.
+- **Don't** set amber text on paper or white, or white text on amber.
+- **Don't** apply the letter bounce-in to any heading other than the hero H1, or add other entrance effects.
+- **Don't** put the diagonal texture on paper or Logo Blue bands, or make it stronger than about 4% white.
+- **Don't** turn the floating circle into a bottom bar, or show it while the form is in view.
+- **Don't** give an eyebrow an arrow, hover state, shadow or full amber fill, and don't add one to every section.
+- **Don't** add a Call button to the hero. The number lives in the header and the close band.
+- **Don't** use stock or illustrated imagery. Every photo is the crew's own job, cropped with `object-fit: cover` and never stretched.
+- **Don't** set Cal Sans in bold.
