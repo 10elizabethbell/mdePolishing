@@ -121,7 +121,7 @@ section{padding:64px 0}
 .steps{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:24px;counter-reset:s}
 .steps li{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;counter-increment:s}
 .steps li::before{content:counter(s);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--amber);color:var(--ink);font:400 20px/1 var(--display)}
-.steps b{display:block;font:400 21px/1.2 var(--display);color:var(--on-dark);margin-top:4px}
+.steps h3{font:400 21px/1.2 var(--display);color:var(--on-dark);margin-top:4px}
 .steps span{display:block;margin-top:4px;max-width:36ch}
 
 /* ---------- Before and after: real job photos ---------- */
@@ -165,7 +165,7 @@ form .btn-primary:focus-visible{outline:2px solid var(--focus);outline-offset:2p
 .sent .twin{display:flex;flex-wrap:wrap;gap:10px}
 .sent .btn{min-height:48px;font-size:16px;padding:0 20px}
 .sent a.num{white-space:nowrap;color:var(--ink);font-weight:600}
-@media (max-width:380px){.chips label{padding:0 14px}}
+@media (max-width:380px){.chips label{padding:0 14px}form>.btn{font-size:16px;padding:0 16px}}
 
 /* ---------- Close ---------- */
 .close .who{margin-top:14px;font-size:clamp(18px,5vw,20px);color:var(--soft)}
@@ -176,13 +176,13 @@ form .btn-primary:focus-visible{outline:2px solid var(--focus);outline-offset:2p
 /* ---------- Footer ---------- */
 footer{background-color:var(--deep);background-image:var(--texture);color:var(--on-dark-soft);padding:40px 0 calc(96px + env(safe-area-inset-bottom));font-size:16px}
 footer .wrap{display:grid;gap:10px}
-footer b{font:400 20px/1.2 var(--display);color:var(--on-dark)}
+footer small{font:14px/1.4 var(--text);color:var(--on-dark-soft)}
 footer nav{display:flex;flex-wrap:wrap;gap:6px 22px}
 footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--on-dark);text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(244,246,251,.4)}
 
 /* ---------- Floating text circle (one circle, never a bottom bar) ---------- */
-.float{position:fixed;z-index:15;right:calc(16px + env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--amber);color:var(--ink);box-shadow:0 10px 28px rgba(10,18,52,.3);transform:translateY(120px);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.float.on{transform:none}
+.float{position:fixed;z-index:15;right:calc(16px + env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--amber);color:var(--ink);box-shadow:0 10px 28px rgba(10,18,52,.3);transform:translateY(120px);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
+.float.on{transform:none;visibility:visible;transition-delay:0s}
 .float svg{width:26px;height:26px}
 .float:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:50%}
 
@@ -203,7 +203,6 @@ footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--on-d
   .actions .btn{min-width:220px}
   .rows{grid-template-columns:1fr 1fr}
   .pairs{grid-template-columns:1fr 1fr;gap:24px}
-  .fb{max-width:520px}
 }
 @media (min-width:1024px){
   .hero-photo img{object-position:50% 62%}
@@ -212,7 +211,7 @@ footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--on-d
   .close .wrap{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
   .bigtel{margin-top:0}
   .how .steps{grid-template-columns:repeat(3,1fr);gap:40px}
-  .steps b{font-size:22px}
+  .steps h3{font-size:22px}
 }
 /* hover styles only where there is a real pointer, so taps don't leave them stuck on */
 @media (hover:hover){
@@ -256,7 +255,7 @@ FORM: calm-photo band system: paper, navy, deep navy with line texture; 24px car
   </div>
 </header>
 
-<main id="top">
+<main>
 <section class="hero" id="hero" aria-labelledby="h1">
   <div class="hero-photo"><img src="assets/hero-760.webp" srcset="assets/hero-760.webp 760w, assets/hero-1316.webp 1316w" sizes="100vw" width="1316" height="1508" alt="" fetchpriority="high"></div>
   <div class="wrap hero-copy">
@@ -286,11 +285,11 @@ FORM: calm-photo band system: paper, navy, deep navy with line texture; 24px car
 
 <section class="on-deep how" aria-labelledby="h-how">
   <div class="wrap">
-    <h2 id="h-how" class="rise">How a quote <span class="accent">works.</span></h2>
+    <h2 id="h-how" class="rise">How a quote <span class="accent">works</span></h2>
     <ol class="steps">
-      <li class="rise"><div><b>Send us photos.</b><span>The whole floor, plus close-ups of any cracks, stains or old coating.</span></div></li>
-      <li class="rise"><div><b>We tell you straight.</b><span>What your floor needs, and what it doesn't.</span></div></li>
-      <li class="rise"><div><b>We do it right.</b><span>Proper prep comes first. It's the part you can't see, and the part we don't rush.</span></div></li>
+      <li class="rise"><div><h3>Send us photos.</h3><span>The whole floor, plus close-ups of any cracks, stains or old coating.</span></div></li>
+      <li class="rise"><div><h3>We tell you straight.</h3><span>What your floor needs, and what it doesn't.</span></div></li>
+      <li class="rise"><div><h3>We do it right.</h3><span>Proper prep comes first. It's the part you can't see, and the part we don't rush.</span></div></li>
     </ol>
   </div>
 </section>
@@ -303,12 +302,12 @@ FORM: calm-photo band system: paper, navy, deep navy with line texture; 24px car
     </div>
     <div class="pairs">
       <div class="pair rise">
-        <figure class="shot"><img src="assets/room-before.webp" width="720" height="961" alt="Before: a dusty concrete floor mid-grind, with the grinder in the room" loading="lazy" decoding="async"><span>Before</span></figure>
-        <figure class="shot"><img src="assets/room-after.webp" width="720" height="960" alt="After: the same room, the floor ground and polished with the stone showing" loading="lazy" decoding="async"><span>After</span></figure>
+        <figure class="shot"><img src="assets/room-before.webp" width="720" height="961" alt="Before: a dusty concrete floor mid-grind, with the grinder in the room" loading="lazy" decoding="async"><span aria-hidden="true">Before</span></figure>
+        <figure class="shot"><img src="assets/room-after.webp" width="720" height="960" alt="After: the same room, the floor ground and polished with the stone showing" loading="lazy" decoding="async"><span aria-hidden="true">After</span></figure>
       </div>
       <div class="pair rise">
-        <figure class="shot"><img src="assets/crack-before.webp" width="720" height="960" alt="Before: a cracked basement slab marked out in orange paint" loading="lazy" decoding="async"><span>Before</span></figure>
-        <figure class="shot"><img src="assets/crack-after.webp" width="720" height="960" alt="After: the slab with the cracks filled and ground" loading="lazy" decoding="async"><span>After</span></figure>
+        <figure class="shot"><img src="assets/crack-before.webp" width="720" height="960" alt="Before: a cracked basement slab marked out in orange paint" loading="lazy" decoding="async"><span aria-hidden="true">Before</span></figure>
+        <figure class="shot"><img src="assets/crack-after.webp" width="720" height="960" alt="After: the slab with the cracks filled and ground" loading="lazy" decoding="async"><span aria-hidden="true">After</span></figure>
       </div>
     </div>
     <a class="fb rise" href="https://facebook.com/profile.php?id=61589369156324" rel="noopener">
@@ -368,7 +367,7 @@ FORM: calm-photo band system: paper, navy, deep navy with line texture; 24px car
       </div>
       <button class="btn btn-primary" type="submit"><svg aria-hidden="true"><use href="#i-chat"/></svg>Text this to MDE Polishing</button>
       <div class="sent" id="sent" role="status" hidden>
-        <p><strong>Your text is ready.</strong> If it didn't open, copy it and send it with your photos to <a class="num" href="tel:+12268084556">226-808-4556</a>.</p>
+        <p><strong>Your text is ready.</strong> <span id="sent-lead">If it didn't open, copy it and send it with your photos to</span> <a class="num" href="tel:+12268084556">226-808-4556</a>.</p>
         <pre id="sent-msg"></pre>
         <div class="twin"><a class="btn btn-primary" id="sent-open" href="sms:+12268084556">Open in Messages</a><button class="btn btn-line" type="button" id="sent-copy">Copy message</button></div>
       </div>
@@ -391,7 +390,7 @@ FORM: calm-photo band system: paper, navy, deep navy with line texture; 24px car
 
 <footer>
   <div class="wrap">
-    <b>MDE Polishing Inc.</b>
+    <small>© 2026 MDE Polishing Inc.</small>
     <nav aria-label="Elsewhere">
       <a href="https://facebook.com/profile.php?id=61589369156324" rel="noopener">Facebook</a>
     </nav>
@@ -442,6 +441,8 @@ function sms(body){ return 'sms:' + CONFIG.NUM + '?&body=' + encodeURIComponent(
   [].forEach.call(rows,function(a){a.href=sms("Hi MDE Polishing! I'd like a quote for "+a.dataset.svc+". Here are some photos of the floor.\nTown: \nRough size: ")});
   // desktops can't send texts: a service row opens the quote form with that job ticked
   if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+    document.getElementById('heroText').href='#quote';
+    var f=document.getElementById('float');if(f)f.href='#quote';
     [].forEach.call(rows,function(a){
       a.href='#quote';
       a.addEventListener('click',function(){var cb=document.querySelector('input[name=work][value="'+a.dataset.chip+'"]');if(cb)cb.checked=true});
@@ -452,7 +453,7 @@ function sms(body){ return 'sms:' + CONFIG.NUM + '?&body=' + encodeURIComponent(
 /* ===== Quote form: composes a text to MDE Polishing ===== */
 (function(){
   var form=document.getElementById('qform');if(!form)return;
-  var sent=document.getElementById('sent'),msgEl=document.getElementById('sent-msg'),openBtn=document.getElementById('sent-open');
+  var sent=document.getElementById('sent'),msgEl=document.getElementById('sent-msg'),openBtn=document.getElementById('sent-open'),copyBtn=document.getElementById('sent-copy');
   function val(id){return document.getElementById(id).value.trim()}
   function mark(id,bad){var f=document.getElementById(id);f.classList.toggle('bad',bad);f.querySelector('input').setAttribute('aria-invalid',bad?'true':'false')}
   form.addEventListener('input',function(e){var f=e.target.closest('.field');if(f&&f.classList.contains('bad')&&e.target.value.trim())f.classList.remove('bad')});
@@ -472,8 +473,14 @@ function sms(body){ return 'sms:' + CONFIG.NUM + '?&body=' + encodeURIComponent(
     var body=lines.join('\n');
     msgEl.textContent=body;openBtn.href=sms(body);
     // phones open the messages app; desktops (and in-app browsers that block it) get the message to copy
+    form.querySelector('.after').hidden=true;
     if(matchMedia('(pointer:coarse)').matches){location.href=openBtn.href;setTimeout(function(){sent.hidden=false},900)}
-    else{sent.hidden=false;sent.scrollIntoView({block:'nearest',behavior:'smooth'})}
+    else{
+      // nothing opened on a desktop: offer the copy, not a second "open" button
+      openBtn.hidden=true;copyBtn.className='btn btn-primary';
+      document.getElementById('sent-lead').textContent='Copy this and text it with your photos to';
+      sent.hidden=false;sent.scrollIntoView({block:'nearest',behavior:'smooth'});
+    }
   });
   document.getElementById('sent-copy').addEventListener('click',function(){
     var b=this;
