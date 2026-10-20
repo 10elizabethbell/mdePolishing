@@ -3,572 +3,502 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MDE Polishing Inc. | Concrete grinding, polishing and epoxy</title>
-<meta name="description" content="MDE Polishing Inc.: concrete grinding, epoxy coatings, concrete polishing, grind and seals, coating removals and concrete sealing. Send photos of your floor for a quote: 226-808-4556.">
-<meta name="theme-color" content="#aeaca7">
+<title>MDE Polishing Inc. · Concrete grinding, polishing and epoxy</title>
+<meta name="description" content="MDE Polishing Inc.: concrete grinding, epoxy coatings, concrete polishing, grind and seals, coating removals and concrete sealing. Text us photos of your floor for a quote: 226-808-4556.">
+<meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website">
-<meta property="og:title" content="MDE Polishing Inc.">
-<meta property="og:description" content="Concrete grinding, polishing, epoxy coatings and sealing. Send us photos of your floor for a quote.">
+<meta property="og:title" content="MDE Polishing Inc. · Floors that shine">
+<meta property="og:description" content="Concrete grinding, polishing, epoxy coatings and sealing. Text us photos of your floor for a quote.">
 <meta property="og:url" content="https://10elizabethbell.github.io/mdePolishing/">
 <meta property="og:image" content="https://10elizabethbell.github.io/mdePolishing/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ebebeb'/%3E%3Cg fill='%232c54f7' stroke='%23000f2f' stroke-width='2.4' stroke-linejoin='round'%3E%3Cpath d='M18 26V6h6l8 9 8-9h6v20h-5V13l-9 9-9-9v13z'/%3E%3Cpath d='M18 29h17c7 0 11 4 11 8.5S42 46 35 46H18zm5 4v9h12c3.6 0 6-1.8 6-4.5S38.6 33 35 33z' fill-rule='evenodd'/%3E%3Cpath d='M18 49h28v4H23v1.5h20v3.5H23V59h23v4H18z' transform='translate(0 -1)'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" as="image" href="assets/hero-760.webp" imagesrcset="assets/hero-760.webp 760w, assets/hero-1316.webp 1316w" imagesizes="100vw">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap">
 <style>
-/* ---------- tokens ---------- */
+/* ---------- Tokens ---------- */
 :root{
-  --ground:#aeaca7;      /* polished concrete; the floor texture is drawn over it in JS */
-  --ink:#0d1636;         /* navy-black, from the logo outline */
-  --ink-soft:#1f2643;
-  --blue:#2c54f7;        /* logo blue */
-  --blue-deep:#1d3cc4;
-  --navy:#14215a;        /* logo tagline navy */
-  --on-navy:#eef0fa;
-  --on-navy-soft:#b9c0e0;
-  --line:rgba(13,22,54,.3);
-  --focus:#f0a51c;       /* form outline accent: grinder warning-light amber */
-  --radius:14px;
-  --font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  /* off-white paper, the logo's blue and navy, one grinder-amber accent */
+  --paper:#f4f6fb;       /* page ground */
+  --card:#ffffff;
+  --field:#e6ecf5;       /* inputs and chips on the white form card */
+  --ink:#14215a;         /* headings, text on amber (logo tagline navy) */
+  --body:#2a3352;        /* running text on light */
+  --soft:#4a5868;        /* secondary text on light */
+  --navy:#1d3cc4;        /* logo blue, deepened so white text sits on it: services, quote */
+  --deep:#14215a;        /* how it works, footer (line texture) */
+  --on-dark:#f4f6fb;
+  --on-dark-soft:#c9d4f5;
+  --amber:#f2a51a;       /* fills only; text on it is --ink */
+  --amber-2:#f7bb4a;
+  --amber-ink:#8a5a00;   /* amber as text on light (5.5:1) */
+  --line:rgba(20,33,90,.12);
+  --focus:#1d3cc4;       /* form hover/focus outline, distinct from the amber fill */
+  --error:#b3261e;
+  --texture:repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.035) 22px 23px);
+  --display:"Cal Sans","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --text:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --r-card:24px;--r-field:10px;--pill:999px;
+  --gutter:20px;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;overscroll-behavior-y:none;scroll-behavior:smooth}
-body{margin:0;background:var(--ground);color:var(--ink);font:400 1.0625rem/1.55 var(--font)}
-::selection{background:var(--blue);color:#fff}
-img{max-width:100%;display:block}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--paper)}
+body{margin:0;font:16px/1.7 var(--text);color:var(--body);background:var(--paper)}
+::selection{background:var(--amber);color:var(--ink)}
+img,svg{display:block}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
-h1,h2,h3{margin:0;font-weight:900;text-transform:uppercase;letter-spacing:-.015em;line-height:.95;text-wrap:balance}
-h2{font-size:clamp(2rem,9vw,3.6rem)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.on-navy :focus-visible,.on-deep :focus-visible,.hero :focus-visible,footer :focus-visible{outline-color:var(--amber)}
+.on-navy form :focus-visible{outline-color:var(--focus)}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:-.005em;color:var(--ink);text-wrap:balance}
+h2{font-size:clamp(30px,7.6vw,48px)}
 p{margin:0}
-.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* ---------- the floor: shop lights reflecting in it ---------- */
-.lights{position:fixed;left:0;top:0;width:100%;height:100vh;height:100lvh;z-index:-1;pointer-events:none;overflow:hidden}
-.lrow{position:absolute;left:0;top:0;width:100%;height:0;will-change:transform}
-.lrow::before{content:"";position:absolute;left:-10%;right:-10%;top:-70px;height:140px;background:radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,.2),transparent 72%)}
-.tube{position:absolute;top:-5px;height:10px;border-radius:6px;background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.8) 30%,#fff 50%,rgba(255,255,255,.8) 70%,rgba(255,255,255,0));box-shadow:0 0 22px 7px rgba(255,255,255,.3)}
+/* ---------- Bands ---------- */
+section{padding:64px 0}
+.on-paper{background:var(--paper)}
+.on-navy{background:var(--navy);color:var(--on-dark-soft)}
+.on-deep{background-color:var(--deep);background-image:var(--texture);color:var(--on-dark-soft)}
+.on-navy h2,.on-deep h2,.on-navy h3,.on-deep h3{color:var(--on-dark)}
+.accent{color:var(--amber-ink)}
+.on-navy .accent,.on-deep .accent,.hero .accent{color:var(--amber)}
+.head{display:grid;gap:16px;justify-items:start;max-width:640px}
+.lede{font-size:clamp(17px,4.6vw,19px);color:var(--soft);max-width:38ch}
+.on-navy .lede,.on-deep .lede{color:var(--on-dark-soft)}
 
-/* ---------- buttons (outlined like the logo's letters) ---------- */
-.btn{display:flex;align-items:center;justify-content:center;gap:.6em;text-align:center;text-wrap:balance;min-height:58px;padding:0 1.4em;border:2.5px solid var(--ink);border-radius:999px;font:800 1.0625rem/1.1 var(--font);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,transform .15s}
-.btn:active{transform:translateY(1px) scale(.99)}
-.btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 14px -6px rgba(13,22,54,.45)}
-.btn-primary:hover{background:var(--blue-deep)}
-.btn-ghost{background:transparent;color:var(--ink)}
-.btn-ghost:hover{background:var(--ink);color:#fff}
-.btn svg{width:22px;height:22px;flex:none}
-.on-navy .btn-primary{border-color:#fff;box-shadow:none}
+/* Eyebrow: a few key headings only. A label, not a button. */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 14px/1 var(--text);letter-spacing:.02em;color:var(--ink);background:rgba(20,33,90,.06);padding:9px 14px;border-radius:var(--pill)}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber)}
+.hero .eyebrow,.on-navy .eyebrow,.on-deep .eyebrow{color:var(--on-dark);background:rgba(255,255,255,.12)}
 
-/* ---------- header ---------- */
-.top{position:relative;z-index:3}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:6px}
-.logo{display:block;width:clamp(138px,40vw,200px)}
-.logo img{width:100%;height:auto}
-.phone{display:flex;align-items:center;gap:.4em;min-height:44px;padding:0 2px;font-weight:800;font-size:1.0625rem;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
-.phone svg{width:18px;height:18px;color:var(--blue)}
-.phone:hover{color:var(--blue-deep)}
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:var(--pill);font:400 18px/1.15 var(--display);text-align:center;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:background-color .2s,color .2s,border-color .2s,transform .12s}
+.btn:active{transform:scale(.98)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+.btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(244,246,251,.7)}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--ink)}
 
-/* ---------- hero ---------- */
-.hero{position:relative}
-.hero-copy{padding-top:10px;padding-bottom:56px}
-.hero h1{font-size:clamp(2.75rem,13.4vw,5.6rem);line-height:.9;letter-spacing:-.025em}
-.hero h1 em{font-style:normal;color:var(--blue-deep)}
-.promise{margin-top:14px;max-width:34ch;font-size:clamp(1.0625rem,4.4vw,1.25rem);color:var(--ink-soft)}
-.actions{display:grid;gap:10px;margin-top:20px}
+/* ---------- Header ---------- */
+.top{background:var(--card);color:var(--ink)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:68px;padding-top:max(8px,env(safe-area-inset-top));padding-bottom:8px}
+.logo{display:block;min-height:44px}
+.logo img{height:52px;width:auto}
+.tel{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 2px;font:400 17px/1 var(--display);text-decoration:none;white-space:nowrap}
+.tel svg{width:18px;height:18px;flex:none;color:var(--amber-ink)}
 
-/* ---------- epoxy pour dividers ---------- */
-.pour{display:block;width:100%;height:46px;margin-top:-1px;margin-bottom:-1px;position:relative;z-index:2}
-.pour.down{transform:scaleY(-1)}  /* navy above, floor below */
+/* ---------- Hero: their own job photo under a navy overlay ---------- */
+.hero{padding:0;position:relative;background:var(--deep);color:var(--on-dark);overflow:hidden;isolation:isolate}
+.hero-photo{position:absolute;inset:0;z-index:-2}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,33,90,.86) 0%,rgba(20,33,90,.8) 55%,rgba(20,33,90,.9) 100%)}
+.hero-copy{position:relative;display:grid;gap:20px;justify-items:start;padding-top:56px;padding-bottom:64px}
+.hero h1{color:#fff;font-size:clamp(44px,12.6vw,84px);line-height:1.02;max-width:11ch}
+/* H1 bounce-in (after lpmr.co.uk): each letter slides in from 50px right with a slight overshoot, 20ms apart */
+.hero h1 .w{display:inline-block;white-space:nowrap}
+.hero h1 .c{display:inline-block;opacity:0;transform:translateX(50px);animation:letter-in 1s cubic-bezier(.34,1.56,.64,1) forwards;animation-delay:calc(var(--i) * 20ms)}
+@keyframes letter-in{to{opacity:1;transform:none}}
+.promise{font-size:clamp(17px,4.7vw,20px);line-height:1.5;color:var(--on-dark-soft);max-width:32ch}
+.actions{display:grid;gap:12px;width:100%;margin-top:4px}
 
-/* ---------- sections ---------- */
-section{position:relative}
-.band{padding:56px 0 64px}
-/* saw-cut control joint between two floor sections */
-.joint{height:3px;background:linear-gradient(rgba(38,36,32,.5) 0 2px,rgba(255,255,255,.4) 2px)}
-.on-navy{position:relative;isolation:isolate;background:var(--navy);color:var(--on-navy)}
-.on-navy::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(120% 80% at 15% 35%,rgba(44,84,247,.35),transparent 60%),radial-gradient(90% 70% at 100% 65%,rgba(9,14,40,.55),transparent 70%);-webkit-mask:linear-gradient(transparent,#000 28%,#000 72%,transparent);mask:linear-gradient(transparent,#000 28%,#000 72%,transparent)}
-.on-navy p{color:var(--on-navy-soft)}
-.on-navy :focus-visible{outline-color:#fff}
-
-/* services: whole row is the link, only the arrow reacts */
-.svc-list{list-style:none;margin:26px 0 0;padding:0;border-top:1.5px solid var(--line)}
-.svc-list li{border-bottom:1.5px solid var(--line)}
-.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px;padding:10px 2px;text-decoration:none;font-weight:800;font-size:clamp(1.125rem,5vw,1.5rem);text-transform:uppercase;letter-spacing:.01em}
-.row:hover,.row:focus-visible{outline:none;background:none;box-shadow:none}
-.arrow{display:grid;place-items:center;flex:none;width:44px;height:44px;border:2px solid var(--line);border-radius:50%;color:var(--ink);transition:background .2s,border-color .2s,color .2s}
+/* ---------- Services: each row texts about that job ---------- */
+.svc .wrap{display:grid;gap:28px}
+.rows{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:68px;padding:10px 12px 10px 22px;border-radius:20px;background:var(--card);color:var(--ink);text-decoration:none;font:400 clamp(19px,5.2vw,22px)/1.2 var(--display)}
+.row:hover,.row:focus-visible{outline:none;background:var(--card);box-shadow:none}
+.arrow{width:44px;height:44px;flex:none;border-radius:50%;display:grid;place-items:center;background:rgba(20,33,90,.07);color:var(--ink);transition:background-color .2s,color .2s}
 .arrow svg{width:18px;height:18px}
-.row:hover .arrow,.row:focus-visible .arrow{background:var(--blue);border-color:var(--blue);color:#fff}
-.row:focus-visible .arrow{outline:3px solid var(--blue);outline-offset:3px}
-.svc-note{margin-top:16px;color:var(--ink-soft);font-size:1rem}
+.row:focus-visible .arrow,.fb:focus-visible .arrow{background:var(--amber);outline:3px solid var(--focus);outline-offset:3px}
 
-/* how it works */
-.steps{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:26px;counter-reset:s}
-.steps li{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;align-items:start}
-.steps li::before{counter-increment:s;content:counter(s);grid-row:span 2;color:var(--blue-deep);font-weight:900;font-size:2.25rem;line-height:1}
-.steps h3{font-size:1.375rem;line-height:1.05;padding-top:4px}
-.steps p{color:var(--ink-soft);max-width:44ch}
+/* ---------- How it works ---------- */
+.steps{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:24px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--amber);color:var(--ink);font:400 20px/1 var(--display)}
+.steps b{display:block;font:400 21px/1.2 var(--display);color:var(--on-dark);margin-top:4px}
+.steps span{display:block;margin-top:4px;max-width:36ch}
 
-/* work / facebook */
-.work h2{max-width:14ch}
-.fb{display:flex;align-items:center;gap:16px;margin-top:26px;padding:18px 20px;border:2.5px solid #fff;border-radius:var(--radius);background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-weight:800;font-size:clamp(1.125rem,5vw,1.375rem);line-height:1.15;transition:background .2s}
-.fb:hover{background:rgba(255,255,255,.14)}
-.fb .fbi{flex:none;width:52px;height:52px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center}
-.fb .fbi svg{width:28px;height:28px}
-.fb .go{margin-left:auto;flex:none;width:28px;height:28px}
-
-/* before/after pairs: two photos side by side */
-.pairs{display:grid;gap:22px;margin-top:22px}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.shot{position:relative;margin:0;aspect-ratio:3/4;overflow:hidden;border-radius:var(--radius);border:2.5px solid #fff;background:#3a3f55}
+/* ---------- Before and after: real job photos ---------- */
+.pairs{display:grid;gap:16px;margin-top:32px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.shot{position:relative;margin:0;border-radius:var(--r-card);overflow:hidden;background:var(--field);aspect-ratio:3/4}
 .shot img{width:100%;height:100%;object-fit:cover}
-.shot .tag{position:absolute;left:8px;top:8px;padding:4px 10px;border-radius:999px;background:rgba(13,22,54,.72);color:#fff;font-size:.8125rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
-.work .fb{margin-top:22px}
+.shot::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(180deg,rgba(20,33,90,0),rgba(20,33,90,.78))}
+.shot span{position:absolute;z-index:1;left:16px;bottom:12px;font:400 clamp(18px,5vw,22px)/1 var(--display);color:#fff}
+.fb{margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:76px;padding:14px 16px 14px 22px;border-radius:20px;background:var(--card);color:var(--ink);text-decoration:none;font:400 clamp(19px,5.2vw,22px)/1.2 var(--display)}
+.fb:hover,.fb:focus-visible{outline:none;background:var(--card);box-shadow:none}
+.fb .lbl{display:flex;align-items:center;gap:14px}
+.fb .lbl svg{width:30px;height:30px;flex:none;color:var(--navy)}
 
-/* quote form */
-.quote .intro{margin-top:14px;max-width:44ch;color:var(--ink-soft)}
-form{margin-top:26px;display:grid;gap:22px;max-width:640px}
-.field{display:grid;gap:8px}
-.field>label,fieldset legend{font-weight:800;font-size:1rem}
-.opt{font-weight:500;color:var(--ink-soft)}
-input[type=text],input[type=tel],textarea{width:100%;min-height:54px;padding:13px 15px;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font:500 1.0625rem/1.4 var(--font);transition:border-color .15s,outline-color .15s}
-textarea{min-height:110px;resize:vertical}
-input::placeholder,textarea::placeholder{color:#6d7186}
+/* ---------- Quote form: writes the text for them ---------- */
+.ask .wrap{display:grid;gap:28px}
+form{background:var(--card);border-radius:var(--r-card);padding:clamp(20px,5vw,32px);display:grid;gap:22px;max-width:620px;color:var(--body)}
+.field{display:grid;gap:8px;min-width:0}
+.field label,.field legend{font:400 17px/1.2 var(--display);color:var(--ink);padding:0}
+.field small{font:400 14px/1 var(--text);color:var(--soft);margin-left:4px}
 fieldset{border:0;margin:0;padding:0;min-width:0}
-fieldset legend{padding:0;margin-bottom:10px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{position:relative}
-.chip input{position:absolute;opacity:0;width:1px;height:1px}
-.chip span{display:flex;align-items:center;min-height:46px;padding:0 16px;border:2px solid var(--line);border-radius:999px;background:#fff;font-weight:700;font-size:1rem;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
-.chip input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
-/* every control inside the form: amber outline on hover and focus */
-form input[type=text]:hover,form input[type=tel]:hover,form textarea:hover,.chip span:hover,form .btn:hover,
-form input[type=text]:focus,form input[type=tel]:focus,form textarea:focus,.chip input:focus-visible+span,form .btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
-form input:focus,form textarea:focus,.chip input:focus-visible+span,.chip span:hover{border-color:var(--ink)}
-.err{display:none;color:#7d1610;font-weight:700;font-size:1rem}
+fieldset legend{margin-bottom:10px}
+input[type=text],textarea{width:100%;font:16px/1.4 var(--text);color:var(--ink);background:var(--field);border:2px solid transparent;border-radius:var(--r-field);padding:13px 14px;min-height:52px;caret-color:var(--navy);transition:border-color .15s}
+textarea{min-height:110px;resize:vertical}
+input::placeholder,textarea::placeholder{color:var(--soft)}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--focus)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips input{position:absolute;width:1px;height:1px;opacity:0;margin:0}
+.chips label{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;border-radius:var(--pill);background:var(--field);border:2px solid transparent;font:16px/1 var(--text);color:var(--ink);cursor:pointer;margin:0;transition:border-color .15s,background-color .15s,color .15s}
+.chips input:focus-visible+label{border-color:var(--focus);outline:3px solid var(--focus);outline-offset:3px}
+.chips input:checked+label{background:var(--ink);color:#fff}
+.err{display:none;font-size:15px;color:var(--error)}
 .field.bad .err{display:block}
-.field.bad input{border-color:#7d1610}
-.sent{display:none;padding:18px;border-radius:var(--radius);background:#fff;border:2px solid var(--line)}
-.sent.show{display:grid;gap:12px}
-.sent pre{margin:0;white-space:pre-wrap;font:500 1rem/1.45 var(--font);color:var(--ink-soft)}
-.sent .row-btns{display:flex;flex-wrap:wrap;gap:10px}
-.sent .btn{min-height:48px;font-size:1rem}
+.field.bad input[type=text],.field.bad input[type=text]:focus{border-color:var(--error)}
+form>.btn-primary{width:100%}
+form .btn-primary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.after{font-size:15px;color:var(--soft)}
+.sent{display:grid;gap:12px;padding:18px;border-radius:16px;background:var(--paper)}
+.sent strong{color:var(--ink)}
+.sent pre{margin:0;white-space:pre-wrap;font:15px/1.5 var(--text);color:var(--body)}
+.sent .twin{display:flex;flex-wrap:wrap;gap:10px}
+.sent .btn{min-height:48px;font-size:16px;padding:0 20px}
+.sent a.num{white-space:nowrap;color:var(--ink);font-weight:600}
+@media (max-width:380px){.chips label{padding:0 14px}}
 
-/* close + footer */
-.close{text-align:left}
-.close h2{max-width:12ch}
-.close p.lede{margin-top:14px;max-width:38ch;font-size:1.25rem}
-.close .actions{max-width:420px}
-.close .call{display:inline-flex;align-items:center;gap:.4em;min-height:44px;margin-top:14px;color:#fff;font-weight:800;font-size:1.25rem;text-decoration:none;font-variant-numeric:tabular-nums}
-.close .call:hover{text-decoration:underline;text-underline-offset:4px}
-.area{margin-top:22px;font-size:1rem}
-footer{padding:28px 0 36px;border-top:1px solid rgba(255,255,255,.14)}
-footer .wrap{display:grid;gap:8px;font-size:1rem}
-footer strong{font-size:1.0625rem;color:#fff}
-footer a{color:var(--on-navy);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
-footer a:hover{text-decoration:underline;text-underline-offset:4px}
-footer .links{display:flex;flex-wrap:wrap;gap:4px 22px}
+/* ---------- Close ---------- */
+.close .who{margin-top:14px;font-size:clamp(18px,5vw,20px);color:var(--soft)}
+.bigtel{display:inline-flex;align-items:center;gap:12px;margin-top:28px;font:400 clamp(34px,10vw,56px)/1 var(--display);text-decoration:none;color:var(--ink);min-height:56px;white-space:nowrap}
+.bigtel svg{width:.75em;height:.75em;flex:none;color:var(--amber-ink)}
+.area{margin-top:22px;max-width:40ch;color:var(--body)}
 
-/* ---------- larger screens ---------- */
-@media (max-width:359px){.btn{font-size:1rem;padding:0 1em}}
-@media (min-width:600px){
-  .actions{grid-template-columns:auto auto;justify-content:start}
-  .pour{height:64px}
+/* ---------- Footer ---------- */
+footer{background-color:var(--deep);background-image:var(--texture);color:var(--on-dark-soft);padding:40px 0 calc(96px + env(safe-area-inset-bottom));font-size:16px}
+footer .wrap{display:grid;gap:10px}
+footer b{font:400 20px/1.2 var(--display);color:var(--on-dark)}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 22px}
+footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--on-dark);text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(244,246,251,.4)}
+
+/* ---------- Floating text circle (one circle, never a bottom bar) ---------- */
+.float{position:fixed;z-index:15;right:calc(16px + env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--amber);color:var(--ink);box-shadow:0 10px 28px rgba(10,18,52,.3);transform:translateY(120px);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.float.on{transform:none}
+.float svg{width:26px;height:26px}
+.float:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:50%}
+
+/* ---------- Motion: one fade-up, only for things below the first screen ---------- */
+.js .rise{transition:opacity .4s ease-out,transform .4s ease-out}
+.js .rise.below{opacity:0;transform:translateY(12px)}
+
+/* ---------- Desktop ---------- */
+@media (min-width:760px){
+  :root{--gutter:40px}
+  .top .wrap{min-height:84px}
+  .logo img{height:64px}
+  .tel{font-size:21px}
+  section{padding:96px 0}
+  .hero-copy{padding-top:112px;padding-bottom:120px}
+  .promise{max-width:40ch}
+  .actions{grid-auto-flow:column;justify-content:start;width:auto}
+  .actions .btn{min-width:220px}
+  .rows{grid-template-columns:1fr 1fr}
+  .pairs{grid-template-columns:1fr 1fr;gap:24px}
+  .fb{max-width:520px}
 }
 @media (min-width:1024px){
-  .wrap{padding:0 40px}
-  .top .wrap{padding-top:18px}
-  .phone{font-size:1.25rem}
-  .hero-copy{padding-top:70px;padding-bottom:120px}
-  .hero h1{font-size:clamp(4rem,6.4vw,6rem)}
-  .promise{font-size:1.25rem}
-  .band{padding:96px 0 104px}
-  .svc .wrap,.how .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:60px;align-items:start}
-  .svc-list,.steps{margin-top:6px}
-  .quote .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:60px}
-  form{margin-top:0}
-  .pairs{grid-template-columns:1fr 1fr;gap:28px;margin-top:34px}
-  .pair{gap:12px}
-  .work .fb{margin-top:34px;max-width:520px}
-  .pour{height:84px}
+  .hero-photo img{object-position:50% 62%}
+  .ask .wrap{grid-template-columns:1fr 1.25fr;gap:64px;align-items:start}
+  .ask .head{position:sticky;top:40px}
+  .close .wrap{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
+  .bigtel{margin-top:0}
+  .how .steps{grid-template-columns:repeat(3,1fr);gap:40px}
+  .steps b{font-size:22px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* hover styles only where there is a real pointer, so taps don't leave them stuck on */
+@media (hover:hover){
+.tel:hover{color:var(--navy)}
+.btn-primary:hover{background:var(--amber-2);border-color:var(--amber-2)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.row:hover .arrow,.fb:hover .arrow{background:var(--amber);color:var(--ink)}
+input[type=text]:hover,textarea:hover{border-color:var(--focus)}
+.chips label:hover{border-color:var(--focus)}
+form .btn:hover{outline:2px solid var(--focus);outline-offset:2px}
+.bigtel:hover{color:var(--navy)}
+footer a:hover{color:var(--amber)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rise,.float,.btn{transition:none}
+  .js .rise.below{opacity:1;transform:none}
+  .hero h1 .c{animation:none;opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
 <!--
-DIRECTION CONTRACT
-THESIS: A raw, dusty slab becomes a floor you can see yourself in. The page itself is that floor.
-OWN-WORLD: The polishing floor. The whole page sits on polished salt-and-pepper concrete with the shop's light tubes reflecting in it; the reflections drift as you scroll. Light sections meet at saw-cut joints; navy bands are epoxy poured over the floor, with flowing edges.
-STORY: Hero (headline and the two buttons, on the floor) -> what we do (six services, each one text-to-quote) -> how a quote works (photos first) -> before/after photo pairs of real jobs, then Facebook -> quote form that writes the text -> close with the number.
-FIRST VIEWPORT (phone): logo + number top-right, "Make your concrete shine.", one-line promise, two buttons (text photos / get a quote), all on the polished floor with the light reflections drifting under it.
-FORM: Heavy uppercase system sans, outlined buttons echoing the outlined logo letters, logo blue + navy on concrete grey, navy epoxy bands for depth, saw-cut joints between floor sections. No black grounds.
+THESIS: A concrete crew's site that earns trust through calm order (after lpmr.co.uk): their own grinder on their own job under the headline, six services you can text about in one tap, and a quote that starts with photos of your floor.
+OWN-WORLD: Off-white paper, the logo's blue deepened (#1d3cc4) and its navy (#14215a, faint diagonal lines) as the bands, grinder amber (#f2a51a) as the one warm accent (fills only; #8a5a00 when it has to be text on light). Cal Sans display, system body at 16/1.7.
+STORY: The visitor sees who grinds and polishes floors in Essex County, sees real before/afters, and texts photos of their floor or fills the form that writes that text.
+FIRST VIEWPORT: White header with the real logo left and tap-to-call 226-808-4556 top right. Hero on their grinder photo under navy: eyebrow (their tagline), "Floors that shine in Essex County", the care promise, two pill buttons (Text us photos of your floor, Get a quote).
+FORM: calm-photo band system: paper, navy, deep navy with line texture; 24px cards, pill buttons, eyebrows on three headings. The earlier polished-floor world is in git history (ae90afd).
 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h3.5l1.8 4.6-2.3 1.5a11 11 0 0 0 6 6l1.5-2.3L20 14.5V18a2 2 0 0 1-2.2 2A16 16 0 0 1 3 5.2 2 2 0 0 1 5 3z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="11" r="1.6"/><path d="m21 16-5-5-8 8"/></g></symbol>
+</svg>
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="MDE Polishing Inc., home"><img src="assets/logo.webp" fetchpriority="high" width="460" height="220" alt="MDE Polishing: concrete grinding and polishing"></a>
-    <a class="phone" href="tel:+12268084556"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>226-808-4556</a>
+    <a class="logo" href="#top" aria-label="MDE Polishing Inc., back to top"><img src="assets/logo.webp" width="460" height="220" alt="MDE Polishing: concrete grinding and polishing" fetchpriority="high"></a>
+    <a class="tel" href="tel:+12268084556"><svg aria-hidden="true"><use href="#i-phone"/></svg>226-808-4556</a>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero" aria-labelledby="h-hero">
-    <div class="hero-copy wrap">
-      <h1 id="h-hero">Make your concrete <em>shine.</em></h1>
-      <p class="promise">We take a tired, stained floor down to fresh stone and bring it back up to a finish you'll want to show people.</p>
-      <div class="actions">
-        <a class="btn btn-primary" id="hero-text" href="sms:+12268084556"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="11" r="1.6"/><path d="m21 16-5-5-8 8"/></svg>Text us photos of your floor</a>
-        <a class="btn btn-ghost" href="#quote">Get a quote</a>
-      </div>
+<section class="hero" id="hero" aria-labelledby="h1">
+  <div class="hero-photo"><img src="assets/hero-760.webp" srcset="assets/hero-760.webp 760w, assets/hero-1316.webp 1316w" sizes="100vw" width="1316" height="1508" alt="" fetchpriority="high"></div>
+  <div class="wrap hero-copy">
+    <p class="eyebrow">Concrete grinding and polishing</p>
+    <h1 id="h1">Floors that shine in <span class="accent">Essex County</span></h1>
+    <p class="promise">We treat your floor like it's our own, from the first pass of the grinder to the last coat.</p>
+    <div class="actions">
+      <a class="btn btn-primary" id="heroText" data-sms href="sms:+12268084556"><svg aria-hidden="true"><use href="#i-photo"/></svg>Text us photos of your floor</a>
+      <a class="btn btn-ghost" href="#quote">Get a quote</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="joint" aria-hidden="true"></div>
+<section class="on-paper svc" aria-labelledby="h-svc">
+  <div class="wrap">
+    <h2 id="h-svc" class="rise">What we do</h2>
+    <ul class="rows">
+      <li class="rise"><a class="row" data-svc="concrete grinding" data-chip="Concrete grinding" href="sms:+12268084556">Concrete grinding<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" data-svc="an epoxy coating" data-chip="Epoxy coating" href="sms:+12268084556">Epoxy coatings<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" data-svc="concrete polishing" data-chip="Concrete polishing" href="sms:+12268084556">Concrete polishing<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" data-svc="a grind and seal" data-chip="Grind and seal" href="sms:+12268084556">Grind and seal<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" data-svc="removing an old coating" data-chip="Coating removal" href="sms:+12268084556">Coating removal<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" data-svc="concrete sealing" data-chip="Concrete sealing" href="sms:+12268084556">Concrete sealing<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+    </ul>
+  </div>
+</section>
 
-  <section class="svc band" aria-labelledby="h-svc">
-    <div class="wrap">
-      <div>
-        <h2 id="h-svc">What we do</h2>
-        <p class="svc-note">Pick one to text us about it.</p>
-      </div>
-      <ul class="svc-list">
-        <li><a class="row" data-svc="concrete grinding" href="sms:+12268084556">Concrete grinding<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-        <li><a class="row" data-svc="epoxy coating" href="sms:+12268084556">Epoxy coatings<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-        <li><a class="row" data-svc="concrete polishing" href="sms:+12268084556">Concrete polishing<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-        <li><a class="row" data-svc="a grind and seal" href="sms:+12268084556">Grind and seal<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-        <li><a class="row" data-svc="removing an old coating" href="sms:+12268084556">Coating removal<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-        <li><a class="row" data-svc="concrete sealing" href="sms:+12268084556">Concrete sealing<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-      </ul>
-    </div>
-  </section>
+<section class="on-deep how" aria-labelledby="h-how">
+  <div class="wrap">
+    <h2 id="h-how" class="rise">How a quote <span class="accent">works.</span></h2>
+    <ol class="steps">
+      <li class="rise"><div><b>Send us photos.</b><span>The whole floor, plus close-ups of any cracks, stains or old coating.</span></div></li>
+      <li class="rise"><div><b>We tell you straight.</b><span>What your floor needs, and what it doesn't.</span></div></li>
+      <li class="rise"><div><b>We do it right.</b><span>Proper prep comes first. It's the part you can't see, and the part we don't rush.</span></div></li>
+    </ol>
+  </div>
+</section>
 
-  <div class="joint" aria-hidden="true"></div>
-
-  <section class="how band" aria-labelledby="h-how">
-    <div class="wrap">
-      <h2 id="h-how">How a quote works</h2>
-      <ol class="steps">
-        <li><h3>Send us photos</h3><p>Stand back and take a few of the whole floor, plus close-ups of any cracks, stains or old coating.</p></li>
-        <li><h3>We tell you straight</h3><p>What your floor needs, and what it doesn't. Sometimes that's a full polish, sometimes a grind and seal does the job for less.</p></li>
-        <li><h3>We do it right</h3><p>We prep the concrete properly before anything goes on it. That's the part you can't see, and the part we don't rush.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#14215a"/></svg>
-
-  <section class="work band on-navy" aria-labelledby="h-work">
-    <div class="wrap">
+<section class="on-paper work" aria-labelledby="h-work">
+  <div class="wrap">
+    <div class="head rise">
+      <p class="eyebrow">Our work</p>
       <h2 id="h-work">Before and after</h2>
-      <div class="pairs">
-        <div class="pair">
-          <figure class="shot"><img src="assets/room-before.webp" width="720" height="961" alt="Before: a dusty concrete floor mid-grind, with the grinder in the room" loading="lazy" decoding="async"><span class="tag">Before</span></figure>
-          <figure class="shot"><img src="assets/room-after.webp" width="720" height="960" alt="After: the same room, the floor ground and polished with the stone showing" loading="lazy" decoding="async"><span class="tag">After</span></figure>
-        </div>
-        <div class="pair">
-          <figure class="shot"><img src="assets/crack-before.webp" width="720" height="960" alt="Before: a cracked basement slab marked out in orange paint" loading="lazy" decoding="async"><span class="tag">Before</span></figure>
-          <figure class="shot"><img src="assets/crack-after.webp" width="720" height="960" alt="After: the slab with the cracks filled and ground" loading="lazy" decoding="async"><span class="tag">After</span></figure>
-        </div>
+    </div>
+    <div class="pairs">
+      <div class="pair rise">
+        <figure class="shot"><img src="assets/room-before.webp" width="720" height="961" alt="Before: a dusty concrete floor mid-grind, with the grinder in the room" loading="lazy" decoding="async"><span>Before</span></figure>
+        <figure class="shot"><img src="assets/room-after.webp" width="720" height="960" alt="After: the same room, the floor ground and polished with the stone showing" loading="lazy" decoding="async"><span>After</span></figure>
       </div>
-      <a class="fb" href="https://facebook.com/profile.php?id=61589369156324" rel="noopener"><span class="fbi"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.2L14.1 2C10.9 2 10.2 4.4 10.2 6v2.5H8v3.7h2.2V22H14v-9.8h2.8l.4-3.7z"/></svg></span>See more of our work on Facebook<svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-  </section>
-
-  <svg class="pour down" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#14215a"/></svg>
-
-  <section class="quote band" id="quote" aria-labelledby="h-quote">
-    <div class="wrap">
-      <div>
-        <h2 id="h-quote">Get a quote</h2>
-        <p class="intro">Fill this in and we'll write the text for you. Add your photos before you hit send.</p>
+      <div class="pair rise">
+        <figure class="shot"><img src="assets/crack-before.webp" width="720" height="960" alt="Before: a cracked basement slab marked out in orange paint" loading="lazy" decoding="async"><span>Before</span></figure>
+        <figure class="shot"><img src="assets/crack-after.webp" width="720" height="960" alt="After: the slab with the cracks filled and ground" loading="lazy" decoding="async"><span>After</span></figure>
       </div>
-      <form id="qform" novalidate>
-        <div class="field" id="f-name">
-          <label for="q-name">Your name</label>
-          <input type="text" id="q-name" name="name" autocomplete="name" required>
-          <p class="err" id="e-name">Add your name so we know who we're talking to.</p>
-        </div>
-        <div class="field" id="f-town">
-          <label for="q-town">Town</label>
-          <input type="text" id="q-town" name="town" autocomplete="address-level2" required>
-          <p class="err" id="e-town">Add your town so we know where the floor is.</p>
-        </div>
-        <fieldset>
-          <legend>What kind of floor?</legend>
-          <div class="chips">
-            <label class="chip"><input type="radio" name="floor" value="Garage"><span>Garage</span></label>
-            <label class="chip"><input type="radio" name="floor" value="Basement"><span>Basement</span></label>
-            <label class="chip"><input type="radio" name="floor" value="Shop or warehouse"><span>Shop or warehouse</span></label>
-            <label class="chip"><input type="radio" name="floor" value="Store or office"><span>Store or office</span></label>
-            <label class="chip"><input type="radio" name="floor" value="Patio or outdoor"><span>Patio or outdoor</span></label>
-            <label class="chip"><input type="radio" name="floor" value="Something else"><span>Something else</span></label>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>What are you after? <span class="opt">(pick any)</span></legend>
-          <div class="chips">
-            <label class="chip"><input type="checkbox" name="work" value="Epoxy coating"><span>Epoxy coating</span></label>
-            <label class="chip"><input type="checkbox" name="work" value="Polished concrete"><span>Polished concrete</span></label>
-            <label class="chip"><input type="checkbox" name="work" value="Grind and seal"><span>Grind and seal</span></label>
-            <label class="chip"><input type="checkbox" name="work" value="Concrete sealing"><span>Sealing</span></label>
-            <label class="chip"><input type="checkbox" name="work" value="Old coating removed"><span>Old coating off</span></label>
-            <label class="chip"><input type="checkbox" name="work" value="Not sure yet"><span>Not sure yet</span></label>
-          </div>
-        </fieldset>
-        <div class="field">
-          <label for="q-size">Rough size <span class="opt">(optional)</span></label>
-          <input type="text" id="q-size" name="size" placeholder="e.g. two-car garage, or 600 sq ft">
-        </div>
-        <div class="field">
-          <label for="q-notes">Anything else? <span class="opt">(optional)</span></label>
-          <textarea id="q-notes" name="notes" placeholder="Cracks, stains, an old coating peeling up, when you'd like it done…"></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Write my text message</button>
-        <div class="sent" id="sent" role="status" aria-live="polite">
-          <p><strong>Your text is ready.</strong> If it didn't open, copy it and send it to 226-808-4556, with your photos.</p>
-          <pre id="sent-msg"></pre>
-          <div class="row-btns"><a class="btn btn-primary" id="sent-open" href="sms:+12268084556">Open my text</a><button class="btn btn-ghost" type="button" id="sent-copy">Copy message</button></div>
-        </div>
-      </form>
     </div>
-  </section>
+    <a class="fb rise" href="https://facebook.com/profile.php?id=61589369156324" rel="noopener">
+      <span class="lbl"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>Click to see more of our work on Facebook</span>
+      <span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+    </a>
+  </div>
+</section>
 
-  <svg class="pour" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path class="sh" fill="rgba(13,22,54,.13)" transform="translate(0 -4)"/><path class="top" fill="#14215a"/></svg>
-
-  <section class="close band on-navy" aria-labelledby="h-close">
-    <div class="wrap">
-      <h2 id="h-close">Ready for a better floor?</h2>
-      <p class="lede">Send a few photos and we'll tell you what it'll take.</p>
-      <div class="actions"><a class="btn btn-primary" id="close-text" href="sms:+12268084556">Text us photos of your floor</a></div>
-      <a class="call" href="tel:+12268084556">or call 226-808-4556</a>
+<section class="on-navy ask" id="quote" aria-labelledby="h-ask">
+  <div class="wrap">
+    <div class="head rise">
+      <p class="eyebrow">Photos help</p>
+      <h2 id="h-ask">Get a <span class="accent">quote</span></h2>
+      <p class="lede">Fill this in and we'll write the text for you. Add your photos before you send it.</p>
     </div>
-  </section>
+    <form id="qform" class="rise" novalidate>
+      <fieldset class="field">
+        <legend>What are you after? <small>(pick any)</small></legend>
+        <div class="chips">
+          <input type="checkbox" name="work" id="k1" value="Concrete grinding"><label for="k1">Grinding</label>
+          <input type="checkbox" name="work" id="k2" value="Epoxy coating"><label for="k2">Epoxy coating</label>
+          <input type="checkbox" name="work" id="k3" value="Concrete polishing"><label for="k3">Polishing</label>
+          <input type="checkbox" name="work" id="k4" value="Grind and seal"><label for="k4">Grind and seal</label>
+          <input type="checkbox" name="work" id="k5" value="Coating removal"><label for="k5">Old coating off</label>
+          <input type="checkbox" name="work" id="k6" value="Concrete sealing"><label for="k6">Sealing</label>
+          <input type="checkbox" name="work" id="k7" value="Not sure yet"><label for="k7">Not sure yet</label>
+        </div>
+      </fieldset>
+      <fieldset class="field">
+        <legend>What kind of floor? <small>(optional)</small></legend>
+        <div class="chips">
+          <input type="radio" name="floor" id="r1" value="Garage"><label for="r1">Garage</label>
+          <input type="radio" name="floor" id="r2" value="Basement"><label for="r2">Basement</label>
+          <input type="radio" name="floor" id="r3" value="Shop or warehouse"><label for="r3">Shop or warehouse</label>
+          <input type="radio" name="floor" id="r4" value="Store or office"><label for="r4">Store or office</label>
+          <input type="radio" name="floor" id="r5" value="Something else"><label for="r5">Something else</label>
+        </div>
+      </fieldset>
+      <div class="field" id="f-name">
+        <label for="q-name">Your name</label>
+        <input type="text" id="q-name" name="name" autocomplete="name" maxlength="60" placeholder="First name is fine" aria-describedby="e-name">
+        <p class="err" id="e-name">Add your name so we know who's texting.</p>
+      </div>
+      <div class="field" id="f-town">
+        <label for="q-town">Your town</label>
+        <input type="text" id="q-town" name="town" autocomplete="address-level2" maxlength="60" aria-describedby="e-town">
+        <p class="err" id="e-town">Add your town so we know where the floor is.</p>
+      </div>
+      <div class="field">
+        <label for="q-size">Rough size <small>(optional)</small></label>
+        <input type="text" id="q-size" name="size" maxlength="60" placeholder="Two-car garage, or 600 sq ft">
+      </div>
+      <div class="field">
+        <label for="q-notes">Anything else? <small>(optional)</small></label>
+        <textarea id="q-notes" name="notes" maxlength="600" placeholder="Cracks, stains, old coating peeling up, when you'd like it done…"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit"><svg aria-hidden="true"><use href="#i-chat"/></svg>Text this to MDE Polishing</button>
+      <div class="sent" id="sent" role="status" hidden>
+        <p><strong>Your text is ready.</strong> If it didn't open, copy it and send it with your photos to <a class="num" href="tel:+12268084556">226-808-4556</a>.</p>
+        <pre id="sent-msg"></pre>
+        <div class="twin"><a class="btn btn-primary" id="sent-open" href="sms:+12268084556">Open in Messages</a><button class="btn btn-line" type="button" id="sent-copy">Copy message</button></div>
+      </div>
+      <p class="after">Opens your messages with this written out.</p>
+    </form>
+  </div>
+</section>
+
+<section class="on-paper close" aria-labelledby="h-close">
+  <div class="wrap">
+    <div class="rise">
+      <h2 id="h-close">MDE Polishing Inc.</h2>
+      <p class="who">Concrete grinding, polishing, epoxy and sealing.</p>
+      <p class="area">Not sure we cover your town? Call and ask.</p>
+    </div>
+    <a class="bigtel rise" href="tel:+12268084556"><svg aria-hidden="true"><use href="#i-phone"/></svg>226-808-4556</a>
+  </div>
+</section>
 </main>
 
-<footer class="on-navy">
+<footer>
   <div class="wrap">
-    <strong>MDE Polishing Inc.</strong>
-    <div class="links">
+    <b>MDE Polishing Inc.</b>
+    <nav aria-label="Elsewhere">
       <a href="https://facebook.com/profile.php?id=61589369156324" rel="noopener">Facebook</a>
-    </div>
+    </nav>
   </div>
 </footer>
 
+<a class="float" id="float" data-sms href="sms:+12268084556" aria-label="Text us photos of your floor"><svg aria-hidden="true"><use href="#i-chat"/></svg></a>
+
 <script>
-/* ---------- the floor: polished concrete under the whole page ---------- */
+/* ===== Config ===== */
+var CONFIG = {
+  FLOAT: true,             // the floating text circle; false removes it
+  NUM: '+12268084556',
+  SHOW: '226-808-4556',
+  PHOTOS: "Hi MDE Polishing! I'd like a quote on my floor. Here are some photos.\nTown: \nRough size: "
+};
+document.documentElement.classList.add('js');
+function sms(body){ return 'sms:' + CONFIG.NUM + '?&body=' + encodeURIComponent(body); }
+
+/* ===== Hero H1 bounce-in: split into letters (JS only, so no-JS and reduced motion keep the plain heading) ===== */
 (function(){
-  var TILE = 460;           /* tile size, CSS px */
-  var STONES = 3000;        /* aggregate chips per tile */
-  var BIG = 3.4;            /* largest chip radius, CSS px */
-  var CONTRAST = 0.6;       /* how far chips stray from the cement colour (0-1) */
-  var sc = Math.min(window.devicePixelRatio || 1, 2), n = Math.round(TILE * sc);
-  var cv = document.createElement('canvas'); cv.width = cv.height = n;
-  var c = cv.getContext('2d'); if (!c) return;
-  var seed = 11; function rnd(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
-  function wrapped(x, y, r, draw){             /* draw near an edge twice so the tile repeats seamlessly */
-    for (var i = -1; i <= 1; i++) for (var j = -1; j <= 1; j++){
-      var X = x + i * n, Y = y + j * n;
-      if (X + r > 0 && X - r < n && Y + r > 0 && Y - r < n) draw(X, Y);
-    }
-  }
-  c.fillStyle = '#aeaca7'; c.fillRect(0, 0, n, n);
-  for (var k = 0; k < 22; k++){                 /* soft cloudy mottling */
-    var r = (70 + rnd() * 170) * sc, light = rnd() < 0.5, a = 0.04 + rnd() * 0.05;
-    wrapped(rnd() * n, rnd() * n, r, function(X, Y){
-      var g = c.createRadialGradient(X, Y, 0, X, Y, r);
-      g.addColorStop(0, light ? 'rgba(255,255,250,' + a + ')' : 'rgba(60,58,54,' + a + ')'); g.addColorStop(1, 'rgba(0,0,0,0)');
-      c.fillStyle = g; c.fillRect(X - r, Y - r, r * 2, r * 2);
+  var h=document.getElementById('h1');
+  if(!h||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var plain=h.innerHTML,i=0,last=null;
+  h.setAttribute('aria-label',h.textContent.replace(/\s+/g,' ').trim());
+  function split(node,into){
+    [].slice.call(node.childNodes).forEach(function(n){
+      if(n.nodeType===3){
+        n.textContent.split(/(\s+)/).forEach(function(part){
+          if(!part)return;
+          if(/^\s+$/.test(part)){into.appendChild(document.createTextNode(' '));return}
+          var w=document.createElement('span');w.className='w';w.setAttribute('aria-hidden','true');
+          for(var k=0;k<part.length;k++){var c=document.createElement('span');c.className='c';c.style.setProperty('--i',i++);c.textContent=part[k];w.appendChild(c);last=c}
+          into.appendChild(w);
+        });
+      }else if(n.nodeType===1){var copy=n.cloneNode(false);split(n,copy);into.appendChild(copy)}
     });
   }
-  var im = c.getImageData(0, 0, n, n), d = im.data;  /* fine cement grain */
-  for (var p = 0; p < d.length; p += 4){ var v = (rnd() - 0.5) * 22; d[p] += v; d[p + 1] += v; d[p + 2] += v; }
-  c.putImageData(im, 0, 0);
-  for (k = 0; k < STONES; k++){                 /* salt-and-pepper aggregate, ground flat */
-    var rr = (0.4 + Math.pow(rnd(), 3) * BIG) * sc, t = rnd(), col;
-    if (t < 0.5){ var l = 174 + (14 + rnd() * 50) * CONTRAST; col = 'rgb(' + (l | 0) + ',' + (l - 3 - rnd() * 6 | 0) + ',' + (l - 8 - rnd() * 14 | 0) + ')'; }
-    else if (t < 0.88){ l = 174 - (50 + rnd() * 52) * CONTRAST; col = 'rgb(' + (l | 0) + ',' + (l | 0) + ',' + (l + 2 | 0) + ')'; }
-    else { l = 120 + rnd() * 30; col = 'rgb(' + (l - 6 | 0) + ',' + (l | 0) + ',' + (l + 8 | 0) + ')'; }
-    var sides = 5 + (rnd() * 3 | 0), rot = rnd() * 6.3, jit = [];
-    for (var q = 0; q < sides; q++) jit.push(0.6 + rnd() * 0.5);
-    c.globalAlpha = 0.55 + rnd() * 0.4; c.fillStyle = col;
-    wrapped(rnd() * n, rnd() * n, rr * 1.2, function(X, Y){
-      c.beginPath();
-      for (var q = 0; q < sides; q++){ var an = rot + q / sides * 6.283; c.lineTo(X + Math.cos(an) * rr * jit[q], Y + Math.sin(an) * rr * jit[q]); }
-      c.fill();
-    });
-  }
-  c.globalAlpha = 1;
-  function use(url){ document.body.style.backgroundImage = 'url(' + url + ')'; document.body.style.backgroundSize = TILE + 'px ' + TILE + 'px'; }
-  if (cv.toBlob) cv.toBlob(function(b){ if (b) use(URL.createObjectURL(b)); }); else use(cv.toDataURL());
+  var frag=document.createDocumentFragment();split(h,frag);h.textContent='';h.appendChild(frag);
+  // once the last letter lands, put the plain heading back so kerning and text selection return
+  if(last)last.addEventListener('animationend',function(){h.innerHTML=plain;h.removeAttribute('aria-label')});
 })();
-/* ---------- text-message links ---------- */
+
+/* ===== Text-message links: hero, floating circle, one per service ===== */
 (function(){
-  var NUM = '+12268084556';
-  function sms(body){ return 'sms:' + NUM + '?&body=' + encodeURIComponent(body); }
-  window.MDE_sms = sms;
-  var photos = "Hi MDE Polishing! I'd like a quote on my floor. Here are some photos.\nTown: \nRough size: ";
-  document.getElementById('hero-text').href = sms(photos);
-  document.getElementById('close-text').href = sms(photos);
-  document.querySelectorAll('.row[data-svc]').forEach(function(a){
-    a.href = sms("Hi MDE Polishing! I'd like a quote for " + a.dataset.svc + ". Here are some photos of the floor.\nTown: \nRough size: ");
-  });
-  /* desktops can't send texts: rows open the quote form with that service ticked */
-  if (matchMedia('(hover:hover) and (pointer:fine)').matches){
-    var map = {'epoxy coating':'Epoxy coating','concrete polishing':'Polished concrete','a grind and seal':'Grind and seal','concrete sealing':'Concrete sealing','removing an old coating':'Old coating removed','concrete grinding':'Not sure yet'};
-    document.querySelectorAll('.row[data-svc]').forEach(function(a){
-      a.href = '#quote';
-      a.addEventListener('click', function(){ var cb = document.querySelector('input[name=work][value="' + map[a.dataset.svc] + '"]'); if (cb) cb.checked = true; });
+  [].forEach.call(document.querySelectorAll('[data-sms]'),function(a){a.href=sms(CONFIG.PHOTOS)});
+  var rows=document.querySelectorAll('.row[data-svc]');
+  [].forEach.call(rows,function(a){a.href=sms("Hi MDE Polishing! I'd like a quote for "+a.dataset.svc+". Here are some photos of the floor.\nTown: \nRough size: ")});
+  // desktops can't send texts: a service row opens the quote form with that job ticked
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+    [].forEach.call(rows,function(a){
+      a.href='#quote';
+      a.addEventListener('click',function(){var cb=document.querySelector('input[name=work][value="'+a.dataset.chip+'"]');if(cb)cb.checked=true});
     });
   }
 })();
 
-/* ---------- quote form -> text message ---------- */
+/* ===== Quote form: composes a text to MDE Polishing ===== */
 (function(){
-  var form = document.getElementById('qform');
-  var sent = document.getElementById('sent');
-  var msgEl = document.getElementById('sent-msg');
-  var openBtn = document.getElementById('sent-open');
-  function need(id){
-    var input = document.getElementById('q-' + id), f = document.getElementById('f-' + id);
-    var ok = input.value.trim() !== '';
-    f.classList.toggle('bad', !ok);
-    input.setAttribute('aria-invalid', ok ? 'false' : 'true');
-    if (!ok) input.setAttribute('aria-describedby', 'e-' + id); else input.removeAttribute('aria-describedby');
-    return ok;
-  }
-  ['name','town'].forEach(function(id){
-    document.getElementById('q-' + id).addEventListener('input', function(){
-      if (document.getElementById('f-' + id).classList.contains('bad')) need(id);
-    });
-  });
-  form.addEventListener('submit', function(e){
+  var form=document.getElementById('qform');if(!form)return;
+  var sent=document.getElementById('sent'),msgEl=document.getElementById('sent-msg'),openBtn=document.getElementById('sent-open');
+  function val(id){return document.getElementById(id).value.trim()}
+  function mark(id,bad){var f=document.getElementById(id);f.classList.toggle('bad',bad);f.querySelector('input').setAttribute('aria-invalid',bad?'true':'false')}
+  form.addEventListener('input',function(e){var f=e.target.closest('.field');if(f&&f.classList.contains('bad')&&e.target.value.trim())f.classList.remove('bad')});
+  form.addEventListener('submit',function(e){
     e.preventDefault();
-    var okName = need('name'), okTown = need('town');
-    if (!okName || !okTown){ document.getElementById(okName ? 'q-town' : 'q-name').focus(); return; }
-    var d = new FormData(form);
-    var lines = ["Hi MDE Polishing! I'd like a quote.", 'Name: ' + d.get('name').trim(), 'Town: ' + d.get('town').trim()];
-    if (d.get('floor')) lines.push('Floor: ' + d.get('floor'));
-    var work = d.getAll('work'); if (work.length) lines.push('Looking for: ' + work.join(', '));
-    if (d.get('size').trim()) lines.push('Size: ' + d.get('size').trim());
-    if (d.get('notes').trim()) lines.push('Notes: ' + d.get('notes').trim());
+    var name=val('q-name'),town=val('q-town');
+    mark('f-name',!name);mark('f-town',!town);
+    if(!name){document.getElementById('q-name').focus();return}
+    if(!town){document.getElementById('q-town').focus();return}
+    var lines=["Hi MDE Polishing! I'd like a quote.",'Name: '+name,'Town: '+town];
+    var work=[].map.call(form.querySelectorAll('input[name=work]:checked'),function(c){return c.value});
+    if(work.length)lines.push('Looking for: '+work.join(', '));
+    var fl=form.querySelector('input[name=floor]:checked');if(fl)lines.push('Floor: '+fl.value);
+    if(val('q-size'))lines.push('Size: '+val('q-size'));
+    if(val('q-notes'))lines.push('Notes: '+val('q-notes'));
     lines.push("I'll add photos of the floor.");
-    var body = lines.join('\n');
-    msgEl.textContent = body;
-    openBtn.href = window.MDE_sms(body);
-    sent.classList.add('show');
-    sent.scrollIntoView({block:'nearest', behavior:'smooth'});
-    if (matchMedia('(pointer:coarse)').matches) window.location.href = openBtn.href;
+    var body=lines.join('\n');
+    msgEl.textContent=body;openBtn.href=sms(body);
+    // phones open the messages app; desktops (and in-app browsers that block it) get the message to copy
+    if(matchMedia('(pointer:coarse)').matches){location.href=openBtn.href;setTimeout(function(){sent.hidden=false},900)}
+    else{sent.hidden=false;sent.scrollIntoView({block:'nearest',behavior:'smooth'})}
   });
-  document.getElementById('sent-copy').addEventListener('click', function(){
-    var b = this;
-    function done(){ b.textContent = 'Copied'; setTimeout(function(){ b.textContent = 'Copy message'; }, 2000); }
-    if (navigator.clipboard) navigator.clipboard.writeText(msgEl.textContent).then(done, function(){ b.textContent = 'Select the text above to copy'; });
-    else b.textContent = 'Select the text above to copy';
+  document.getElementById('sent-copy').addEventListener('click',function(){
+    var b=this;
+    function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy message'},2000)}
+    function fail(){b.textContent='Select the text above to copy'}
+    if(navigator.clipboard)navigator.clipboard.writeText(msgEl.textContent).then(done,fail);else fail();
   });
 })();
 
-/* ---------- shared animation loop ---------- */
-var MDE_loop = (function(){
-  var jobs = [], running = false;
-  function tick(t){
-    running = false;
-    var any = false;
-    for (var i = 0; i < jobs.length; i++) if (jobs[i].active()) { jobs[i].step(t); any = true; }
-    if (any) { running = true; requestAnimationFrame(tick); }
-  }
-  return {
-    add: function(job){ jobs.push(job); },
-    wake: function(){ if (!running) { running = true; requestAnimationFrame(tick); } }
-  };
-})();
-var MDE_reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/* ---------- shop lights reflecting in the floor, sliding as you scroll ---------- */
+/* ===== Floating text circle: shows after the hero, hides while the form is on screen ===== */
 (function(){
-  var RATE = 0.45;          /* reflections travel this fraction of the scroll (1 = painted on the floor) */
-  var GAP = 0.6;            /* space between light rows, in screen heights */
-  if (MDE_reduced) RATE = 1;
-  var layer = document.createElement('div'); layer.className = 'lights'; layer.setAttribute('aria-hidden', 'true');
-  document.body.insertBefore(layer, document.body.firstChild);
-  var rows = [], W = 0, H = 0, G = 1;
-  function hash(n, k){ var v = Math.sin(n * 127.1 + k * 311.7) * 43758.5453; return v - Math.floor(v); }
-  function dress(row, n){                       /* each row index gets its own fixed fixture layout */
-    row.n = n;
-    var two = W > 900 && hash(n, 1) > 0.3, t = row.tubes;
-    if (two){
-      var w = W * (0.3 + hash(n, 2) * 0.12), gap = W * (0.05 + hash(n, 3) * 0.08), x = W * (0.02 + hash(n, 4) * 0.12);
-      t[0].style.cssText = 'left:' + x + 'px;width:' + w + 'px'; t[1].style.cssText = 'left:' + (x + w + gap) + 'px;width:' + w * (0.85 + hash(n, 5) * 0.3) + 'px';
-    } else {
-      t[0].style.cssText = 'left:' + W * (-0.05 + hash(n, 2) * 0.25) + 'px;width:' + W * (0.62 + hash(n, 3) * 0.45) + 'px'; t[1].style.cssText = 'display:none';
-    }
-    row.el.style.opacity = 0.6 + hash(n, 6) * 0.35;
-    row.dy = (hash(n, 7) - 0.5) * G * 0.35;
-  }
-  function size(){
-    var w = layer.clientWidth, h = layer.clientHeight;
-    if (w === W && Math.abs(h - H) < 120) return;   /* ignore the address bar sliding */
-    W = w; H = h; G = Math.max(240, H * GAP);
-    var need = Math.ceil((H + 3.2 * G) / G) + 1;    /* enough rows that one is always parked off each edge */
-    while (rows.length < need){
-      var el = document.createElement('div'); el.className = 'lrow';
-      el.innerHTML = '<i class="tube"></i><i class="tube"></i>';
-      layer.appendChild(el); rows.push({el:el, tubes:el.children, n:null});
-    }
-    rows.forEach(function(r){ r.n = null; });
-  }
-  function place(){                             /* runs inside the scroll event, so it moves in the same frame as the page */
-    var off = (window.scrollY || 0) * RATE, n0 = Math.floor((off - 1.6 * G) / G), len = rows.length;
-    for (var i = 0; i < len; i++){              /* a row is only re-dressed while it's off screen */
-      var n = n0 + i, r = rows[((n % len) + len) % len];
-      if (r.n !== n) dress(r, n);
-      r.el.style.transform = 'translate3d(0,' + (n * G + G * 0.55 + r.dy - off).toFixed(1) + 'px,0)';
-    }
-  }
-  size(); place();
-  window.addEventListener('resize', function(){ size(); place(); });
-  window.addEventListener('scroll', place, {passive:true});
+  var fl=document.getElementById('float');if(!fl)return;
+  if(!CONFIG.FLOAT||!('IntersectionObserver' in window)){fl.remove();return}
+  var pastHero=false,formIn=false;
+  function sync(){var on=pastHero&&!formIn;fl.classList.toggle('on',on);fl.tabIndex=on?0:-1;fl.setAttribute('aria-hidden',on?'false':'true')}
+  new IntersectionObserver(function(es){pastHero=!es[0].isIntersecting;sync()},{threshold:.15}).observe(document.getElementById('hero'));
+  new IntersectionObserver(function(es){formIn=es[0].isIntersecting;sync()},{rootMargin:'-15% 0px -15% 0px'}).observe(document.getElementById('qform'));
+  sync();
 })();
 
-/* ---------- epoxy pour dividers ---------- */
+/* ===== Fade-up: everything is visible at rest; only what starts below the first screen rises 12px in ===== */
 (function(){
-  var SPEED = 0.0006;       /* how fast the pour edge rolls */
-  var AMP = 7;              /* swell height, viewBox units */
-  var PUSH = 16;            /* how far the edge bulges from a nearby pointer */
-  var pours = [].slice.call(document.querySelectorAll('.pour'));
-  var px = -1e4, py = -1e4;
-  var state = pours.map(function(svg, k){ return {svg:svg, path:svg.querySelector('path.top'), sh:svg.querySelector('path.sh'), ph:k * 1.7, vis:true, flip:svg.classList.contains('down'), bump:new Float32Array(73), vel:new Float32Array(73)}; });
-  function edge(s, t){
-    var d = 'M0 80', n = 72;
-    for (var i = 0; i <= n; i++){
-      var x = i * 20, u = x / 1440;
-      var y = 40 + AMP * Math.sin(u * 6.1 + t * SPEED + s.ph) + AMP * 0.55 * Math.sin(u * 13.7 - t * SPEED * 1.6 + s.ph * 2) + AMP * 0.3 * Math.sin(u * 27 + t * SPEED * 2.3) + s.bump[i];
-      d += ' L' + x + ' ' + y.toFixed(1);
-    }
-    return d + ' L1440 80 Z';
-  }
-  function step(t){
-    state.forEach(function(s){
-      if (!s.vis) return;
-      var r = s.svg.getBoundingClientRect();
-      var near = py > r.top - 90 && py < r.bottom + 90;
-      for (var i = 0; i <= 72; i++){
-        var target = 0;
-        if (near){ var dx = (r.left + i / 72 * r.width) - px; var f = Math.exp(-(dx * dx) / 9000); target = (py < r.top + r.height / 2 ? 1 : -1) * (s.flip ? -1 : 1) * PUSH * f; }
-        s.vel[i] += (target - s.bump[i]) * 0.08; s.vel[i] *= 0.82; s.bump[i] += s.vel[i];
-      }
-      var d = edge(s, t); s.path.setAttribute('d', d); s.sh.setAttribute('d', d);
-    });
-  }
-  state.forEach(function(s){ var d = edge(s, 0); s.path.setAttribute('d', d); s.sh.setAttribute('d', d); });
-  if (MDE_reduced) return;
-  window.addEventListener('pointermove', function(e){ px = e.clientX; py = e.clientY; }, {passive:true});
-  window.addEventListener('touchmove', function(e){ var tt = e.touches[0]; if (tt){ px = tt.clientX; py = tt.clientY; } }, {passive:true});
-  if ('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ state.forEach(function(s){ if (s.svg === e.target) s.vis = e.isIntersecting; }); }); MDE_loop.wake(); });
-    state.forEach(function(s){ io.observe(s.svg); });
-  }
-  MDE_loop.add({active:function(){ return state.some(function(s){ return s.vis; }); }, step:step});
-  MDE_loop.wake();
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('below');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  [].forEach.call(document.querySelectorAll('.rise'),function(el){if(el.getBoundingClientRect().top>innerHeight){el.classList.add('below');io.observe(el)}});
 })();
 </script>
 </body>
